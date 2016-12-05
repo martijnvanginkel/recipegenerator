@@ -13,7 +13,7 @@
 		<input type="text" name="steps"><br>
 		<label for="">Voedingswaarden</label>
 		<input type="submit" name="nutritional_values">
-		<label for="">Allergieen</label>
+		<label for="">Allergieën</label>
 		<input type="checkbox" name="allergy_1" value="">
 		<input type="checkbox" name="allergy_2" value="">
 		<input type="checkbox" name="allergy_3" value="">
