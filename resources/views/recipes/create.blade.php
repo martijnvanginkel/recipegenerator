@@ -7,7 +7,7 @@
 	<form>
 		<label>Titel</label>
 		<input type="text" name="title"><br>
-		<label for="">Ingredienten</label>
+		<label for="">Ingrediënten</label>
 		<input type="text" name="ingredients" value="">
 		<label>Bereidingswijze</label>
 		<input type="text" name="steps"><br>
