@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<h1>Schrijf een recept!!!</h1>
+	<h1>Doe is iets toevoegen</h1>
 
 	<form>
 		Titel<input type="text" name=""><br>
