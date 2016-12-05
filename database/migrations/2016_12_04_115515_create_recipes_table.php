@@ -24,6 +24,7 @@ class CreateRecipesTable extends Migration
             $table->integer('waardering');
             $table->text('reactie');
             $table->integer('allergieen');
+            $table->integer('dieet');
             $table->timestamps();
         });
     }
