@@ -1,8 +1,9 @@
 /* Import config, mixins */
-@import "config.scss";
-@import "mixins.scss";
-
+/* Kleuren */
+/* Fonts */
+/* Achtergrond */
 /* CSS Reset */
+/* line 6, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 html, body, div, span, applet, object, iframe,
 h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,15 +17,18 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-/* Einde CSS Reset */
 
-input{
-	margin-top:20px;
+/* Einde CSS Reset */
+/* line 28, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+input {
+  margin-top: 20px;
 }
+
+/*# sourceMappingURL=../../../public/css/style.map */
