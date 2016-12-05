@@ -2,16 +2,27 @@
 
 @section('content')
 
-	<h1>Doe is iets toevoegen</h1>
+	<h1>Recepten toevoegen</h1>
 
 	<form>
 		<label>Titel</label>
-		<input type="text" name=""><br>
+		<input type="text" name="title"><br>
 		<label for="">Ingredienten</label>
+		<input type="text" name="ingredients" value="">
 		<label>Bereidingswijze</label>
-		<input type="text" name=""><br>
+		<input type="text" name="steps"><br>
 		<label for="">Voedingswaarden</label>
-		<input type="submit" name="">
+		<input type="submit" name="nutritional_values">
+		<label for="">Allergieen</label>
+		<input type="checkbox" name="allergy_1" value="">
+		<input type="checkbox" name="allergy_2" value="">
+		<input type="checkbox" name="allergy_3" value="">
+		<input type="checkbox" name="allergy_4" value="">
+		<input type="checkbox" name="allergy_5" value="">
+		<input type="checkbox" name="allergy_6" value="">
+		<label for="">Dieet</label>
+		<input type="checkbox" name="vegan" value="">
+		<input type="checkbox" name="vegetarian" value="">
 	</form>
 
 @endsection
