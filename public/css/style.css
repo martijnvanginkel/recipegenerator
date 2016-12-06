@@ -26,9 +26,31 @@ time, mark, audio, video {
 }
 
 /* Einde CSS Reset */
-/* line 28, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
-input {
+/* line 27, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+body, main {
+  width: 100%;
+  height: 100%;
+}
+
+/* Generator */
+/* line 32, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+#generator {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Formulier recepten */
+/* line 39, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+#form_new_recipe {
+  margin: 0 auto;
+  display: block;
+  position: relative;
+}
+
+/* line 45, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+#form_new_recipe input {
   margin-top: 20px;
+  position: absolute;
 }
 
 /*# sourceMappingURL=../../../public/css/style.map */

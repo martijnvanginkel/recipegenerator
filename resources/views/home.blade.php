@@ -1,17 +1,20 @@
 @extends('main')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+  <section id="generator">
+    <input type="text" name="" value="">
+    <button type="button" name="button">GENEREER</button>
+  </section>
+  <section id="recept">
+    <img src="" alt="" />
+    <ol id="ingredients">
+      <!-- vanuit PHP -->
+    </ol>
+    <div id="steps">
+      <!-- vanuit PHP -->
     </div>
-</div>
+    <div id="nutricien_values">
+      <!-- vanuit PHP -->
+    </div>
+  </section>
 @endsection

@@ -24,7 +24,26 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* Einde CSS Reset */
+body, main{
+	width: 100%;
+	height: 100%;
+}
+/* Generator */
+#generator
+{
+	display: block;
+	margin: 0 auto;
+}
 
-input{
-	margin-top:20px;
+/* Formulier recepten */
+#form_new_recipe
+{
+	margin: 0 auto;
+	display: block;
+	position: relative;
+
+	input{
+		margin-top:20px;
+		position: absolute;
+	}
 }
