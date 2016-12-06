@@ -6,7 +6,7 @@
     <button type="button" name="button">GENEREER</button>
   </section>
   <section id="recept">
-    <img id="image_recipe" src="http://placehold.it/500x250" alt="" />
+    <img id="image_recipe" src="http://placehold.it/800x250" alt="" />
     <ol id="ingredients">
       <!-- vanuit PHP -->
       <li>Lorem</li>
