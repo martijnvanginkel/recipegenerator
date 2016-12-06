@@ -33,6 +33,60 @@ body, main{
 {
 	display: block;
 	margin: 0 auto;
+	width:500px;
+	margin-bottom: 200px;
+
+	input
+	{
+		height: 100px;
+		width: 500px;
+		font-size: 75px;
+		border: none;
+		text-align: center;
+	}
+
+	button{
+		height: 100px;
+		width: 200px;
+		left:45%;
+	}
+}
+
+/* Recept */
+#recept
+{
+	width:50%;
+	border: 1px solid black;
+	overflow: hidden;
+
+	#image_recipe
+	{
+
+	}
+	#ingredients
+	{
+		float: left;
+	}
+	#steps
+	{
+		float: left;
+	}
+	#nutritional_values
+	{
+
+	}
+}
+
+/* Footer */
+footer
+{
+	width: 100%;
+
+	p{
+		padding-top: 20px;
+		padding-bottom: 20px;
+		text-align: center;
+	}
 }
 
 /* Formulier recepten */
