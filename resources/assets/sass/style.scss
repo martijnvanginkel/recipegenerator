@@ -58,22 +58,28 @@ body, main{
 	width:50%;
 	border: 1px solid black;
 	overflow: hidden;
+	margin: 0 auto;
 
 	#image_recipe
 	{
-
+		display: block;
 	}
 	#ingredients
 	{
 		float: left;
+		width: 23%;
+		padding-left:10px;
+		list-style: none;
 	}
 	#steps
 	{
 		float: left;
+		width: 73%;
+		padding-right: 10px;
 	}
 	#nutritional_values
 	{
-
+		display: block;
 	}
 }
 
