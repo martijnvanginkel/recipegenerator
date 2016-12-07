@@ -20,9 +20,6 @@ class CreateRecipesTable extends Migration
             $table->text('ingredienten');
             $table->text('bereidingswijze');
             $table->text('voedingswaarde');
-            //extra
-            $table->integer('waardering');
-            $table->text('reactie');
             //gelinkt aan user
             $table->integer('allergieen');
             $table->integer('dieet');
