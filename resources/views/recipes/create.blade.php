@@ -4,7 +4,7 @@
 
 	<h1>Recepten toevoegen</h1>
 
-	<form>
+	<form id="form_new_recipe">
 		<label>Titel</label>
 		<input type="text" name="title"><br>
 		<label for="">Ingrediënten</label>
