@@ -4,7 +4,7 @@
 
 /* CSS Reset */
 html, body, div, span, applet, object, iframe,
-h2, h3, h4, h5, h6, p, blockquote, pre,
+h2, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -60,6 +60,10 @@ body, main{
 	overflow: hidden;
 	margin: 0 auto;
 
+	h1{
+		margin-left: 10px;
+	}
+
 	#image_recipe
 	{
 		display: block;
@@ -70,16 +74,23 @@ body, main{
 		width: 23%;
 		padding-left:10px;
 		list-style: none;
+		height:100%;
+		padding-top: 10px;
 	}
 	#steps
 	{
 		float: left;
 		width: 73%;
 		padding-right: 10px;
+		padding-top: 10px;
 	}
 	#nutritional_values
 	{
-		display: block;
+		float: right;
+		width: 73%;
+		padding-right: 23px;
+		padding-top: 10px;
+		padding-bottom: 10px;
 	}
 }
 

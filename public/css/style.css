@@ -5,7 +5,7 @@
 /* CSS Reset */
 /* line 6, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 html, body, div, span, applet, object, iframe,
-h2, h3, h4, h5, h6, p, blockquote, pre,
+h2, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -67,37 +67,49 @@ body, main {
 }
 
 /* line 63, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+#recept h1 {
+  margin-left: 10px;
+}
+
+/* line 67, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 #recept #image_recipe {
   display: block;
 }
 
-/* line 67, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 71, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 #recept #ingredients {
   float: left;
   width: 23%;
   padding-left: 10px;
   list-style: none;
+  height: 100%;
+  padding-top: 10px;
 }
 
-/* line 74, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 80, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 #recept #steps {
   float: left;
   width: 73%;
   padding-right: 10px;
+  padding-top: 10px;
 }
 
-/* line 80, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 87, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 #recept #nutritional_values {
-  display: block;
+  float: right;
+  width: 73%;
+  padding-right: 23px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /* Footer */
-/* line 87, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 98, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 footer {
   width: 100%;
 }
 
-/* line 91, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 102, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 footer p {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -105,14 +117,14 @@ footer p {
 }
 
 /* Formulier recepten */
-/* line 99, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 110, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 #form_new_recipe {
   margin: 0 auto;
   display: block;
   position: relative;
 }
 
-/* line 105, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 116, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 #form_new_recipe input {
   margin-top: 20px;
   position: absolute;
