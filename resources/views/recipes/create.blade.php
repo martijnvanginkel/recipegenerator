@@ -14,6 +14,8 @@
 			        </ul>
 			    </div>
 		@endif
+    <label for="">Afbeelding</label>
+    <input type="file" name="image" accept="image/*">
 		<label name="title">Titel</label>
 		<br>
 		<input type="text" name="titel" id="titel">
