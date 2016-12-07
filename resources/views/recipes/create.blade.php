@@ -7,7 +7,7 @@
 	<form method="POST" action=" {{ route('recipes.store') }} ">
 		<label name="title">Titel</label>
 		<br>
-		<input type="text" name="title" id="title">
+		<input type="text" name="titel" id="titel">
 		<br>
 		<label name="ingredienten" for="">Ingrediënten:</label>
 		<br>
