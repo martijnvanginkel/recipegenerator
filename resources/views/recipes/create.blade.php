@@ -4,25 +4,41 @@
 
 	<h1>Recepten toevoegen</h1>
 
-	<form>
-		<label>Titel</label>
-		<input type="text" name="title"><br>
-		<label for="">Ingrediënten</label>
-		<input type="text" name="ingredients" value="">
-		<label>Bereidingswijze</label>
-		<input type="text" name="steps"><br>
-		<label for="">Voedingswaarden</label>
-		<input type="submit" name="nutritional_values">
-		<label for="">Allergieën</label>
+	<form method="POST" action=" {{ route('recipes.store') }} ">
+		<label name="title">Titel</label>
+		<br>
+		<input type="text" name="title" id="title">
+		<br>
+		<label name="ingredienten" for="">Ingrediënten:</label>
+		<br>
+		<input type="text" name="ingredienten" id="ingredienten" value="">
+		<br>
+		<label name="bereidingswijze">Bereidingswijze:</label>
+		<br>
+		<input type="text" name="bereidingswijze" id="bereidingswijze">
+		<br>
+		<label name="voedingswaarde" for="">Voedingswaarde:</label>
+		<br>
+		<input name="voedingswaarde=" id="voedingswaarde">
+		<br>
+		<label name="allergieen" for="">Allergieën:</label>
+		<br>
 		<input type="checkbox" name="allergy_1" value="">
 		<input type="checkbox" name="allergy_2" value="">
 		<input type="checkbox" name="allergy_3" value="">
 		<input type="checkbox" name="allergy_4" value="">
 		<input type="checkbox" name="allergy_5" value="">
 		<input type="checkbox" name="allergy_6" value="">
-		<label for="">Dieet</label>
+		<br>
+		<label name="dieet" for="">Dieet:</label>
+		<br>
+
 		<input type="checkbox" name="vegan" value="">
 		<input type="checkbox" name="vegetarian" value="">
+		<br>
+		<input type="submit" value="Voeg recept toe">
+
+		<input type="hidden" name="_token" value="{{ Session::token() }}">
 	</form>
 
 @endsection
