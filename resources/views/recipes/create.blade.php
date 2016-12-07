@@ -28,7 +28,7 @@
 		<br>
 		<label name="voedingswaarde" for="">Voedingswaarde:</label>
 		<br>
-		<input name="voedingswaarde=" id="voedingswaarde">
+		<input name="voedingswaarde" id="voedingswaarde">
 		<br>
 		<label name="allergieen" for="">Allergieën:</label>
 		<br>
