@@ -58,7 +58,7 @@ class RecipeController extends Controller
         
         $recipe->save();
 
-        return redirect('recipes.show', $recipe->id);
+        return redirect()->route('recipes.show', $recipe->id);
     }
 
     /**
