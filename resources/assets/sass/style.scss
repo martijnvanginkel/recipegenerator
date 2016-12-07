@@ -116,14 +116,23 @@ footer
 }
 
 /* Formulier recepten */
-#form_new_recipe
-{
-	margin: 0 auto;
-	display: block;
-	position: relative;
 
-	input{
-		margin-top:20px;
-		position: absolute;
+#container
+{
+
+	#form_new_recipe
+	{
+		margin: 0 auto;
+		max-width:min-content;
+
+		label{
+			display: block;
+		}
+
+		input{
+			margin-top:20px;
+			margin-bottom:20px;
+			display: block;
+		}
 	}
 }

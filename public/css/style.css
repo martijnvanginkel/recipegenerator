@@ -125,17 +125,22 @@ footer p {
 }
 
 /* Formulier recepten */
-/* line 119, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
-#form_new_recipe {
+/* line 123, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+#container #form_new_recipe {
   margin: 0 auto;
-  display: block;
-  position: relative;
+  max-width: min-content;
 }
 
-/* line 125, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
-#form_new_recipe input {
+/* line 128, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+#container #form_new_recipe label {
+  display: block;
+}
+
+/* line 132, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+#container #form_new_recipe input {
   margin-top: 20px;
-  position: absolute;
+  margin-bottom: 20px;
+  display: block;
 }
 
 /*# sourceMappingURL=../../../public/css/style.map */
