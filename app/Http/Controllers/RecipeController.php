@@ -108,4 +108,19 @@ class RecipeController extends Controller
     {
         //
     }
+
+    public function generate($id)
+    {
+        $recipeAmount = Recipe::count($id);
+
+        $randomNumber = rand(1, $recipeAmount);
+
+        $id = $randomNumber;
+
+        $recipe = Recipe::find($id);
+   
+    }
+
+
+
 }
