@@ -55,9 +55,10 @@ class RecipeController extends Controller
         $recipe->ingredienten = $request->ingredienten;
         $recipe->bereidingswijze = $request->bereidingswijze;
         $recipe->voedingswaarde = $request->voedingswaarde;
+        
         $recipe->save();
 
-        return redirect('recipes.show', $recipe->id);
+        return redirect()->route('recipes.show', $recipe->id);
     }
 
     /**
@@ -68,7 +69,10 @@ class RecipeController extends Controller
      */
     public function show($id)
     {
+        //zoek het recept die je hebt aangeklikt in de database
+        $recipe = Recipe::find($id);
         //
+        return view('recipes.show')->with('recipe', $recipe);
     }
 
     /**
