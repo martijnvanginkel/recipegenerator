@@ -5,6 +5,15 @@
 	<h1>Recepten toevoegen</h1>
 
 	<form method="POST" action=" {{ route('recipes.store') }} ">
+		@if (count($errors) > 0)
+			    <div class="alert alert-danger">
+			        <ul>
+			            @foreach ($errors->all() as $error)
+			                <li>{{ $error }}</li>
+			            @endforeach
+			        </ul>
+			    </div>
+		@endif
 		<label name="title">Titel</label>
 		<br>
 		<input type="text" name="title" id="title">
@@ -37,7 +46,7 @@
 		<input type="checkbox" name="vegetarian" value="">
 		<br>
 		<input type="submit" value="Voeg recept toe">
-
+		
 		<input type="hidden" name="_token" value="{{ Session::token() }}">
 	</form>
 
