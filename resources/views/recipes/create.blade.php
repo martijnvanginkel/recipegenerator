@@ -18,7 +18,7 @@
       <label for="">Afbeelding</label>
       <input type="file" name="image" accept="image/*"></textarea>
   		<label name="title">Titel</label>
-  		<textarea type="text" name="titel" id="titel"></textarea>
+  		<input type="text" name="titel" id="titel"></textarea>
   		<label name="ingredienten" for="">Ingrediënten:</label>
   		<textarea type="text" name="ingredienten" id="ingredienten" value=""></textarea>
   		<label name="bereidingswijze">Bereidingswijze:</label>

@@ -132,9 +132,16 @@ footer
 		}
 
 		input, textarea{
+		margin-top:20px;
+		margin-bottom:20px;
+		display: block;
+		}
+
+		input[type="text"], textarea{
 			margin-top:20px;
 			margin-bottom:20px;
 			display: block;
+			width: 300px;
 		}
 	}
 }

@@ -145,4 +145,12 @@ footer p {
   display: block;
 }
 
+/* line 140, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+#container #form_new_recipe input[type="text"], #container #form_new_recipe textarea {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+  width: 300px;
+}
+
 /*# sourceMappingURL=../../../public/css/style.map */
