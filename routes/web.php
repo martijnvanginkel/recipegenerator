@@ -14,6 +14,9 @@
 Route::get('/', 'PagesController@getIndex');
 Route::resource('recipes', 'RecipeController');
 
+Route::get('/home', 'GenerateController@generate')->name('generate');
+Route::post('/home', 'GenerateController@generate')->name('recipe-generate');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
