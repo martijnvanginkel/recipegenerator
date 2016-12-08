@@ -16,7 +16,7 @@
   		@endif
       <h1>Recepten toevoegen</h1>
       <label for="">Afbeelding</label>
-      <textarea type="file" name="image" accept="image/*"></textarea>
+      <input type="file" name="image" accept="image/*"></textarea>
   		<label name="title">Titel</label>
   		<textarea type="text" name="titel" id="titel"></textarea>
   		<label name="ingredienten" for="">Ingrediënten:</label>
