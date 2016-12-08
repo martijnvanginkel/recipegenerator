@@ -7,25 +7,21 @@
   </section>
   <section id="recept">
     <img id="image_recipe" src="http://placehold.it/800x250" alt="" />
-    <h1>Dit recept is vet lekker</h1>
+    <h1>{{ $recipe->titel }}</h1>
     <ol id="ingredients">
       <h3>Ingrediënten</h3>
       <!-- vanuit PHP -->
-      <li>Lorem</li>
-      <li>Ipsum</li>
-      <li>dolor</li>
+      <p>{{ $recipe->ingredienten }}</p>
     </ol>
     <div id="steps">
       <h3>Bereidingswijze</h3>
       <!-- vanuit PHP -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum, lorem id dictum egestas, ex lacus euismod neque, a scelerisque felis est vitae ex. Mauris placerat pulvinar auctor. Morbi purus neque, molestie at fringilla quis, ultricies eu nibh. Mauris ullamcorper aliquet eros ac interdum. Nunc sit amet vulputate leo. Nam lacinia varius tempor. Vivamus sem arcu, aliquam non enim a, facilisis aliquet nunc. In posuere fringilla tempus. Curabitur accumsan neque enim, vestibulum viverra est hendrerit nec. Cras hendrerit lectus vitae turpis mattis dictum. Aliquam cursus quam mi. Proin ullamcorper, sem nec ultrices lacinia, elit nunc facilisis neque, ut molestie nunc est et nunc. Phasellus auctor nibh nec tortor maximus dapibus.
-
-Vestibulum fringilla enim sed mauris accumsan varius. Phasellus commodo leo at sagittis tristique. Curabitur quis ipsum nisl. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus faucibus pharetra erat id placerat. Nulla facilisi. Integer non sagittis purus.</p>
+      <p>{{ $recipe->bereidingswijze }}</p>
     </div>
     <div id="nutritional_values">
       <h3>Voedingswaarden</h3>
       <!-- vanuit PHP -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>{{ $recipe->voedingswaarde }}</p>
     </div>
   </section>
 @endsection
