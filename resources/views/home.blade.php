@@ -14,14 +14,8 @@
 
 @if($clicked)
     
-     <h1> {{ $recipe->id }} </h1>
-
-@endif
-
-@endsection
 
 
-{{-- 
   </section>
   <section id="recept">
     <img id="image_recipe" src="http://placehold.it/800x250" alt="" />
@@ -41,7 +35,11 @@
       <!-- vanuit PHP -->
       <p>{{ $recipe->voedingswaarde }}</p>
     </div>
-  </section> --}}
+  </section> 
+
+  @endif
+
+@endsection
 
 
 
