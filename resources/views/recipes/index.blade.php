@@ -6,7 +6,7 @@
 	<div class="panel panel-default">
 		<div class="panel-heading">Acties</div>
 		<div class="panel-body">
-			<a href=" " class="btn btn-primary">
+			<a href="{{route('recipes.create')}}" class="btn btn-primary">
 				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Recept Toevoegen!
 			</a>
 		</div>
