@@ -2,13 +2,17 @@
 
 @section('content')
 
+	
 	<h1> {{ $recipe->titel }} </h1>
 
-	<p> {{ $recipe->ingredienten }} </p>
+	<h2>Ingrediënten</h2>
+	<p> {{ $recipe->ingredienten }} </p><br>
 
-	<p> {{ $recipe->bereidingswijze }} </p>
+	<h2>Bereidingswijze</h2>
+	<p> {{ $recipe->bereidingswijze }} </p><br>
 
-	<p> {{ $recipe->voedingswaarde }} </p>
+	<h2>Voedingswaarde</h2>
+	<p> {{ $recipe->voedingswaarde }} </p><br>
 	
 	<a href=" {{ route('recipes.index', $recipe->id) }} ">Terug</a>
 
