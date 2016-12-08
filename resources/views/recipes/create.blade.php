@@ -16,15 +16,15 @@
   		@endif
       <h1>Recepten toevoegen</h1>
       <label for="">Afbeelding</label>
-      <input type="file" name="image" accept="image/*">
+      <textarea type="file" name="image" accept="image/*">
   		<label name="title">Titel</label>
-  		<input type="text" name="titel" id="titel">
+  		<textarea type="text" name="titel" id="titel">
   		<label name="ingredienten" for="">Ingrediënten:</label>
-  		<input type="text" name="ingredienten" id="ingredienten" value="">
+  		<textarea type="text" name="ingredienten" id="ingredienten" value="">
   		<label name="bereidingswijze">Bereidingswijze:</label>
-  		<input type="text" name="bereidingswijze" id="bereidingswijze">
+  		<textarea type="text" name="bereidingswijze" id="bereidingswijze">
   		<label name="voedingswaarde" for="">Voedingswaarde:</label>
-  		<input name="voedingswaarde" id="voedingswaarde">
+  		<textarea name="voedingswaarde" id="voedingswaarde">
   		<label name="allergieen" for="">Allergieën:</label>
   		<input type="checkbox" name="allergy_1" value="">
   		<input type="checkbox" name="allergy_2" value="">
