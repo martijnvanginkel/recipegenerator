@@ -1,6 +1,7 @@
-/* Import config, mixins */
+/* Import config, mixins, font */
 @import "config.scss";
 @import "mixins.scss";
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
 
 /* CSS Reset */
 html, body, div, span, applet, object, iframe,
@@ -27,6 +28,7 @@ time, mark, audio, video {
 body, main{
 	width: 100%;
 	height: 100%;
+	font-family: 'Exo 2', sans-serif;
 }
 
 #logo
