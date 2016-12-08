@@ -2,9 +2,8 @@
 
 @section('content')
 
-<form method="POST" action=" {{ route('recipe-generate') }} ">
+<form id="generator" method="POST" action=" {{ route('recipe-generate') }} ">
 {{ csrf_field() }}
-  <label>Genereer</label>
   <input type="submit" name="genereer" value="Genereer" id="generateButton" action="">
 
   <input type="hidden" name="_token" value="{{ Session::token() }}">
@@ -13,7 +12,7 @@
 <br>
 
 @if($clicked)
-    
+
 
 
   </section>
@@ -35,11 +34,8 @@
       <!-- vanuit PHP -->
       <p>{{ $recipe->voedingswaarde }}</p>
     </div>
-  </section> 
+  </section>
 
   @endif
 
 @endsection
-
-
-
