@@ -83,7 +83,9 @@ class RecipeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $recipe = Recipe::find($id);
+
+        return view('recipes.edit')->with('recipe', $recipe);
     }
 
     /**
@@ -95,7 +97,23 @@ class RecipeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, array(
+            'titel' => 'required',
+            'ingredienten' => 'required',
+            'bereidingswijze' => 'required',
+            'voedingswaarde' => 'required',
+            ));
+
+        $recipe = Recipe::find($id);
+
+        $recipe->titel = $request->input('titel');
+        $recipe->ingredienten = $request->input('ingredienten');
+        $recipe->bereidingswijze = $request->input('bereidingswijze');
+        $recipe->voedingswaarde = $request->input('voedingswaarde');
+
+        $recipe->save();
+
+        return redirect()->route('recipes.show', $recipe->id);
     }
 
     /**
@@ -106,7 +124,11 @@ class RecipeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $recipe = Recipe::find($id);
+
+        $recipe->delete();
+
+        return redirect()->route('recipes.index');
     }
 
 }
