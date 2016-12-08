@@ -1,9 +1,21 @@
 @extends('main')
 
 @section('content')
-  <section id="generator">
-    <input type="text" name="" value="">
-    <button type="button" name="button">GENEREER</button>
+
+<form method="POST" action=" {{ route('recipe-generate') }} ">
+{{ csrf_field() }}
+  <label>Genereer</label>
+  <input type="submit" name="genereer" value="Genereer" id="generateButton" action="">
+
+  <input type="hidden" name="_token" value="{{ Session::token() }}">
+  {{ method_field('get') }}
+</form>
+<br>
+
+@if($clicked)
+    
+
+
   </section>
   <section id="recept">
     <img id="image_recipe" src="http://placehold.it/800x250" alt="" />
@@ -23,5 +35,11 @@
       <!-- vanuit PHP -->
       <p>{{ $recipe->voedingswaarde }}</p>
     </div>
-  </section>
+  </section> 
+
+  @endif
+
 @endsection
+
+
+
