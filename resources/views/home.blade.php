@@ -4,7 +4,7 @@
 
 <form id="generator" method="POST" action=" {{ route('recipe-generate') }} ">
 {{ csrf_field() }}
-  <input type="submit" name="genereer" value="Genereer" id="generateButton" action="">
+  <input type="submit" name="genereer" value="Genereer" id="generateButton" action="" >
 
   <input type="hidden" name="_token" value="{{ Session::token() }}">
   {{ method_field('get') }}
