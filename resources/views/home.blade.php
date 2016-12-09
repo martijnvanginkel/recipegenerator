@@ -1,7 +1,6 @@
 @extends('main')
 
 @section('content')
-
 <section id=container_generator>
   <form id="generator" method="POST" action=" {{ route('recipe-generate') }} ">
   {{ csrf_field() }}

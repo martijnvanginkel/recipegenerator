@@ -4,6 +4,7 @@
 <body>
   <main>
       <img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo">
+      <p>Laat De Sjef een recept voor je genereren!</p>
       @yield('content')
   </main>
   @include('partials._footer')
