@@ -15,8 +15,8 @@ class GenerateController extends Controller
 
 		if ($clicked) {
 
-			$recipeAmount = Recipe::count();
-	        $randomNumber = rand(1, $recipeAmount);
+			//$recipeAmount = Recipe::count();
+	        $randomNumber = rand(13, 20);
 	        $id = $randomNumber;
 	        $recipe = Recipe::find($id);
 
