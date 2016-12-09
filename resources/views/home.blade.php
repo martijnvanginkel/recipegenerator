@@ -2,20 +2,19 @@
 
 @section('content')
 
-<form id="generator" method="POST" action=" {{ route('recipe-generate') }} ">
-{{ csrf_field() }}
-  <input type="submit" name="genereer" value="Genereer" id="generateButton" action="" >
+<section id=container_generator>
+  <form id="generator" method="POST" action=" {{ route('recipe-generate') }} ">
+  {{ csrf_field() }}
+    <input type="submit" name="genereer" value="Genereer" id="generateButton" action="">
 
-  <input type="hidden" name="_token" value="{{ Session::token() }}">
-  {{ method_field('get') }}
-</form>
-<br>
+    <input type="hidden" name="_token" value="{{ Session::token() }}">
+    {{ method_field('get') }}
+  </form>
+  <br>
+</section>
+<section id="container_recept">
 
 @if($clicked)
-
-
-
-  </section>
   <section id="recept">
     <img id="image_recipe" src="http://placehold.it/800x250" alt="" />
     <h1>{{ $recipe->titel }}</h1>
@@ -34,8 +33,10 @@
       <!-- vanuit PHP -->
       <p>{{ $recipe->voedingswaarde }}</p>
     </div>
+    <div id="social_media">
+
+    </div>
   </section>
-
   @endif
-
+</section>
 @endsection
