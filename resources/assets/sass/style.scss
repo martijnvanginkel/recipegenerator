@@ -47,26 +47,30 @@ body, main{
 #container_generator
 {
 	width: 100%;
-	height: 70vh;
+	height: 65vh;
 	background-color: $background_color_green;
-
+	position: relative;
 }
 
 /* Generator */
 #generator
 {
 	display: block;
-	margin: 0 auto;
+	margin: 0 0 0 -110px;
 	width:500px;
-	margin-bottom: 100px;
+	top: 50%;
+	left: 50%;
+	position: absolute;
 
 	input[type="submit"]
 	{
 		height: 100px;
 		width: 200px;
-		margin: 0 auto;
-		display: block;
 		font-size:30px;
+		background-color: $yellow;
+		color: $white;
+		border: none;
+		margin: 0 auto;
 	}
 }
 
