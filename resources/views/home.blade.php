@@ -15,13 +15,13 @@
 
 @if($clicked)
   <section id="recept">
-    <img id="image_recipe" src="http://placehold.it/800x250" alt="" />
+    <img id="image_recipe" src="http://placehold.it/900x250" alt="" />
     <h1>{{ $recipe->titel }}</h1>
-    <ol id="ingredients">
+    <ul id="ingredients">
       <h3>Ingrediënten</h3>
       <!-- vanuit PHP -->
       <p>{{ $recipe->ingredienten }}</p>
-    </ol>
+    </ul>
     <div id="steps">
       <h3>Bereidingswijze</h3>
       <!-- vanuit PHP -->
