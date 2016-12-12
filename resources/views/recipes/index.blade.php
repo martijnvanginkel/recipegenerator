@@ -15,10 +15,10 @@
 	<table class="table table-bordered" style="background-color: white">
 		<tr>
 			<th>#</th>
-			<th>titel</th>
-			<th>ingredienten</th>
-			<th>bereidingswijze</th>
-			<th>voedingwaarde</th>
+			<th>Titel</th>
+			<th>Ingrediënten</th>
+			<th>Bereidingswijze</th>
+			<th>Voedingswaarde</th>
 			<th></th>
 			<th></th>
 		</tr>
