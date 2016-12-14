@@ -13,6 +13,7 @@
 
 Route::get('/', 'PagesController@getIndex');
 Route::resource('recipes', 'RecipeController');
+Route::resource('diets', 'DietController', ['except' => ['create']]);
 
 Route::get('/home', 'GenerateController@generate')->name('generate');
 Route::post('/home', 'GenerateController@generate')->name('recipe-generate');
