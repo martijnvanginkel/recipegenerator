@@ -13,7 +13,7 @@
 </section>
 <section id="container_recept">
 
-@if($clicked)+-
+@if($clicked)
   <script type="text/javascript">
     $(document).ready(function(){
       $('html, body').animate({
