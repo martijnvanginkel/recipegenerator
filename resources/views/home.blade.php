@@ -13,17 +13,16 @@
 </section>
 <section id="container_recept">
 
-@if($clicked)
+@if($clicked)+-
   <script type="text/javascript">
     $(document).ready(function(){
       $('html, body').animate({
         scrollTop: $("#recept").offset().top
       }, 1000);
-
     });
   </script>
   <section id="recept">
-    <img height="250px" width="900px" id="image_recipe" src="http://placehold.it/900x250" alt="" />
+    <img id="image_recipe" src="{{ asset('img/' . $recipe->image) }}" alt="" />
     <h1>{{ $recipe->titel }}</h1>
     <ul id="ingredients">
       <h3>Ingrediënten</h3>
