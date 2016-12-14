@@ -33,7 +33,8 @@ body, main{
 }
 main
 {
-	// position: relative;
+	display: flex;
+	flex-direction: column;
 }
 
 #logo
@@ -87,20 +88,19 @@ main
 #container_recept
 {
 	width: 100%;
-	height: 100vh;
-	position: relative;
 	background-color: $white;
-	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
 
 	/* Recept */
 	#recept
 	{
 		width:55%;
 		overflow: hidden;
-		top: 20%;
-		left: 25%;
-		position: absolute;
 		background-color: $lightblue;
+		height: auto;
 
 		h1{
 			margin-left: 10px;
@@ -116,11 +116,9 @@ main
 		{
 			float: left;
 			width: 25%;
-			min-height: 100%;
 			padding: 1.2%;
 			margin-left: 1.2%;
 			list-style: none;
-			height:100%;
 			background-color: $white;
 		}
 		#steps
@@ -153,7 +151,7 @@ footer
 	width: 100%;
 	background-color: $yellow;
 	color: $white;
-	// position: absolute;
+	bottom:0%;
 
 	p
 	{
