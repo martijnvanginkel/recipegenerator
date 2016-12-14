@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Diet extends Model
 {
-    //
+    public function recipes()
+    {
+    	return $this->belongToMany('App\Recipe');
+    }
 }
