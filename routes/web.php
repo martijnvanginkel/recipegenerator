@@ -19,4 +19,4 @@ Route::post('/home', 'GenerateController@generate')->name('recipe-generate');
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index'); // VERWIJST OOK NAAR AUTHENTICATION IN HOMECONTROLLER. __CONSTRUCT
+//Route::get('/home', 'HomeController@index'); // VERWIJST OOK NAAR AUTHENTICATION IN HOMECONTROLLER. __CONSTRUCT /staat alleen homepage toe als ingelogt

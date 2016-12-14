@@ -4,7 +4,8 @@
 
 
   <div id="container">
-  	<form id="form_new_recipe" method="POST" action=" {{ route('recipes.store') }} ">
+  	<form id="form_new_recipe" method="POST" action=" {{ route('recipes.store') }} " enctype="multipart/form-data">
+
   		@if (count($errors) > 0)
   			    <div class="alert alert-danger">
   			        <ul>

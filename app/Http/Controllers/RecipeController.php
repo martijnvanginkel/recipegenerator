@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Recipe;
+use Image;
 
 class RecipeController extends Controller
 {
@@ -55,7 +56,13 @@ class RecipeController extends Controller
         $recipe->ingredienten = $request->ingredienten;
         $recipe->bereidingswijze = $request->bereidingswijze;
         $recipe->voedingswaarde = $request->voedingswaarde;
-        
+
+        $image = $request->image;
+        $filename = time() . '.' . $image->getClientOriginalExtension();
+        $location = public_path('img/' . $filename);
+        Image::make($image)->resize(900, 250)->save($location);
+        $recipe->image = $filename;
+    
         $recipe->save();
 
         return redirect()->route('recipes.show', $recipe->id);
