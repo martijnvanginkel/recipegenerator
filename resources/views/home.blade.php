@@ -13,7 +13,7 @@
 </section>
 <section id="container_recept">
 
-@if($clicked)+-
+@if($clicked)
   <script type="text/javascript">
     $(document).ready(function(){
       $('html, body').animate({
@@ -22,7 +22,10 @@
     });
   </script>
   <section id="recept">
-    <img id="image_recipe" src="{{ asset('img/' . $recipe->image) }}" alt="" />
+    <div class="icons">
+
+    </div>
+    <img id="image_recipe" src="{{ asset('img/' . $recipe->image) }}" alt="" height="250px" width="900px"/>
     <h1>{{ $recipe->titel }}</h1>
     <ul id="ingredients">
       <h3>Ingrediënten</h3>
