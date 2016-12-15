@@ -165,54 +165,67 @@ main {
   background-color: #fff;
   color: #313332;
   text-align: center;
+  width: 100%;
 }
 
-/* line 160, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 161, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 #geschiedenis {
   background-color: #F1C410;
   text-align: center;
 }
 
-/* Footer */
 /* line 167, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+.slide-favorieten {
+  margin: 60px auto;
+  width: 50%;
+}
+
+/* line 172, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+.slick-slide {
+  margin: 0 27px;
+  width: 400px !important;
+}
+
+/* Footer */
+/* line 179, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 footer {
   width: 100%;
   background-color: #F1C410;
   color: #fff;
 }
 
-/* line 173, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 185, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 footer p {
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
 }
 
-/* line 180, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 192, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 footer a {
   color: #fff;
 }
 
 /* Formulier recepten */
-/* line 190, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 202, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 #container #form_new_recipe {
   margin: 0 auto;
   max-width: min-content;
 }
 
-/* line 195, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 207, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 #container #form_new_recipe label {
   display: block;
 }
 
-/* line 199, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 211, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 #container #form_new_recipe input, #container #form_new_recipe textarea {
   margin-top: 20px;
   margin-bottom: 20px;
   display: block;
 }
 
-/* line 205, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 217, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 #container #form_new_recipe input[type="text"], #container #form_new_recipe textarea {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -220,14 +233,14 @@ footer a {
   width: 600px;
 }
 
-/* line 215, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 227, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: absolute;
   left: -9999px;
 }
 
-/* line 220, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 232, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 [type="checkbox"]:not(:checked) + label,
 [type="checkbox"]:checked + label {
   position: relative;
@@ -236,7 +249,7 @@ footer a {
 }
 
 /* checkbox aspect */
-/* line 228, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 240, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 [type="checkbox"]:not(:checked) + label:before,
 [type="checkbox"]:checked + label:before {
   content: '';
@@ -252,7 +265,7 @@ footer a {
 }
 
 /* checked mark aspect */
-/* line 240, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 252, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
   content: '✔';
@@ -266,13 +279,13 @@ footer a {
 }
 
 /* checked mark aspect changes */
-/* line 251, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 263, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 [type="checkbox"]:not(:checked) + label:after {
   opacity: 0;
   transform: scale(0);
 }
 
-/* line 255, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
+/* line 267, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 [type="checkbox"]:checked + label:after {
   opacity: 1;
   transform: scale(1);
