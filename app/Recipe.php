@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Recipe extends Model
 {
     public function diets()
     {
-    	return $this->belongToMany('App\Diet');
+    	return $this->belongsToMany('App\Diet');
     }
 }
