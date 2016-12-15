@@ -35,6 +35,7 @@ main
 {
 	display: flex;
 	flex-direction: column;
+	color: $white;
 }
 
 #logo
@@ -74,9 +75,9 @@ main
 		width: 200px;
 		font-size:30px;
 		background-color: $yellow;
-		color: $white;
 		border: none;
 		margin: 0 auto;
+		color: $white;
 	}
 	input[type="submit"]:hover
 	{
@@ -101,6 +102,7 @@ main
 		overflow: hidden;
 		background-color: $lightblue;
 		height: auto;
+		color: $black;
 
 		h1{
 			margin-left: 10px;
@@ -120,6 +122,7 @@ main
 			margin-left: 1.2%;
 			list-style: none;
 			background-color: $white;
+
 		}
 		#steps
 		{
@@ -145,13 +148,27 @@ main
 	}
 }
 
+/* profile page */
+
+#favorieten
+{
+	background-color: $white;
+	color: $black;
+	text-align: center;
+}
+
+#geschiedenis
+{
+	background-color: $yellow;
+	text-align: center;
+}
+
 /* Footer */
 footer
 {
 	width: 100%;
 	background-color: $yellow;
 	color: $white;
-	bottom:0%;
 
 	p
 	{
