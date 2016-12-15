@@ -18,7 +18,7 @@
       <h1>Recepten toevoegen</h1>
       <label for="">Afbeelding</label>
       <input type="file" name="image" accept="image/*"></textarea>
-  		<label name="title">Titel</label>
+  		<label name="title">Titel:</label>
   		<input type="text" name="titel" id="titel"></textarea>
   		<label name="ingredienten" for="">Ingrediënten:</label>
   		<textarea type="text" name="ingredienten" id="ingredienten" value=""></textarea>
@@ -26,19 +26,22 @@
   		<textarea type="text" name="bereidingswijze" id="bereidingswijze"></textarea>
   		<label name="voedingswaarde" for="">Voedingswaarde:</label>
   		<textarea name="voedingswaarde" id="voedingswaarde"></textarea>
-  		<label name="allergieen" for="">Allergieën:</label>
+  		<!-- <label name="allergieen" for="">Allergieën:</label>
   		<input type="checkbox" name="allergy_1" value="">
   		<input type="checkbox" name="allergy_2" value="">
   		<input type="checkbox" name="allergy_3" value="">
   		<input type="checkbox" name="allergy_4" value="">
   		<input type="checkbox" name="allergy_5" value="">
-  		<input type="checkbox" name="allergy_6" value="">
+  		<input type="checkbox" name="allergy_6" value=""> -->
 
   		<label name="diet" for="">Dieet:</label>
   @foreach($diets as $diet)
-      <h1> {{ $diet->titel }} </h1>
+      <p> {{ $diet->titel }} </p>
 
-      <input type="checkbox" name="diet[]" value="{{ $diet->id }}">
+      <input type="checkbox" id="diet[]" for="diet[]" name="diet[]" value="{{ $diet->id }}">
+    
+
+
   @endforeach
 
   		<input type="submit" value="Voeg recept toe">
