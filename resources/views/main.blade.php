@@ -8,8 +8,7 @@
       @yield('content')
   </main>
   @include('partials._footer')
-  
+
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
 </body>
 </html>

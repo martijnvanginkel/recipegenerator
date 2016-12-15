@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  alert("joi");
   $('.slide-favorieten').slick({
     dots: true,
     infinite: false,
