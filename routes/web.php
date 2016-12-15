@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'PagesController@getIndex');
+Route::get('/profile', 'PagesController@getProfile');
+
 Route::resource('recipes', 'RecipeController');
 Route::resource('diets', 'DietController', ['except' => ['create']]);
 
