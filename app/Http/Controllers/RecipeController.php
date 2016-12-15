@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Recipe;
+use App\Diet;
 use Image;
 
 class RecipeController extends Controller
@@ -30,7 +31,8 @@ class RecipeController extends Controller
      */
     public function create()
     {
-        return view('recipes.create');
+        $diets = Diet::all();
+        return view('recipes.create')->with('diets', $diets);
     }
 
     /**
@@ -57,13 +59,17 @@ class RecipeController extends Controller
         $recipe->bereidingswijze = $request->bereidingswijze;
         $recipe->voedingswaarde = $request->voedingswaarde;
 
+        //afbeelding toevoegen aan recept
         $image = $request->image;
         $filename = time() . '.' . $image->getClientOriginalExtension();
         $location = public_path('img/' . $filename);
         Image::make($image)->resize(900, 250)->save($location);
         $recipe->image = $filename;
-    
+        //--
+
         $recipe->save();
+        
+        $recipe->diets()->sync($request->diets, false);
 
         return redirect()->route('recipes.show', $recipe->id);
     }
@@ -76,7 +82,7 @@ class RecipeController extends Controller
      */
     public function show($id)
     {
-        //zoek het recept die je hebt aangeklikt in de database
+        //zoek het recept die je hebt aangeklikt op in de database
         $recipe = Recipe::find($id);
         //
         return view('recipes.show')->with('recipe', $recipe);
