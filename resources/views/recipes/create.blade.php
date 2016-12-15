@@ -33,10 +33,14 @@
   		<input type="checkbox" name="allergy_4" value="">
   		<input type="checkbox" name="allergy_5" value="">
   		<input type="checkbox" name="allergy_6" value="">
-  		<label name="dieet" for="">Dieet:</label>
 
-  		<input type="checkbox" name="vegan" value="">
-  		<input type="checkbox" name="vegetarian" value="">
+  		<label name="diet" for="">Dieet:</label>
+  @foreach($diets as $diet)
+      <h1> {{ $diet->titel }} </h1>
+
+      <input type="checkbox" name="diet[]" value="{{ $diet->id }}">
+  @endforeach
+
   		<input type="submit" value="Voeg recept toe">
 
   		<input type="hidden" name="_token" value="{{ Session::token() }}">
