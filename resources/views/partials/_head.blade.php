@@ -9,7 +9,6 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="/css/style.css" media="screen" title="no title" charset="utf-8">
-    <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -18,7 +17,7 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
-    
+
     <script type="text/javascript">
       $('a[href^="#"]').on('click', function(event) {
         var target = $(this.getAttribute('href'));

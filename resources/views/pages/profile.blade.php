@@ -7,13 +7,13 @@
     <h1>Favorieten</h1>
     <div class="slide-favorieten">
       <div>
-        content
+        <img src="http://placehold.it/200x200">
       </div>
       <div>
-        content
+        <img src="http://placehold.it/200x200">
       </div>
       <div>
-        content
+        <img src="http://placehold.it/200x200">
       </div>
     </div>
   </section>
