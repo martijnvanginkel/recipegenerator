@@ -39,7 +39,7 @@
       <p> {{ $diet->titel }} </p>
 
       <input type="checkbox" id="diet[]" for="diet[]" name="diet[]" value="{{ $diet->id }}">
-    
+
 
 
   @endforeach
