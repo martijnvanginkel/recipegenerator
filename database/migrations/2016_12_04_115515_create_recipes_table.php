@@ -21,8 +21,6 @@ class CreateRecipesTable extends Migration
             $table->text('bereidingswijze');
             $table->text('voedingswaarde');
             //gelinkt aan user
-            $table->integer('allergieen');
-            $table->integer('dieet');
             $table->timestamps();
         });
     }

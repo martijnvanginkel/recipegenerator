@@ -3,6 +3,7 @@
 @section('content')
 
 
+
   <div id="container">
   	<form id="form_new_recipe" method="POST" action=" {{ route('recipes.store') }} " enctype="multipart/form-data">
 
@@ -34,19 +35,24 @@
   		<input type="checkbox" name="allergy_5" value="">
   		<input type="checkbox" name="allergy_6" value=""> -->
 
-  		<label name="diet" for="">Dieet:</label>
-  @foreach($diets as $diet)
-      <p> {{ $diet->titel }} </p>
+  		<label name="diets" for="diets">Dieet:</label>
 
-      <input type="checkbox" id="diet[]" for="diet[]" name="diet[]" value="{{ $diet->id }}">
-
-
-
-  @endforeach
+      <select class="form-control select2-multi" name="diets[]" multiple="multiple">
+        @foreach($diets as $diet)
+          <option value="{{ $diet->id }}"> {{ $diet->titel }} </option>
+        @endforeach
+      </select>
 
   		<input type="submit" value="Voeg recept toe">
 
   		<input type="hidden" name="_token" value="{{ Session::token() }}">
   	</form>
   </div>
+
+
+
+<script type="text/javascript">
+  $('.select2-multi').select2();
+</script>
+
 @endsection

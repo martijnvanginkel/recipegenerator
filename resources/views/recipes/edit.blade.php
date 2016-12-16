@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
 <form method="POST" action="{{ route('recipes.update', $recipe->id) }}">
       
     <label for="titel">Titel</label>
@@ -36,5 +38,7 @@
 
    <a href=" {{ route('recipes.show', $recipe->id) }} ">Terug</a>
 </form>﻿
+
+
 
 @endsection

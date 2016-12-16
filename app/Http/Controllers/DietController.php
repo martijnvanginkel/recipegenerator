@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Diet;
 
 class DietController extends Controller
 {
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->middleware('auth');
     }
-
     /**
      * Display a listing of the resource.
      *
@@ -29,10 +28,6 @@ class DietController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -69,9 +64,7 @@ class DietController extends Controller
      */
     public function edit($id)
     {
-        $diet = Diet::find($id);
-
-        return view('diets.edit')->with('diet', $diet);
+        //
     }
 
     /**
@@ -83,17 +76,7 @@ class DietController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, array(
-            'titel' => 'required',
-            ));
-
-        $diet = Diet::find($id);
-
-        $diet->titel = $request->input('titel');
-
-        $diet->save();
-
-        return redirect()->route('diets.index', $diet->id);
+        //
     }
 
     /**

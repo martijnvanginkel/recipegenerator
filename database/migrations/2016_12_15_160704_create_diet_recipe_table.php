@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRecipeDietTable extends Migration
+class CreateDietRecipeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateRecipeDietTable extends Migration
      */
     public function up()
     {
-        Schema::create('recipe_diet', function (Blueprint $table) {
+        Schema::create('diet_recipe', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('recipe_id')->unsigned();
-            $table->foreign('recipe_id')->references('id')->on('recipes');
-
             $table->integer('diet_id')->unsigned();
             $table->foreign('diet_id')->references('id')->on('diets');
+
+            $table->integer('recipe_id')->unsigned();
+            $table->foreign('recipe_id')->references('id')->on('recipes');
+            
         });
     }
 
@@ -30,6 +31,6 @@ class CreateRecipeDietTable extends Migration
      */
     public function down()
     {
-        Schema::drop('recipe_diet');
+        Schema::drop('diet_recipe');
     }
 }

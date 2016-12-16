@@ -69,6 +69,7 @@ class RecipeController extends Controller
 
         $recipe->save();
         
+        //$recipe->diets()->attach(1);
         $recipe->diets()->sync($request->diets, false);
 
         return redirect()->route('recipes.show', $recipe->id);
