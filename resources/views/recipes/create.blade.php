@@ -19,13 +19,13 @@
       <label for="">Afbeelding:</label>
       <input type="file" name="image" accept="image/*"></textarea>
       <label name="title">Titel:</label>
-      <input type="text" name="titel" id="titel"></textarea>
+      <input placeholder="Typ hier de titel van dit gerecht" cols="30" rows="5" type="text" name="titel" id="titel"></textarea>
       <label name="ingredienten" for="">Ingrediënten:</label>
-      <textarea type="text" name="ingredienten" id="ingredienten" value=""></textarea>
+      <textarea placeholder="Typ hier de ingrediënten die zijn gebruikt voor dit gerecht" cols="30" rows="5" type="text" name="ingredienten" id="ingredienten" value=""></textarea>
       <label name="bereidingswijze">Bereidingswijze:</label>
-      <textarea type="text" name="bereidingswijze" id="bereidingswijze"></textarea>
-      <label name="voedingswaarde" for="">Voedingswaarde:</label>
-      <textarea name="voedingswaarde" id="voedingswaarde"></textarea>
+      <textarea placeholder="Typ hier hoe dit gerecht klaargemaakt wordt" cols="30" rows="5" type="text" name="bereidingswijze" id="bereidingswijze"></textarea>
+      <label name="voedingswaarde" for="">Voedingswaarden:</label>
+      <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" cols="30" rows="5" name="voedingswaarden" id="voedingswaarden"></textarea>
 
       <!-- <label name="allergieen" for="">Allergieën:</label>
       <input type="checkbox" name="allergy_1" value="">
@@ -37,7 +37,7 @@
 
       <label name="diet" for="">Dieet:</label>
       @foreach($diets as $diet)
-      <input type="checkbox" id="{{$diet->titel}}" value="{{ $diet->id }}" ><label for="{{$diet->titel}}">{{$diet->titel}}</label>  
+      <input type="checkbox" id="{{$diet->titel}}" value="{{ $diet->id }}" ><label for="{{$diet->titel}}" >{{$diet->titel}}</label>  
 
 
 <!-- <input type="checkbox" id="vegetarisch" />

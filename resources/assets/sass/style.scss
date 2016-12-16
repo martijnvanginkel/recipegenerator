@@ -38,6 +38,10 @@ h1{
 	text-align: center;
 }
 
+text-area{
+	font-family: 'Exo 2', sans-serif;
+}
+
 
 
 
@@ -226,6 +230,8 @@ footer
 
 		label{
 			display: block;
+			margin-top:20px;
+			margin-bottom:20px;
 		}
 
 		input, textarea{
