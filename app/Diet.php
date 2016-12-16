@@ -10,4 +10,10 @@ class Diet extends Model
     {
     	return $this->belongsToMany('App\Recipe');
     }
+
+    public function users()
+    {
+    	return $this->belongsToMany('App\User');
+    }
+
 }
