@@ -7,6 +7,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+
+    public function diets()
+    {
+        return $this->belongsToMany('App\Diet');
+    }
+    
     use Notifiable;
 
     /**
@@ -26,4 +32,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
 }
