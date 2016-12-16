@@ -38,11 +38,6 @@ h1{
 	text-align: center;
 }
 
-text-area{
-	font-family: 'Exo 2', sans-serif;
-}
-
-
 
 
 body, main{
@@ -245,6 +240,19 @@ footer
 			margin-bottom:20px;
 			display: block;
 			width: 100%;
+			resize: none;
+			font-family: 'Exo 2', sans-serif;
+			font-size: 1em;
+			outline: none;
+		}
+
+		#afbeeldingknop{
+
+		}
+
+		#toevoegknop{
+		
+
 		}
 	}
 } 

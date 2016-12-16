@@ -17,14 +17,14 @@
       @endif
       <h1>Recepten toevoegen</h1>
       <label for="">Afbeelding:</label>
-      <input type="file" name="image" accept="image/*"></textarea>
+      <input id="afbeeldingknop" type="file" name="image" accept="image/*"></textarea>
       <label name="title">Titel:</label>
       <input placeholder="Typ hier de titel van dit gerecht" cols="30" rows="5" type="text" name="titel" id="titel"></textarea>
       <label name="ingredienten" for="">Ingrediënten:</label>
       <textarea placeholder="Typ hier de ingrediënten die zijn gebruikt voor dit gerecht" cols="30" rows="5" type="text" name="ingredienten" id="ingredienten" value=""></textarea>
       <label name="bereidingswijze">Bereidingswijze:</label>
       <textarea placeholder="Typ hier hoe dit gerecht klaargemaakt wordt" cols="30" rows="5" type="text" name="bereidingswijze" id="bereidingswijze"></textarea>
-      <label name="voedingswaarde" for="">Voedingswaarden:</label>
+      <label name="voedingswaarden" for="">Voedingswaarden:</label>
       <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" cols="30" rows="5" name="voedingswaarden" id="voedingswaarden"></textarea>
 
       <!-- <label name="allergieen" for="">Allergieën:</label>
@@ -40,13 +40,9 @@
       <input type="checkbox" id="{{$diet->titel}}" value="{{ $diet->id }}" ><label for="{{$diet->titel}}" >{{$diet->titel}}</label>  
 
 
-<!-- <input type="checkbox" id="vegetarisch" />
-      <label for="vegetarisch">Vegetarisch</label> -->
-
-
   @endforeach
 
-      <input type="submit" value="Voeg recept toe">
+      <input id="toevoegknop" type="submit" value="Voeg recept toe">
 
       <input type="hidden" name="_token" value="{{ Session::token() }}">
     </form>
