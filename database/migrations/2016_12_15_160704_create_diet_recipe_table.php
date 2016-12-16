@@ -31,6 +31,6 @@ class CreateDietRecipeTable extends Migration
      */
     public function down()
     {
-        Schema::drop('diet_recipe');
+        Schema::dropIfExists('diet_recipe');
     }
 }
