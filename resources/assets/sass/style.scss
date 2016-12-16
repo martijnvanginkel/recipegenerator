@@ -27,16 +27,17 @@ time, mark, audio, video {
 /* Einde CSS Reset */
 
 p:first-letter{
-  text-transform: capitalize
+  text-transform: capitalize;
 }
 
 label:first-letter{
-  text-transform: capitalize
+  text-transform: capitalize;
 }
 
 h1{
 	text-align: center;
 }
+
 
 
 
@@ -240,7 +241,7 @@ footer
 			width: 100%;
 		}
 	}
-}
+} 
 
 
 [type="checkbox"]:not(:checked),
