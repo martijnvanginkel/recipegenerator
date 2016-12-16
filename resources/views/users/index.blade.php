@@ -2,7 +2,19 @@
 
 @section('content')
 
-  <style>
+	<p>Welkom op je profiel, {{ $user->name }}</p>
+
+	<a href=" {{ route('users.edit', $user->id) }} ">Bewerk profiel</a>
+
+	<h2>Dit zijn jouw dieeten</h2>
+
+	@foreach($user->diets as $diet)
+		<span>{{ $diet->titel }}</span>
+	@endforeach
+
+
+
+	<style>
   .slick-prev:before, .slick-next:before {
     color:red !important;
 }
@@ -59,32 +71,5 @@
       </div>
     </div>
   </section>
-
-
-
-      <form id="form_new_recipe" method="POST" action=" {{ route('recipes.store') }} " enctype="multipart/form-data">
-
-      @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-      @endif
-  
-      <label name="diets" for="diets">Dieet:</label>
-
-      <select class="form-control select2-multi" name="diets[]" multiple="multiple">
-        @foreach($diets as $diet)
-          <option value="{{ $diet->id }}"> {{ $diet->titel }} </option>
-        @endforeach
-      </select>
-
-      <input type="submit" value="Voeg recept toe">
-
-      <input type="hidden" name="_token" value="{{ Session::token() }}">
-    </form>
 
 @endsection
