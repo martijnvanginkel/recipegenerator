@@ -42,9 +42,20 @@
       <!-- vanuit PHP -->
       <p>{{ $recipe->voedingswaarde }}</p>
     </div>
+
+
+    <form method="POST" action="{{ route('recipe-generate') }}">
+     {{ csrf_field() }}
+      <input type="submit" name="favorited" value="Voeg {{$recipe->titel}} als Favoriet">
+      {{ method_field('get') }}
+    </form> 
+
+
+
     <div id="social_media">
 
     </div>
+
   </section>
   @endif
 </section>
