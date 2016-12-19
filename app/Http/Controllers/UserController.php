@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Diet;
+use App\Recipe;
 use Auth;
 
 class UserController extends Controller
@@ -17,6 +18,7 @@ class UserController extends Controller
     public function index()
     {
         $user = Auth::User();
+
         return view ('users.index')->with('user', $user);
     }
 
@@ -38,10 +40,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-
         $user = Auth::User();
-                
-        //$recipe->diets()->attach(1);
         $user->diets()->sync($request->diets, false);
 
         return redirect()->route('users.edit', $user->id);
@@ -67,7 +66,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $diets = Diet::all();
-        return view('users.edit')->with('diets', $diets);
+        $recipes = Recipe::find(1);
+        return view('users.edit')->with('diets', $diets)->with('recipes', $recipes);
     }
 
     /**
