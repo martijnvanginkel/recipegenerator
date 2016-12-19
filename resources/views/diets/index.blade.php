@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-	<h1>Recepten</h1>
+	<h1>Dieeten</h1>
 	<div class="panel panel-default">
 		<div class="panel-heading">Acties</div>
 		<div class="panel-body">
