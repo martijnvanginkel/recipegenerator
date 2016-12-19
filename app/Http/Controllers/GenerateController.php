@@ -18,8 +18,10 @@ class GenerateController extends Controller
         $favorited = Input::get('favorited');
         $recipe = Recipe::inRandomOrder()->first();
 
-        if ($clicked) {            
+        if ($clicked) { 
+
             return view('/home')->with('recipe', $recipe)->with('clicked', $clicked);
+  
         }
 
         if ($favorited) {
@@ -28,7 +30,8 @@ class GenerateController extends Controller
             $user->recipes()->sync([$recipeId], false);
 
             return view('users.index')->with('user', $user)->with('recipe', $recipe);
-        }
+
+            } 
 
         else {
            return view('/home')->with('clicked', $clicked);
@@ -38,6 +41,10 @@ class GenerateController extends Controller
     public function store()
     {
         
+    }
+
+    public function favorite(request $request) {
+        return $request->recipe_id;
     }
 
 }
