@@ -44,7 +44,12 @@ h1 {
   text-align: center;
 }
 
-/* line 43, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 41, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+ul {
+  list-style-type: none;
+}
+
+/* line 47, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 body, main {
   width: 100%;
   height: 100%;
@@ -52,14 +57,14 @@ body, main {
   background-color: #54B364;
 }
 
-/* line 49, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 53, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 main {
   display: flex;
   flex-direction: column;
   color: #fff;
 }
 
-/* line 56, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 60, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #logo {
   height: 10%;
   width: 10%;
@@ -67,13 +72,13 @@ main {
   margin: 0 auto;
 }
 
-/* line 64, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 68, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 .tagline {
   text-align: center;
   margin-bottom: 10px;
 }
 
-/* line 69, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 73, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #container_generator {
   width: 100%;
   height: 65vh;
@@ -82,7 +87,7 @@ main {
 }
 
 /* Generator */
-/* line 78, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 82, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #generator {
   display: block;
   margin: 0 0 0 -110px;
@@ -92,7 +97,7 @@ main {
   position: absolute;
 }
 
-/* line 87, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 91, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #generator input[type="submit"] {
   height: 100px;
   width: 200px;
@@ -103,13 +108,13 @@ main {
   color: #fff;
 }
 
-/* line 97, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 101, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #generator input[type="submit"]:hover {
   color: #F1C410;
   background-color: #fff;
 }
 
-/* line 104, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 108, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #container_recept {
   width: 100%;
   background-color: #fff;
@@ -120,7 +125,7 @@ main {
   /* Recept */
 }
 
-/* line 114, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 118, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #container_recept #recept {
   width: 55%;
   overflow: hidden;
@@ -129,18 +134,18 @@ main {
   color: #313332;
 }
 
-/* line 122, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 126, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #container_recept #recept h1 {
   margin-left: 10px;
   color: #fff;
 }
 
-/* line 127, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 131, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #container_recept #recept #image_recipe {
   display: block;
 }
 
-/* line 132, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 136, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #container_recept #recept #ingredients {
   float: left;
   width: 25%;
@@ -150,7 +155,7 @@ main {
   background-color: #fff;
 }
 
-/* line 142, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 146, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #container_recept #recept #steps {
   float: left;
   width: 65%;
@@ -160,7 +165,7 @@ main {
   background-color: #fff;
 }
 
-/* line 151, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 155, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #container_recept #recept #nutritional_values {
   float: right;
   width: 65%;
@@ -169,13 +174,13 @@ main {
   background-color: #fff;
 }
 
-/* line 159, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 163, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #container_recept #recept h3 {
   margin-top: 0;
 }
 
 /* profile page */
-/* line 168, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 172, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #favorieten {
   background-color: #fff;
   color: #313332;
@@ -183,67 +188,67 @@ main {
   width: 100%;
 }
 
-/* line 176, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 180, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #geschiedenis {
   background-color: #F1C410;
   text-align: center;
 }
 
-/* line 182, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 186, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 .slide-favorieten {
   margin: 60px auto;
   width: 50%;
 }
 
-/* line 187, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 191, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 .slick-slide {
   margin: 0 27px;
   width: 400px !important;
 }
 
 /* Footer */
-/* line 194, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 198, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 footer {
   width: 100%;
   background-color: #F1C410;
   color: #fff;
 }
 
-/* line 200, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 204, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 footer p {
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
 }
 
-/* line 207, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 211, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 footer a {
   color: #fff;
 }
 
 /* Formulier recepten */
-/* line 219, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 223, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #container #form_new_recipe {
   margin: 0 auto;
   color: white;
   width: 60%;
 }
 
-/* line 226, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 230, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #container #form_new_recipe label {
   display: block;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-/* line 232, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 236, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #container #form_new_recipe input, #container #form_new_recipe textarea {
   margin-top: 20px;
   margin-bottom: 20px;
   display: block;
 }
 
-/* line 238, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 242, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 #container #form_new_recipe input[type="text"], #container #form_new_recipe textarea {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -255,14 +260,14 @@ footer a {
   outline: none;
 }
 
-/* line 261, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 265, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: absolute;
   left: -9999px;
 }
 
-/* line 266, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 270, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 [type="checkbox"]:not(:checked) + label,
 [type="checkbox"]:checked + label {
   position: relative;
@@ -271,7 +276,7 @@ footer a {
 }
 
 /* checkbox aspect */
-/* line 274, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 278, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 [type="checkbox"]:not(:checked) + label:before,
 [type="checkbox"]:checked + label:before {
   content: '';
@@ -287,7 +292,7 @@ footer a {
 }
 
 /* checked mark aspect */
-/* line 286, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 290, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
   content: '✔';
@@ -301,13 +306,13 @@ footer a {
 }
 
 /* checked mark aspect changes */
-/* line 297, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 301, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 [type="checkbox"]:not(:checked) + label:after {
   opacity: 0;
   transform: scale(0);
 }
 
-/* line 301, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
+/* line 305, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style.scss */
 [type="checkbox"]:checked + label:after {
   opacity: 1;
   transform: scale(1);
