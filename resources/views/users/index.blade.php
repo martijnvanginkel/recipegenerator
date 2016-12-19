@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<p>Welkom op je profiel, {{ $user->name }}</p>
+	<p>Welkom op je profiel,</p>
 
 	<a href=" {{ route('users.edit', $user->id) }} ">Bewerk profiel</a>
 
@@ -12,7 +12,11 @@
 		<span>{{ $diet->titel }}</span>
 	@endforeach
 
+  <h2>Dit zijn jouw favorieten</h2>
 
+  @foreach($user->recipes as $recipe)
+    <span>{{ $recipe->titel }}</span>
+  @endforeach
 
 	<style>
   .slick-prev:before, .slick-next:before {
