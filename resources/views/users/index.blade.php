@@ -26,27 +26,16 @@
   <section id="favorieten">
     <h1>Favorieten</h1>
     <div class="slide-favorieten">
+
+
+    @foreach($user->recipes as $recipe)
       <div>
-        <img src="http://placehold.it/400x200">
+        <img src="{{$recipe->image}}">
       </div>
-      <div>
-        <img src="http://placehold.it/400x200">
-      </div>
-      <div>
-        <img src="http://placehold.it/400x200">
-      </div>
-      <div>
-        <img src="http://placehold.it/400x200">
-      </div>
-      <div>
-        <img src="http://placehold.it/400x200">
-      </div>
-      <div>
-        <img src="http://placehold.it/400x200">
-      </div>
-      <div>
-        <img src="http://placehold.it/400x200">
-      </div>
+    @endforeach
+
+
+
     </div>
   </section>
   <section id="geschiedenis">

@@ -44,12 +44,26 @@
     </div>
 
 
-    <form method="POST" action="{{ route('recipe-generate') }}">
+    <form method="POST" action="{{ route('recipe-favorite') }}">
      {{ csrf_field() }}
-      <input type="submit" name="favorited" value="Voeg {{$recipe->titel}} als Favoriet">
-      {{ method_field('get') }}
+      <input type="hidden" name="recipe_id" value={{$recipe->id}}>
+      <input type="submit" name="favorited" value="Voeg {{$recipe->titel}} toe als Favoriet">
+
+
     </form> 
 
+     {{--  <button id="favorite">JHalsapiodjaspio</button>
+
+<script type="text/javascript">
+$('#favorite').click(function(){
+  $.ajax({
+    type:"POST",
+    url: "{{route ('recipe-favorite')}}",
+    data: {id:1},
+  });
+});
+
+</script> --}}
 
 
     <div id="social_media">
