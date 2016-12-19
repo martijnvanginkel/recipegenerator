@@ -24,8 +24,8 @@
       <textarea placeholder="Typ hier de ingrediënten die zijn gebruikt voor dit gerecht" cols="30" rows="5" type="text" name="ingredienten" id="ingredienten" value=""></textarea>
       <label name="bereidingswijze">Bereidingswijze:</label>
       <textarea placeholder="Typ hier hoe dit gerecht klaargemaakt wordt" cols="30" rows="5" type="text" name="bereidingswijze" id="bereidingswijze"></textarea>
-      <label name="voedingswaarden" for="">Voedingswaarden:</label>
-      <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" cols="30" rows="5" name="voedingswaarden" id="voedingswaarden"></textarea>
+      <label name="voedingswaarde" for="">Voedingswaarden:</label>
+      <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" cols="30" rows="5" name="voedingswaarde" id="voedingswaarde"></textarea>
 
       <!-- <label name="allergieen" for="">Allergieën:</label>
       <input type="checkbox" name="allergy_1" value="">
@@ -35,12 +35,16 @@
       <input type="checkbox" name="allergy_5" value="">
       <input type="checkbox" name="allergy_6" value=""> -->
 
-      <label name="diet" for="">Dieet:</label>
+
+      <label name="diets[]" for="diets">Dieet:</label>
+
+        <ul>
       @foreach($diets as $diet)
-      <input type="checkbox" id="{{$diet->titel}}" value="{{ $diet->id }}" ><label for="{{$diet->titel}}" >{{$diet->titel}}</label>  
+        <li> <input name="diets[]" type="checkbox" id="{{$diet->titel}}" value="{{ $diet->id }}" ><label for="{{$diet->titel}}" >{{$diet->titel}}</label> </li>
+        @endforeach
+      </ul>
 
 
-  @endforeach
 
       <input id="toevoegknop" type="submit" value="Voeg recept toe">
 
