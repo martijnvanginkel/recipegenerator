@@ -11,67 +11,34 @@ use Auth;
 
 class GenerateController extends Controller
 {
-	/*public function generate(){
-
-        $clicked =  Input::get('genereer');
-
-
-
-
-        //$recipes = Recipe::all();
-		//$diets = Diet::all();
-		//$user = Auth::user();
-
-		
-		//$recipesWithDiet = $recipe->diets;
-
-        if ($clicked) {
-        	   	$user = Auth::user();
-		        $diets = Diet::all();
-		        $dietsFromUser = $user->diets;
-		        //$dietsFromUser = $user->diets;
-		        //$recipes = Recipe::all();
-		        $recipes = Recipe::all()->except($dietsFromUser->id);
-
-
-            //$recipeAmount = Recipe::count();
-            $randomNumber = rand(3, 5);
-            $id = $randomNumber;
-            $recipe = Recipe::find($id);
-            return view('/home')->with('recipe', $recipe)->with('clicked', $clicked);
-        }else {
-            return view('/home')->with('clicked', $clicked);
-        }
-    }*/
 
     public function generate(){
+
         $clicked =  Input::get('genereer');
-        if ($clicked) {
-            //$recipeAmount = Recipe::count();
-            $randomNumber = rand(3, 5);
-            $id = $randomNumber;
-            $user = Auth::user();//
-            $dietsFromUser = $user->diets;
-            $dietsFromRecipe = $recipe->diets;
-			$recipe = Recipe::find($id);
+        $favorited = Input::get('favorited');
+        $recipe = Recipe::inRandomOrder()->first();
 
-            if($dietsFromUser == $dietsFromRecipe){
-
-            }
-
-            
+        if ($clicked) {            
             return view('/home')->with('recipe', $recipe)->with('clicked', $clicked);
-        }else {
-            return view('/home')->with('clicked', $clicked);
+        }
+
+        if ($favorited) {
+            $user = Auth::User();
+            $recipeId = $recipe->id;
+            $user->recipes()->sync([$recipeId], false);
+
+            return view('users.index')->with('user', $user)->with('recipe', $recipe);
+        }
+
+        else {
+           return view('/home')->with('clicked', $clicked);
         }
     }
 
-
+    public function store()
+    {
+        
+    }
 
 }
 
-
-// 1. Dieeten van de gebruiker weten
-// 2. Alle recepten ophalen
-// 3. Alle recepten - Dieeten van gebruiker
-// 4. if $clicked () {}
