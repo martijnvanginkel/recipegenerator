@@ -14,20 +14,36 @@
   			        </ul>
   			    </div>
   		@endif
-      <h1>Jouw dieeten</h1>
+      <h1>Jouw recepten</h1>
 
 
-  		<label name="diets" for="diets">Dieet:</label>
+  		<label name="diets[]" for="diets">Dieet:</label>
 
-      <select class="form-control select2-multi" name="diets[]" multiple="multiple">
-        @foreach($diets as $diet)
-          <option value="{{ $diet->id }}"> {{ $diet->titel }} </option>
+        <ul>
+      @foreach($diets as $diet)
+        <li> <input name="diets[]" type="checkbox" id="{{$diet->titel}}" value="{{ $diet->id }}" ><label for="{{$diet->titel}}" >{{$diet->titel}}</label> </li>
         @endforeach
-      </select>
+      </ul>
 
   		<input type="submit" value="Voeg dieet toe">
 
   		<input type="hidden" name="_token" value="{{ Session::token() }}">
+
+      <p>{{ $recipes->titel }}</p>
+      {{-- <h1>Jouw favo's</h1>
+
+
+      <label name="recipes[]" for="recipes">Dieet:</label>
+
+        <ul>
+      @foreach($recipes as $recipe)
+        <li> <input name="recipes[]" type="checkbox" id="{{$recipe->titel}}" value="{{ $recipe->id }}" ><label for="{{$recipe->titel}}" >{{$recipe->titel}}</label> </li>
+        @endforeach
+      </ul>
+
+      <input type="submit" value="Voeg favoriet toe">
+
+      <input type="hidden" name="_token" value="{{ Session::token() }}"> --}}
   	</form>
   </div>
 
