@@ -19,10 +19,11 @@ Route::resource('diets', 'DietController', ['except' => ['create']]);
 Route::resource('users', 'UserController');
 Route::resource('favorites', 'FavoriteController');
 
-Route::get('/home', 'GenerateController@generate')->name('generate');
-Route::get('/home', 'GenerateController@generate')->name('recipe-generate');
-Route::post('/home', 'GenerateController@generate')->name('recipe-generate');
-Route::post('/home', 'GenerateController@store')->name('generate-store');
+Route::get('/home', 'RecipeController@generate')->name('generate');
+Route::get('/home', 'RecipeController@generate')->name('recipe-generate');
+Route::post('/home', 'RecipeController@generate')->name('recipe-generate');
+Route::post('/home', 'RecipeController@favorite')->name('recipe-favorite');
+//Route::post('/users', 'GenerateController@store')->name('generate-store');
 
 Auth::routes();
 
