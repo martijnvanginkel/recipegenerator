@@ -17,10 +17,15 @@ Route::get('/profile', 'PagesController@getProfile');
 Route::resource('recipes', 'RecipeController');
 Route::resource('diets', 'DietController', ['except' => ['create']]);
 Route::resource('users', 'UserController');
+Route::resource('favorites', 'FavoriteController');
 
 Route::get('/home', 'GenerateController@generate')->name('generate');
+Route::get('/home', 'GenerateController@generate')->name('recipe-generate');
 Route::post('/home', 'GenerateController@generate')->name('recipe-generate');
+Route::post('/home', 'GenerateController@store')->name('generate-store');
 
 Auth::routes();
+
+
 
 //Route::get('/home', 'HomeController@index'); // VERWIJST OOK NAAR AUTHENTICATION IN HOMECONTROLLER. __CONSTRUCT /staat alleen homepage toe als ingelogt
