@@ -12,6 +12,11 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Diet');
     }
+
+    public function recipes()
+    {
+        return $this->belongsToMany('App\Recipe');
+    }
     
     use Notifiable;
 
