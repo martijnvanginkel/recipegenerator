@@ -48,8 +48,6 @@
      {{ csrf_field() }}
       <input type="hidden" name="recipe_id" value={{$recipe->id}}>
       <input type="submit" name="favorited" value="Voeg {{$recipe->titel}} toe als Favoriet">
-
-
     </form> 
 
      {{--  <button id="favorite">JHalsapiodjaspio</button>
