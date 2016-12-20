@@ -12,12 +12,6 @@
 		<span>{{ $diet->titel }}</span>
 	@endforeach
 
-  <h2>Dit zijn jouw favorieten</h2>
-
-  @foreach($user->recipes as $recipe)
-    <span>{{ $recipe->titel }}</span>
-  @endforeach
-
 	<style>
   .slick-prev:before, .slick-next:before {
     color:red !important;
@@ -33,8 +27,6 @@
         <img src="{{$recipe->image}}">
       </div>
     @endforeach
-
-
 
     </div>
   </section>
