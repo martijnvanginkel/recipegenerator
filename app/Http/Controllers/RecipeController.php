@@ -148,14 +148,12 @@ class RecipeController extends Controller
     public function generate(){
 
         $clicked =  Input::get('genereer');
-        $favorited = Input::get('favorited');
+        //$favorited = Input::get('favorited');
         $recipe = Recipe::inRandomOrder()->first();
 
         if ($clicked) { 
             return view('/home')->with('recipe', $recipe)->with('clicked', $clicked);
-        }
-
-        else {
+        }else {
            return view('/home')->with('clicked', $clicked);
         }
     }
