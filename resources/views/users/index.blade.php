@@ -12,12 +12,6 @@
 		<span>{{ $diet->titel }}</span>
 	@endforeach
 
-  <h2>Dit zijn jouw favorieten</h2>
-
-  @foreach($user->recipes as $recipe)
-    <span>{{ $recipe->titel }}</span>
-  @endforeach
-
 	<style>
   .slick-prev:before, .slick-next:before {
     color:red !important;
@@ -26,27 +20,14 @@
   <section id="favorieten">
     <h1>Favorieten</h1>
     <div class="slide-favorieten">
+
+
+    @foreach($user->recipes as $recipe)
       <div>
-        <img src="http://placehold.it/400x200">
+        <img src="{{$recipe->image}}">
       </div>
-      <div>
-        <img src="http://placehold.it/400x200">
-      </div>
-      <div>
-        <img src="http://placehold.it/400x200">
-      </div>
-      <div>
-        <img src="http://placehold.it/400x200">
-      </div>
-      <div>
-        <img src="http://placehold.it/400x200">
-      </div>
-      <div>
-        <img src="http://placehold.it/400x200">
-      </div>
-      <div>
-        <img src="http://placehold.it/400x200">
-      </div>
+    @endforeach
+
     </div>
   </section>
   <section id="geschiedenis">

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Recipe;
 use App\Diet;
 use Image;
+use Auth;
 
 class RecipeController extends Controller
 {
@@ -139,10 +141,30 @@ class RecipeController extends Controller
     public function destroy($id)
     {
         $recipe = Recipe::find($id);
-
         $recipe->delete();
-
         return redirect()->route('recipes.index');
+    }
+
+    public function generate(){
+
+        $clicked =  Input::get('genereer');
+        //$favorited = Input::get('favorited');
+        $recipe = Recipe::inRandomOrder()->first();
+
+        if ($clicked) { 
+            return view('/home')->with('recipe', $recipe)->with('clicked', $clicked);
+        }else {
+           return view('/home')->with('clicked', $clicked);
+        }
+    }
+
+    public function favorite(request $request) {
+
+        $user = Auth::user();
+        $recipe = $request->recipe_id;
+        $user->recipes()->sync([$recipe], false);
+
+        return view('users.index')->with('user', $user)->with('recipe', $recipe);
     }
 
 }
