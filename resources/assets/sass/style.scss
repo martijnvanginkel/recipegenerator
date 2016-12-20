@@ -34,12 +34,9 @@ label:first-letter{
   text-transform: capitalize;
 }
 
-h1{
-	text-align: center;
+ul {
+  list-style-type: none;
 }
-
-
-
 
 body, main{
 	width: 100%;
@@ -226,6 +223,8 @@ footer
 
 		label{
 			display: block;
+			margin-top:20px;
+			margin-bottom:20px;
 		}
 
 		input, textarea{
@@ -239,6 +238,10 @@ footer
 			margin-bottom:20px;
 			display: block;
 			width: 100%;
+			resize: none;
+			font-family: 'Exo 2', sans-serif;
+			font-size: 1em;
+			outline: none;
 		}
 	}
 }

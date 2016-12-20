@@ -26,6 +26,11 @@
 
     </div>
     <img id="image_recipe" src="{{ asset('img/' . $recipe->image) }}" alt="" height="250px" width="900px"/>
+    <form method="POST" action="{{ route('recipe-favorite') }}">
+     {{ csrf_field() }}
+      <input type="submit" name="favorited" value="Voeg {{$recipe->titel}} als Favoriet">
+      {{ method_field('get') }}
+    </form>
     <h1>{{ $recipe->titel }}</h1>
     <ul id="ingredients">
       <h3>Ingrediënten</h3>
@@ -43,31 +48,16 @@
       <p>{{ $recipe->voedingswaarde }}</p>
     </div>
 
+    <script type="text/javascript">
+    $('#favorite').click(function(){
+      $.ajax({
+        type:"POST",
+        url: "{{route ('recipe-favorite')}}",
+        data: {id:1},
+      });
+    });
 
-    <form method="POST" action="{{ route('recipe-favorite') }}">
-     {{ csrf_field() }}
-<<<<<<< HEAD
-      <input type="submit" name="favorited" value="Voeg {{$recipe->titel}} als Favoriet">
-      {{ method_field('get') }}
-    </form>
-=======
-      <input type="hidden" name="recipe_id" value={{$recipe->id}}>
-      <input type="submit" name="favorited" value="Voeg {{$recipe->titel}} toe als Favoriet">
-    </form> 
->>>>>>> 7f6cb322bd1158f300ee88257369d0d00d7e41bb
-
-     {{--  <button id="favorite">JHalsapiodjaspio</button>
-
-<script type="text/javascript">
-$('#favorite').click(function(){
-  $.ajax({
-    type:"POST",
-    url: "{{route ('recipe-favorite')}}",
-    data: {id:1},
-  });
-});
-
-</script> --}}
+    </script>
 
 
     <div id="social_media">
