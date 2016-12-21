@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Diet;
+use App\User;
+use Auth;
 
 class DietController extends Controller
 {
@@ -64,7 +66,9 @@ class DietController extends Controller
      */
     public function edit($id)
     {
-        //
+        $diet = Diet::find($id);
+
+        return view('diets.edit')->with('diet', $diet);
     }
 
     /**
@@ -76,7 +80,12 @@ class DietController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, array('titel' => 'required'));
+        $diet = Diet::find($id);
+        $diet->titel = $request->titel;
+        $diet->save();
+
+        return redirect()->route('diets.index');
     }
 
     /**
@@ -87,6 +96,14 @@ class DietController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // $user = User::all();
+        // $diet = Diet::find($id);
+        // $user->diets()->detach($diet);
+
+        // return redirect()->route('diets.index');
+
+        $diet = Diet::find($id);
+        $diet->delete();
+        return redirect()->route('diets.index');
     }
 }
