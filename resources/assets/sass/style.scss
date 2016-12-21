@@ -34,15 +34,9 @@ label:first-letter{
   text-transform: capitalize;
 }
 
-h1{
-	text-align: center;
-}
-
 ul {
   list-style-type: none;
 }
-
-
 
 body, main{
 	width: 100%;
@@ -249,17 +243,8 @@ footer
 			font-size: 1em;
 			outline: none;
 		}
-
-		#afbeeldingknop{
-
-		}
-
-		#toevoegknop{
-		
-
-		}
 	}
-} 
+}
 
 
 [type="checkbox"]:not(:checked),

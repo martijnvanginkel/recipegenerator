@@ -1,6 +1,5 @@
 $(document).ready(function(){
   $('.slide-favorieten').slick({
-    centerMode: true,
     dots: true,
     infinite: false,
     speed: 300,
