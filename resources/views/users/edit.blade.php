@@ -14,8 +14,6 @@
   			        </ul>
   			    </div>
   		@endif
-      <h1>Jouw recepten</h1>
-
 
   		<label name="diets[]" for="diets">Dieet:</label>
 
@@ -25,11 +23,10 @@
         @endforeach
       </ul>
 
-  		<input type="submit" value="Voeg dieet toe">
+  		<input type="submit" value="Opslaan">
 
   		<input type="hidden" name="_token" value="{{ Session::token() }}">
 
-      <p>{{ $recipes->titel }}</p>
       {{-- <h1>Jouw favo's</h1>
 
 
