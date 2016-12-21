@@ -3,7 +3,7 @@
 @import "mixins.scss";
 @import url('https://fonts.googleapis.com/css?family=Exo+2');
 
-
+/*Standaard teksten*/
 p:first-letter{
   text-transform: capitalize;
 }
@@ -20,13 +20,16 @@ ul {
  	list-style-type: none;
 }
 
+
+/*Login scherm opmaak*/
 .form-group{
 	margin-bottom:20px;
 	margin-left: auto;
 	width: 50%;
+
 }
 
-#email, #password{
+.col-md-4.control-label, .checkbox, .col-md-8.col-md-offset-4, #email, #password{
 	margin-top:20px;
 	margin-bottom:20px;
 	margin-left: -150px;
