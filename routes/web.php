@@ -23,7 +23,6 @@ Route::get('/home', 'RecipeController@generate')->name('generate');
 Route::get('/home', 'RecipeController@generate')->name('recipe-generate');
 Route::post('/home', 'RecipeController@generate')->name('recipe-generate');
 Route::post('/users.index', 'RecipeController@favorite')->name('recipe-favorite');
-//Route::post('/users', 'GenerateController@store')->name('generate-store');
 
 Auth::routes();
 
