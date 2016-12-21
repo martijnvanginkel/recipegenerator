@@ -16,10 +16,10 @@ class CreateDietRecipeTable extends Migration
         Schema::create('diet_recipe', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('diet_id')->unsigned();
-            $table->foreign('diet_id')->references('id')->on('diets');
+            $table->foreign('diet_id')->references('id')->on('diets')->onDelete('cascade');
 
             $table->integer('recipe_id')->unsigned();
-            $table->foreign('recipe_id')->references('id')->on('recipes');
+            $table->foreign('recipe_id')->references('id')->on('recipes')->onDelete('cascade');
             
         });
     }
