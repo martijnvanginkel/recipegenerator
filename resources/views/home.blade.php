@@ -26,11 +26,14 @@
 
     </div>
     <img id="image_recipe" src="{{ asset('img/' . $recipe->image) }}" alt="" height="250px" width="900px"/>
-    <form method="POST" action="{{ route('recipe-favorite') }}">
+
+          <form method="POST" action="{{ route('recipe-favorite') }}">
      {{ csrf_field() }}
+      <input type="hidden" name="recipe_id" id="favorited" value="{{ $recipe->id }}">
       <input type="submit" name="favorited" value="Voeg {{$recipe->titel}} als Favoriet">
-      {{ method_field('get') }}
+
     </form>
+
     <h1>{{ $recipe->titel }}</h1>
     <ul id="ingredients">
       <h3>Ingrediënten</h3>
@@ -48,7 +51,7 @@
       <p>{{ $recipe->voedingswaarde }}</p>
     </div>
 
-    <script type="text/javascript">
+{{--     <script type="text/javascript">
     $('#favorite').click(function(){
       $.ajax({
         type:"POST",
@@ -57,7 +60,9 @@
       });
     });
 
-    </script>
+    </script> --}}
+
+
 
 
     <div id="social_media">
