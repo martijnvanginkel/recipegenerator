@@ -2,15 +2,17 @@
 
 @section('content')
 
-	<p>Welkom op je profiel,</p>
+	<p>Welkom op je profiel, {{ $user->name }} </p>
 
 	<a href=" {{ route('users.edit', $user->id) }} ">Bewerk profiel</a>
 
 	<h2>Dit zijn jouw dieeten</h2>
 
+  <ul>
 	@foreach($user->diets as $diet)
-		<span>{{ $diet->titel }}</span>
+		<li>{{ $diet->titel }}</li>
 	@endforeach
+  </ul>
 
 	<style>
   .slick-prev:before, .slick-next:before {
@@ -24,7 +26,7 @@
 
     @foreach($user->recipes as $recipe)
       <div>
-        <img src="{{$recipe->image}}">
+        <a href="{{ route('users.show', $recipe->id) }}"><img src="{{ asset('img/' . $recipe->image) }}"></a>
       </div>
     @endforeach
 
