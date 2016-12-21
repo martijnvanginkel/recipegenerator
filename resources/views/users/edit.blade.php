@@ -17,11 +17,14 @@
 
   		<label name="diets[]" for="diets">Dieet:</label>
 
-        <ul>
+      <ul>
       @foreach($diets as $diet)
-        <li> <input name="diets[]" type="checkbox" id="{{$diet->titel}}" value="{{ $diet->id }}" ><label for="{{$diet->titel}}" >{{$diet->titel}}</label> </li>
-        @endforeach
+        <li> <input {{ $checked }} name="diets[]" type="checkbox" id="{{$diet->titel}}" value="{{ $diet->id }}" ><label for="{{$diet->titel}}" >{{$diet->titel}}</label> </li>
+      @endforeach
       </ul>
+
+      
+
 
   		<input type="submit" value="Opslaan">
 
