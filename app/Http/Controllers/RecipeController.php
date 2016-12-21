@@ -152,6 +152,10 @@ class RecipeController extends Controller
         $recipe = Recipe::inRandomOrder()->first();
 
         if ($clicked) { 
+            //return redirect()->route('');
+            //als er geklikt is, ga door naar de route met $recipe->id.
+            //verwijs in de route naar de history functie
+            //in de history functie, sla met sync() op in database en verwijs naar /home 
             return view('/home')->with('recipe', $recipe)->with('clicked', $clicked);
         }else {
            return view('/home')->with('clicked', $clicked);
