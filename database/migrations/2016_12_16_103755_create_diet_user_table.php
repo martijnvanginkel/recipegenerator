@@ -16,10 +16,10 @@ class CreateDietUserTable extends Migration
         Schema::create('diet_user', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('diet_id')->unsigned();
-            $table->foreign('diet_id')->references('id')->on('diets');
+            $table->foreign('diet_id')->references('id')->on('diets')->onDelete('cascade');
 
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             
         });
     }
