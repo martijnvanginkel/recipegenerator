@@ -27,20 +27,7 @@
 
   		<input type="hidden" name="_token" value="{{ Session::token() }}">
 
-      {{-- <h1>Jouw favo's</h1>
 
-
-      <label name="recipes[]" for="recipes">Dieet:</label>
-
-        <ul>
-      @foreach($recipes as $recipe)
-        <li> <input name="recipes[]" type="checkbox" id="{{$recipe->titel}}" value="{{ $recipe->id }}" ><label for="{{$recipe->titel}}" >{{$recipe->titel}}</label> </li>
-        @endforeach
-      </ul>
-
-      <input type="submit" value="Voeg favoriet toe">
-
-      <input type="hidden" name="_token" value="{{ Session::token() }}"> --}}
   	</form>
   </div>
 
