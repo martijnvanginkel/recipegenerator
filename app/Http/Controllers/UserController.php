@@ -66,15 +66,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $checked = "checked";
         $user = Auth::user();
-        $userDiets = $user->diets();
         $diets = Diet::all();
-
-        return $userDiets->first();
-
         $recipes = Recipe::find(1);
-        return view('users.edit')->with('diets', $diets)->with('recipes', $recipes)->with('user', $user)->with('checked', $checked);
+        return view('users.edit')->with('diets', $diets)->with('recipes', $recipes)->with('user', $user);
     }
 
     /**
