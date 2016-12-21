@@ -54,7 +54,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $recipe = Recipe::find($id);
+        return view('users.show')->with('recipe', $recipe);
     }
 
     /**
@@ -90,6 +91,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = Auth::user();
+        $recipe = Recipe::find($id);
+        $user->recipes()->detach($recipe);
+        return redirect()->route('users.index');
     }
 }
