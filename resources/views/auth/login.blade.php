@@ -53,11 +53,11 @@
                                 <button type="submit" class="btn btn-primary">
                                     Login
                                 </button>
-
+                            </div>
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">
                                     Wachtwoord vergeten?
                                 </a>
-                            </div>
+                            
                         </div>
                     </form>
                 </div>
