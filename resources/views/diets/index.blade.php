@@ -19,6 +19,7 @@
 				<tr>
 					<td>{{ $diet->id }}</td>
 					<td>{{ $diet->titel }}</td>
+					<td><a href="{{ route('diets.edit', $diet->id) }}">Wijzig</a></td>
 				</tr>
 			@endforeach
 	</table>
