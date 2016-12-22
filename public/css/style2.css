@@ -4,6 +4,7 @@
 /* tables */
 /* Achtergrond */
 @import url("https://fonts.googleapis.com/css?family=Exo+2");
+/*Standaard teksten*/
 /* line 7, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
 p:first-letter {
   text-transform: capitalize;
@@ -24,15 +25,16 @@ ul {
   list-style-type: none;
 }
 
-/* line 23, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+/*Login scherm opmaak*/
+/* line 25, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
 .form-group {
   margin-bottom: 20px;
   margin-left: auto;
   width: 50%;
 }
 
-/* line 29, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
-#email, #password {
+/* line 32, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+.col-md-4.control-label, .checkbox, .col-md-8.col-md-offset-4, #email, #password {
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: -150px;
@@ -44,28 +46,28 @@ ul {
 }
 
 /* Formulier recepten */
-/* line 48, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+/* line 51, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
 #container #form_new_recipe {
   margin: 0 auto;
   color: white;
   width: 60%;
 }
 
-/* line 55, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+/* line 58, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
 #container #form_new_recipe label {
   display: block;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-/* line 61, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+/* line 64, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
 #container #form_new_recipe input, #container #form_new_recipe textarea {
   margin-top: 20px;
   margin-bottom: 20px;
   display: block;
 }
 
-/* line 67, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+/* line 70, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
 #container #form_new_recipe input[type="text"], #container #form_new_recipe textarea {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -77,14 +79,14 @@ ul {
   outline: none;
 }
 
-/* line 90, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+/* line 93, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: absolute;
   left: -9999px;
 }
 
-/* line 95, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+/* line 98, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
 [type="checkbox"]:not(:checked) + label,
 [type="checkbox"]:checked + label {
   position: relative;
@@ -93,7 +95,7 @@ ul {
 }
 
 /* checkbox aspect */
-/* line 103, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+/* line 106, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
 [type="checkbox"]:not(:checked) + label:before,
 [type="checkbox"]:checked + label:before {
   content: '';
@@ -109,7 +111,7 @@ ul {
 }
 
 /* checked mark aspect */
-/* line 115, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+/* line 118, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
   content: '✔';
@@ -123,13 +125,13 @@ ul {
 }
 
 /* checked mark aspect changes */
-/* line 126, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+/* line 129, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
 [type="checkbox"]:not(:checked) + label:after {
   opacity: 0;
   transform: scale(0);
 }
 
-/* line 130, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+/* line 133, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
 [type="checkbox"]:checked + label:after {
   opacity: 1;
   transform: scale(1);

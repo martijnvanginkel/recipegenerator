@@ -4,6 +4,139 @@
 /* Achtergrond */
 /* Mixins */
 @import url("https://fonts.googleapis.com/css?family=Exo+2");
+/* line 7, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+p:first-letter {
+  text-transform: capitalize;
+}
+
+/* line 11, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+label:first-letter {
+  text-transform: capitalize;
+}
+
+/* line 15, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+h1 {
+  text-align: center;
+}
+
+/* line 19, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+ul {
+  list-style-type: none;
+}
+
+/*Login scherm opmaak*/
+/* line 25, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+.form-group {
+  margin-bottom: 20px;
+  margin-left: auto;
+  width: 50%;
+}
+
+/* line 32, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+.col-md-4.control-label, .checkbox, .col-md-8.col-md-offset-4, #email, #password {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: -150px;
+  width: 300px;
+  resize: none;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1em;
+  outline: none;
+}
+
+/* Formulier recepten */
+/* line 51, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+#container #form_new_recipe {
+  margin: 0 auto;
+  color: white;
+  width: 60%;
+}
+
+/* line 58, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+#container #form_new_recipe label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 64, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+#container #form_new_recipe input, #container #form_new_recipe textarea {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* line 70, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+#container #form_new_recipe input[type="text"], #container #form_new_recipe textarea {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+  width: 100%;
+  resize: none;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1em;
+  outline: none;
+}
+
+/* line 93, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+/* line 98, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+/* line 106, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #aaa;
+  background: #f8f8f8;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* checked mark aspect */
+/* line 118, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  font-size: 18px;
+  line-height: 0.8;
+  color: #54B364;
+  transition: all .2s;
+}
+
+/* checked mark aspect changes */
+/* line 129, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* line 133, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/style2.scss */
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
 /* CSS Reset */
 /* line 8, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 html, body, div, span, applet, object, iframe,

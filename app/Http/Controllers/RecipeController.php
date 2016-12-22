@@ -8,6 +8,7 @@ use App\Recipe;
 use App\Diet;
 use Image;
 use Auth;
+use Storage;
 
 class RecipeController extends Controller
 {
@@ -52,6 +53,7 @@ class RecipeController extends Controller
             'ingredienten' => 'required',
             'bereidingswijze' => 'required',
             'voedingswaarde' => 'required',
+            'image' => 'required|image',
         ]);
 
         $recipe = new Recipe;
@@ -118,6 +120,7 @@ class RecipeController extends Controller
             'ingredienten' => 'required',
             'bereidingswijze' => 'required',
             'voedingswaarde' => 'required',
+            'image' => 'image',
             ));
 
         $recipe = Recipe::find($id);
@@ -126,6 +129,21 @@ class RecipeController extends Controller
         $recipe->ingredienten = $request->input('ingredienten');
         $recipe->bereidingswijze = $request->input('bereidingswijze');
         $recipe->voedingswaarde = $request->input('voedingswaarde');
+
+        if ($request->hasFile('image')) {
+            //nieuwe foto toevoegen
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('img/' . $filename);
+            Image::make($image)->resize(900, 250)->save($location);
+            $oldFilename = $recipe->image;
+        
+            //opslaan in database
+            $recipe->image = $filename;
+
+            //verwijder de vorige foto
+            Storage::delete($oldFilename);
+        }
 
         $recipe->save();
 
@@ -152,6 +170,10 @@ class RecipeController extends Controller
         $recipe = Recipe::inRandomOrder()->first();
 
         if ($clicked) { 
+            //return redirect()->route('');
+            //als er geklikt is, ga door naar de route met $recipe->id.
+            //verwijs in de route naar de history functie
+            //in de history functie, sla met sync() op in database en verwijs naar /home 
             return view('/home')->with('recipe', $recipe)->with('clicked', $clicked);
         }else {
            return view('/home')->with('clicked', $clicked);

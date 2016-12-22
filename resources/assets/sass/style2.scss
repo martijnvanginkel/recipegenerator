@@ -1,0 +1,136 @@
+/* Import config, mixins, font */
+@import "config.scss";
+@import "mixins.scss";
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
+
+/*Standaard teksten*/
+p:first-letter{
+  text-transform: capitalize;
+}
+
+label:first-letter{
+  text-transform: capitalize;
+}
+
+h1{
+	text-align: center;
+}
+
+ul {
+ 	list-style-type: none;
+}
+
+
+/*Login scherm opmaak*/
+.form-group{
+	margin-bottom:20px;
+	margin-left: auto;
+	width: 50%;
+
+}
+
+.col-md-4.control-label, .checkbox, .col-md-8.col-md-offset-4, #email, #password{
+	margin-top:20px;
+	margin-bottom:20px;
+	margin-left: -150px;
+	width: 300px;
+	resize: none;
+	font-family: 'Exo 2', sans-serif;
+	font-size: 1em;
+	outline: none;
+}
+
+
+/* Formulier recepten */
+
+
+
+#container
+{
+
+	#form_new_recipe
+	{
+		margin: 0 auto;
+		color: white;
+		width: 60%;
+
+
+		label{
+			display: block;
+			margin-top:20px;
+			margin-bottom:20px;
+		}
+
+		input, textarea{
+		margin-top:20px;
+		margin-bottom:20px;
+		display: block;
+		}
+
+		input[type="text"], textarea{
+			margin-top:20px;
+			margin-bottom:20px;
+			display: block;
+			width: 100%;
+			resize: none;
+			font-family: 'Exo 2', sans-serif;
+			font-size: 1em;
+			outline: none;
+		}
+
+		#afbeeldingknop{
+
+		}
+
+		#toevoegknop{
+		
+
+		}
+	}
+} 
+
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left:0; top: 2px;
+  width: 17px; height: 17px;
+  border: 1px solid #aaa;
+  background: #f8f8f8;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.3)
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: 3px; left: 4px;
+  font-size: 18px;
+  line-height: 0.8;
+  color: $background_color_green;
+  transition: all .2s;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}

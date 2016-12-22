@@ -19,7 +19,7 @@
 
       <ul>
       @foreach($diets as $diet)
-        <li> <input {{ $checked }} name="diets[]" type="checkbox" id="{{$diet->titel}}" value="{{ $diet->id }}" ><label for="{{$diet->titel}}" >{{$diet->titel}}</label> </li>
+        <li> <input name="diets[]" type="checkbox" id="{{$diet->titel}}" value="{{ $diet->id }}" ><label for="{{$diet->titel}}" >{{$diet->titel}}</label> </li>
       @endforeach
       </ul>
 
