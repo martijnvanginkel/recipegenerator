@@ -26,7 +26,7 @@
 
     @foreach($user->recipes as $recipe)
       <div>
-        <a href="{{ route('users.show', $recipe->id) }}"><img src="{{ asset('img/' . $recipe->image) }}"></a>
+        <a href="{{ route('favorites', $recipe->id) }}"><img src="{{ asset('img/' . $recipe->image) }}"></a>
       </div>
     @endforeach
 
@@ -36,7 +36,7 @@
     <h1>Geschiedenis</h1>
     <div class="slide-favorieten">
       <div>
-        <img src="http://placehold.it/400x200">
+        <a href="{{ route('history') }}"><img src="http://placehold.it/400x200"></a>
       </div>
       <div>
         <img src="http://placehold.it/400x200">

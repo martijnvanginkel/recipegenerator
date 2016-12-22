@@ -4,8 +4,11 @@
 
 
 
-<form method="POST" action="{{ route('recipes.update', $recipe->id) }}">
+<form method="POST" action="{{ route('recipes.update', $recipe->id) }}" enctype="multipart/form-data">
       
+    <label for="">Afbeelding:</label>
+    <input id="afbeeldingknop" type="file" name="image" accept="image/*"></textarea>  
+    <br>
     <label for="titel">Titel</label>
     <br>
     <textarea type="text" id="titel" name="titel" rows="1" style="resize:none;">{{ $recipe->titel }}</textarea>

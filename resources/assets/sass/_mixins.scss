@@ -1,0 +1,7 @@
+/* Mixins */
+@mixin background-size($b-size) {
+	-webkit-background-size: $b-size;
+     -moz-background-size: $b-size;
+       -o-background-size: $b-size;
+          background-size: $b-size;
+}

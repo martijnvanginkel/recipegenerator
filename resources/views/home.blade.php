@@ -2,15 +2,18 @@
 
 @section('content')
 <section id=container_generator>
+  <img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo">
+  <img src="img/" alt="">
   <form id="generator" method="POST" action=" {{ route('recipe-generate') }} ">
   {{ csrf_field() }}
-    <input type="submit" name="genereer" value="Genereer" id="generateButton" action="">
+    <input type="image" src="/img/rad.svg" name="genereer" value="Genereer" id="generateButton" alt="Submit" action="">
 
     <input type="hidden" name="_token" value="{{ Session::token() }}">
     {{ method_field('get') }}
   </form>
   <br>
 </section>
+
 <section id="container_recept">
 
 @if($clicked)
@@ -22,15 +25,12 @@
     });
   </script>
   <section id="recept">
-    <div class="icons">
-
-    </div>
     <img id="image_recipe" src="{{ asset('img/' . $recipe->image) }}" alt="" height="250px" width="900px"/>
 
           <form method="POST" action="{{ route('recipe-favorite') }}">
      {{ csrf_field() }}
       <input type="hidden" name="recipe_id" id="favorited" value="{{ $recipe->id }}">
-      <input type="submit" name="favorited" value="Voeg {{$recipe->titel}} als Favoriet">
+      <input type="submit" class="icon-favorite" name="favorited" value="Voeg {{$recipe->titel}} als Favoriet">
 
     </form>
 
@@ -51,7 +51,7 @@
       <p>{{ $recipe->voedingswaarde }}</p>
     </div>
 
-{{--     <script type="text/javascript">
+<!-- <script type="text/javascript">
     $('#favorite').click(function(){
       $.ajax({
         type:"POST",
@@ -60,13 +60,12 @@
       });
     });
 
-    </script> --}}
-
-
-
+    </script> -->
 
     <div id="social_media">
-
+      <a href="#"><img class="icon" src="/img/icons/Twitter.png" alt="Twitter icon"></a>
+      <a href="#"><img id="facebook" class="icon" src="/img/icons/Facebook.png" alt="Facebook icon"></a>
+      <a href="#"><img class="icon" src="/img/icons/Mail.png" alt="Mail"></a>
     </div>
 
   </section>
