@@ -16,7 +16,10 @@ Route::get('/profile', 'PagesController@getProfile');
 
 Route::resource('recipes', 'RecipeController');
 Route::resource('diets', 'DietController', ['except' => ['create']]);
-Route::resource('users', 'UserController');
+Route::resource('users', 'UserController', ['except' => ['show']]);
+
+Route::get('/users/favorites/{id}', 'UserController@show')->name('favorites');
+Route::get('/users/history', 'UserController@history')->name('history');
 
 
 Route::get('/home', 'RecipeController@generate')->name('generate');
