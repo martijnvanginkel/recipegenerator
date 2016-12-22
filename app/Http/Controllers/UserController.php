@@ -98,4 +98,10 @@ class UserController extends Controller
         $user->recipes()->detach($recipe);
         return redirect()->route('users.index');
     }
+
+    public function history()
+    {
+        $recipe = Recipe::find(13);
+        return view('users.show')->with('recipe', $recipe);
+    }
 }
