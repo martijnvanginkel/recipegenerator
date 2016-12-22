@@ -55,7 +55,7 @@ class UserController extends Controller
     public function show($id)
     {
         $recipe = Recipe::find($id);
-        return view('users.show')->with('recipe', $recipe);
+        return view('pages.favorites')->with('recipe', $recipe);
     }
 
     /**
@@ -102,6 +102,6 @@ class UserController extends Controller
     public function history()
     {
         $recipe = Recipe::find(13);
-        return view('users.show')->with('recipe', $recipe);
+        return view('pages.history')->with('recipe', $recipe);
     }
 }
