@@ -8,6 +8,7 @@ use App\Recipe;
 use App\Diet;
 use Image;
 use Auth;
+use Storage;
 
 class RecipeController extends Controller
 {
@@ -52,6 +53,7 @@ class RecipeController extends Controller
             'ingredienten' => 'required',
             'bereidingswijze' => 'required',
             'voedingswaarde' => 'required',
+            'image' => 'required|image',
         ]);
 
         $recipe = new Recipe;
@@ -118,6 +120,7 @@ class RecipeController extends Controller
             'ingredienten' => 'required',
             'bereidingswijze' => 'required',
             'voedingswaarde' => 'required',
+            'image' => 'image',
             ));
 
         $recipe = Recipe::find($id);
@@ -126,6 +129,21 @@ class RecipeController extends Controller
         $recipe->ingredienten = $request->input('ingredienten');
         $recipe->bereidingswijze = $request->input('bereidingswijze');
         $recipe->voedingswaarde = $request->input('voedingswaarde');
+
+        if ($request->hasFile('image')) {
+            //nieuwe foto toevoegen
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('img/' . $filename);
+            Image::make($image)->resize(900, 250)->save($location);
+            $oldFilename = $recipe->image;
+        
+            //opslaan in database
+            $recipe->image = $filename;
+
+            //verwijder de vorige foto
+            Storage::delete($oldFilename);
+        }
 
         $recipe->save();
 
