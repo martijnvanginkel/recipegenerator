@@ -50,9 +50,11 @@ main
 }
 
 #profile{
-	float:left;
+	float:right;
 	margin-right: 3%;
 	margin-top: 3%;
+	height: 100px;
+	width: 80px;
 }
 
 #container_generator
@@ -78,11 +80,17 @@ main
 		display: block;
 		top: 50%;
 		left: 50%;
-		width: 700px;
-		height: 700px;
-		margin-top: -350px;
-   	margin-left: -350px;
+		width: 400px;
+		height: 400px;
+		margin-top: -200px;
+   	margin-left: -200px;
 		position: absolute;
+	}
+
+	#generateButton:hover{
+		#circle{
+			background-color: blue;
+		}
 	}
 
 	// input[type="submit"]
@@ -202,6 +210,26 @@ main
 
 /* profile page */
 
+header{
+	padding:1.2%;
+
+	#logo{
+		margin: 0 auto;
+		display: block;
+	}
+	h1{
+		margin-bottom: 0.5%;
+	}
+	h2
+	{
+		margin-top: 0.5%;
+	}
+	a{
+		color: $white;
+		margin-bottom: 1%;
+	}
+}
+
 #favorieten
 {
 	background-color: $white;
@@ -225,6 +253,10 @@ main
 {
 	margin: 0 27px;
 	width:400px !important;
+}
+
+.slick-prev:before, .slick-next:before {
+	color:red !important;
 }
 
 /* Footer */
