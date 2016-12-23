@@ -2,8 +2,8 @@
 
 @section('content')
 <section id=container_generator>
-  <img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo">
-  <img src="img/" alt="">
+  <a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
+  <a href="/users"><img id="profile" src="img/icons/Profiel.png" alt="Profiel" width="50px" heigt="50px"></a>
   <form id="generator" method="POST" action=" {{ route('recipe-generate') }} ">
   {{ csrf_field() }}
     <input type="image" src="/img/rad.svg" name="genereer" value="Genereer" id="generateButton" alt="Submit" action="">
