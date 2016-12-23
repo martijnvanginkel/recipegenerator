@@ -22,28 +22,33 @@ ul {
 
 
 /*Login scherm opmaak*/
-.form-group{
-	margin-bottom:20px;
-	margin-left: auto;
-	width: 50%;
 
+#login-screen{
+	width: 300px;
+    margin: 0 auto; 
 }
 
-.col-md-4.control-label, .checkbox, .col-md-8.col-md-offset-4, #email, #password{
-	margin-top:20px;
-	margin-bottom:20px;
-	margin-left: -150px;
+
+#email, #password{
+	margin: 20px auto;
 	width: 300px;
 	resize: none;
 	font-family: 'Exo 2', sans-serif;
 	font-size: 1em;
 	outline: none;
+	
 }
+
+.btn.btn-link, .checkbox{
+			display: block;
+			margin-top:0px;
+			margin-bottom:20px;
+			color: $white;
+		}
+
 
 
 /* Formulier recepten */
-
-
 
 #container
 {
@@ -88,6 +93,21 @@ ul {
 		}
 	}
 } 
+
+button {
+    background-color: $yellow;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 
 
 [type="checkbox"]:not(:checked),

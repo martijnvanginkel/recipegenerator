@@ -4,6 +4,7 @@
 	"sources": [
 		"../../resources/assets/sass/style.scss",
 		"../../resources/assets/sass/_config.scss",
+		"../../resources/assets/sass/_style2.scss"
 		"../../resources/assets/sass/_mixins.scss"
 	],
 	"sourcesContent": [

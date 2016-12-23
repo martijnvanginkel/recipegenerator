@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <h1 class="panel-heading">Login</h1>
-                <div class="panel-body">
+                <div id="login-screen" class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 
@@ -41,9 +41,9 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Wachtwoord onthouden
-                                    </label>
+                                    
+            <input id="remember" name="remember" type="checkbox"><label for="remember">Wachtwoord onthouden</label>
+                                     
                                 </div>
                             </div>
                         </div>
@@ -53,11 +53,11 @@
                                 <button type="submit" class="btn btn-primary">
                                     Login
                                 </button>
-
+                            </div>
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">
                                     Wachtwoord vergeten?
                                 </a>
-                            </div>
+                            
                         </div>
                     </form>
                 </div>
