@@ -54,6 +54,7 @@ class RecipeController extends Controller
             'bereidingswijze' => 'required',
             'voedingswaarde' => 'required',
             'image' => 'required|image',
+            'diets' => 'required',
         ]);
 
         $recipe = new Recipe;
