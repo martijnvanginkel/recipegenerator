@@ -43,10 +43,12 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = Auth::User();
-        $user->diets()->sync($request->diets, false);
+        $diet = $request->diet_id;
+        $user->diets()->sync([$diet], false);
 
+        return view('users.index')->with('user', $user)->with('diet', $diet);
+        //return redirect()->route('users.index', $user->id);
 
-        return redirect()->route('users.edit', $user->id);
     }
 
     /**
@@ -71,16 +73,14 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $diets = Diet::all();
+
+        $checked = "checked";
+
         //laat alle dieeten van de gebruiker zien
         $userDiets = $user->diets()->get();
 
-        //return DB::table('diet_user')->where('diet->id', '=', 'diets')->get();
 
-        //return DB::table('diet_user')->whereRaw('diet_id = diet_user')->get();ik  
-
-
-
-        return view('users.edit')->with('diets', $diets)->with('user', $user)->with('userDiets', $userDiets);
+        return view('users.edit')->with('diets', $diets)->with('user', $user)->with('userDiets', $userDiets)->with('checked', $checked);
     }
 
     /**

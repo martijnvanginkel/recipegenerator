@@ -5,9 +5,9 @@
 	<header>
 		<a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
 		<h1>Welkom op je profiel, <em>{{ $user->name }}</em>! </h1>
-		<a href=" {{ route('users.edit', $user->id) }} ">Hier kan je je profiel bewerken</a>
+		<a href=" {{ route('users.edit', $user->id) }} ">Hier kan je je instellingen wijzigen</a>
 
-		<h2>Dit zijn jouw dieeten:</h2>
+		<h1>Dit zijn jouw dieeten:</h1>
 
 	  <ul>
 			@foreach($user->diets as $diet)
