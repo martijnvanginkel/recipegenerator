@@ -178,7 +178,7 @@ class RecipeController extends Controller
             //verwijs in de route naar de history functie
             //in de history functie, sla met sync() op in database en verwijs naar /home 
             
-            $user->recipes()->sync([$recipe], false);
+            //$user->recipes()->sync([$recipe], false);
 
 
             return view('/home')->with('recipe', $recipe)->with('clicked', $clicked);
