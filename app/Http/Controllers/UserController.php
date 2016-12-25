@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\User;
 use App\Diet;
 use App\Recipe;
+use DB;
 use Auth;
 
 class UserController extends Controller
@@ -41,9 +43,12 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = Auth::User();
-        $user->diets()->sync($request->diets, false);
+        $diet = $request->diet_id;
+        $user->diets()->sync([$diet], false);
 
-        return redirect()->route('users.edit', $user->id);
+        return view('users.index')->with('user', $user)->with('diet', $diet);
+        //return redirect()->route('users.index', $user->id);
+
     }
 
     /**
@@ -68,8 +73,14 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $diets = Diet::all();
-        $recipes = Recipe::find(1);
-        return view('users.edit')->with('diets', $diets)->with('recipes', $recipes)->with('user', $user);
+
+        $checked = "checked";
+
+        //laat alle dieeten van de gebruiker zien
+        $userDiets = $user->diets()->get();
+
+
+        return view('users.edit')->with('diets', $diets)->with('user', $user)->with('userDiets', $userDiets)->with('checked', $checked);
     }
 
     /**
@@ -93,10 +104,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = Auth::user();
-        $recipe = Recipe::find($id);
-        $user->recipes()->detach($recipe);
-        return redirect()->route('users.index');
+        // $user = Auth::user();
+        // $recipe = Recipe::find($id);
+        // $user->recipes()->detach($recipe);
+        // return redirect()->route('users.index');
     }
 
     public function history()

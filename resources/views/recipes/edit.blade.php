@@ -39,7 +39,7 @@
     <input type="hidden" name="_token" value="{{ Session::token() }}">
    {{ method_field('DELETE') }}
 
-   <a href=" {{ route('recipes.show', $recipe->id) }} ">Terug</a>
+   <a href=" {{ route('recipes.index', $recipe->id) }} ">Terug</a>
 </form>﻿
 
 

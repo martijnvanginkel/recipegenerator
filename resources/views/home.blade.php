@@ -5,7 +5,7 @@
   <a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
   <a href="/users"><img id="profile" src="img/icons/Profiel.png" alt="Profiel" width="50px" heigt="50px"></a>
   <form id="generator" method="POST" action=" {{ route('recipe-generate') }} ">
-  {{ csrf_field() }}
+    {{ csrf_field() }}
     <input type="image" src="/img/rad.svg" name="genereer" value="Genereer" id="generateButton" alt="Submit" action="">
 
     <input type="hidden" name="_token" value="{{ Session::token() }}">
@@ -17,6 +17,7 @@
 <section id="container_recept">
 
 @if($clicked)
+
   <script type="text/javascript">
     $(document).ready(function(){
       $('html, body').animate({
@@ -24,10 +25,11 @@
       }, 1000);
     });
   </script>
+  
   <section id="recept">
     <img id="image_recipe" src="{{ asset('img/' . $recipe->image) }}" alt="" height="250px" width="900px"/>
 
-          <form method="POST" action="{{ route('recipe-favorite') }}">
+    <form method="POST" action="{{ route('recipe-favorite') }}">
      {{ csrf_field() }}
       <input type="hidden" name="recipe_id" id="favorited" value="{{ $recipe->id }}">
       <input type="submit" class="icon-favorite" name="favorited" value="Voeg {{$recipe->titel}} als Favoriet">

@@ -2,23 +2,20 @@
 
 @section('content')
 
-	<p>Welkom op je profiel, {{ $user->name }} </p>
+	<header>
+		<a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
+		<h1>Welkom op je profiel, <em>{{ $user->name }}</em>! </h1>
+		<a href=" {{ route('users.edit', $user->id) }} ">Hier kan je je instellingen wijzigen</a>
 
-	<a href=" {{ route('users.edit', $user->id) }} ">Bewerk profiel</a>
+		<h1>Dit zijn jouw dieeten:</h1>
 
-	<h2>Dit zijn jouw dieeten</h2>
+	  <ul>
+			@foreach($user->diets as $diet)
+			<li>{{ $diet->titel }}</li>
+			@endforeach
+	  </ul>
+	</header>
 
-  <ul>
-	@foreach($user->diets as $diet)
-		<li>{{ $diet->titel }}</li>
-	@endforeach
-  </ul>
-
-	<style>
-  .slick-prev:before, .slick-next:before {
-    color:red !important;
-}
-  </style>
   <section id="favorieten">
     <h1>Favorieten</h1>
     <div class="slide-favorieten">

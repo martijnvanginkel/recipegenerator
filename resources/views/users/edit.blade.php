@@ -15,21 +15,19 @@
   			    </div>
   		@endif
 
-  		<label name="diets[]" for="diets">Dieet:</label>
+ 		<label name="diets[]" for="diets">Dieet:</label>
 
       <ul>
       @foreach($diets as $diet)
-        <li> <input name="diets[]" type="checkbox" id="{{$diet->titel}}" value="{{ $diet->id }}" ><label for="{{$diet->titel}}" >{{$diet->titel}}</label> </li>
+      <li>
+        <input name="diets[]" type="checkbox" id="{{$diet->titel}}" value="{{ $diet->id }}"><label for="{{$diet->titel}}" >{{$diet->titel}}</label> </li>
       @endforeach
       </ul>
 
-      
-
-
+      <input type="hidden" name="diet_id" value="{{ $diet->id }}">
   		<input type="submit" value="Opslaan">
 
   		<input type="hidden" name="_token" value="{{ Session::token() }}">
-
 
   	</form>
   </div>

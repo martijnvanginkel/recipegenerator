@@ -164,24 +164,31 @@ class RecipeController extends Controller
         return redirect()->route('recipes.index');
     }
 
-    public function generate(){
+    public function generate()
+    {
 
         $clicked =  Input::get('genereer');
         //$favorited = Input::get('favorited');
         $recipe = Recipe::inRandomOrder()->first();
 
         if ($clicked) { 
+            //return redirect()->route('recipe-history')->with('recipe', $recipe)->with('clicked', $clicked);
             //return redirect()->route('');
             //als er geklikt is, ga door naar de route met $recipe->id.
             //verwijs in de route naar de history functie
             //in de history functie, sla met sync() op in database en verwijs naar /home 
+            
+            //$user->recipes()->sync([$recipe], false);
+
+
             return view('/home')->with('recipe', $recipe)->with('clicked', $clicked);
         }else {
            return view('/home')->with('clicked', $clicked);
         }
     }
 
-    public function favorite(request $request) {
+    public function favorite(request $request) 
+    {
 
         $user = Auth::user();
         $recipe = $request->recipe_id;
@@ -189,5 +196,7 @@ class RecipeController extends Controller
 
         return view('users.index')->with('user', $user)->with('recipe', $recipe);
     }
+
+
 
 }
