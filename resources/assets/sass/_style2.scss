@@ -16,6 +16,9 @@ ul {
  	list-style-type: none;
 }
 
+.panel-heading {
+	text-align: center
+}
 
 /*Login scherm opmaak*/
 
@@ -31,16 +34,34 @@ ul {
 	resize: none;
 	font-family: 'Exo 2', sans-serif;
 	font-size: 1em;
-	outline: none;
-	
+	outline: none;	
 }
 
-.btn.btn-link, .checkbox{
-			display: block;
-			margin-top:0px;
-			margin-bottom:20px;
-			color: $white;
-		}
+.btn.btn-link, .checkbox {
+	display: block;
+	margin-top:0px;
+	margin-bottom:20px;
+	color: $white;
+}
+
+
+#login-button {
+    background-color: $yellow;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 300px;
+}
+
+#forgot-password {
+	margin-top: 20px;
+}
 
 
 
@@ -62,13 +83,13 @@ ul {
 			margin-bottom:20px;
 		}
 
-		input, textarea{
+		input, textarea {
 		margin-top:20px;
 		margin-bottom:20px;
 		display: block;
 		}
 
-		input[type="text"], textarea{
+		input[type="text"], textarea {
 			margin-top:20px;
 			margin-bottom:20px;
 			display: block;
@@ -79,30 +100,50 @@ ul {
 			outline: none;
 		}
 
-		#afbeeldingknop{
-
+		#afbeeldingknop {
+			background-color: $yellow;
+    		border: none;
+    		color: white;
+    		padding-top: 15px;
+    		padding-bottom: 15px;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: 'Exo 2', sans-serif;
+   	 		margin: 4px 2px;
+    		cursor: pointer;
+			width: 100%;
+			outline: yes;
 		}
 
-		#toevoegknop{
-		
+		#afbeeldingknop [type=file] {
+		    cursor: inherit;
+    		display: block;
+    		filter: alpha(opacity=0);
+    		opacity: 0;
+    		position: absolute;
+    		right: 0;
+    		top: 0;
+		}
 
+		#toevoegknop {
+			background-color: $yellow;
+    		border: none;
+    		color: white;
+    		padding-top: 15px;
+    		padding-bottom: 15px;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: 'Exo 2', sans-serif;
+    		font-size: 1em;
+   	 		margin: 4px 2px;
+    		cursor: pointer;
+	    	width: 100%;
 		}
 	}
 } 
 
-button {
-    background-color: $yellow;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: 'Exo 2', sans-serif;
-    font-size: 20px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
 
 
 
