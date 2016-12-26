@@ -20,8 +20,8 @@ class UserController extends Controller
     public function index()
     {
         $user = Auth::User();
-
-        return view ('users.index')->with('user', $user);
+        $diets = Diet::all();
+        return view ('users.index')->with('user', $user)->with('diets', $diets);
     }
 
     /**
@@ -43,11 +43,13 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = Auth::User();
+        $diets = Diet::all();
         $diet = $request->diet_id;
+
         $user->diets()->sync([$diet], false);
 
-        return view('users.index')->with('user', $user)->with('diet', $diet);
-        //return redirect()->route('users.index', $user->id);
+        //return view('users.index')->with('user', $user)->with('diet', $diet)->with('diets', $diets);
+        return redirect()->route('users.index', $diet);
 
     }
 
@@ -104,10 +106,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        // $user = Auth::user();
-        // $recipe = Recipe::find($id);
-        // $user->recipes()->detach($recipe);
-        // return redirect()->route('users.index');
+        $user = Auth::user();
+        $recipe = Recipe::find($id);
+        $user->recipes()->detach($recipe);
+        return redirect()->route('users.index');
     }
 
     public function history()
