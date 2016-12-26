@@ -17,7 +17,8 @@ class RecipeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct() {
+    public function __construct() 
+    {
         $this->middleware('auth');
     }
 
@@ -73,8 +74,6 @@ class RecipeController extends Controller
         //--
 
         $recipe->save();
-        
-        //$recipe->diets()->attach(1);
         $recipe->diets()->sync($request->diets, false);
 
         return redirect()->route('recipes.show', $recipe->id);
@@ -168,7 +167,7 @@ class RecipeController extends Controller
     {
 
         $clicked =  Input::get('genereer');
-        //$favorited = Input::get('favorited');
+    
         $recipe = Recipe::inRandomOrder()->first();
 
         if ($clicked) { 
@@ -189,12 +188,12 @@ class RecipeController extends Controller
 
     public function favorite(request $request) 
     {
-
+        $diets = Diet::all();
         $user = Auth::user();
         $recipe = $request->recipe_id;
         $user->recipes()->sync([$recipe], false);
 
-        return view('users.index')->with('user', $user)->with('recipe', $recipe);
+        return view('users.index')->with('user', $user)->with('recipe', $recipe)->with('diets', $diets);
     }
 
 
