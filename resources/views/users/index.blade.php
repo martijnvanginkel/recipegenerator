@@ -7,14 +7,63 @@
 		<h1>Welkom op je profiel, <em>{{ $user->name }}</em>! </h1>
 		<a href=" {{ route('users.edit', $user->id) }} ">Hier kan je je instellingen wijzigen</a>
 
-		<h1>Dit zijn jouw dieeten:</h1>
-
-	  <ul>
-			@foreach($user->diets as $diet)
-			<li>{{ $diet->titel }}</li>
-			@endforeach
-	  </ul>
 	</header>
+
+    <table class="table table-bordered">
+
+    <h1>Dit zijn jouw dieeten:</h1>
+
+      @foreach ($user->diets as $diet)
+        <tr>
+          <td>{{ $diet->titel }}</td>
+          <td>
+
+{{--      <form method="POST" action="{{ route('users.destroy', $diet->id) }}">
+      <input type="submit" value="Delete">
+      <input type="hidden" name="_token" value="{{ Session::token() }}">
+     {{ method_field('DELETE') }}
+    </form>﻿ 
+ --}}
+
+
+
+
+          </td>
+        </tr>
+      @endforeach
+  </table>
+
+    <form id="form_new_recipe" method="POST" action=" {{ route('users.store') }} " enctype="multipart/form-data">
+
+      @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+      @endif
+
+    <label name="diets" for="diets">Dieeten:</label>
+    <select class="form-control" name="diet_id">
+
+      @foreach($diets as $diet)
+     
+          <option value="{{ $diet->id }}"> {{ $diet->titel }} </option>
+          
+      @endforeach
+
+   </select>
+
+      {{-- <input type="hidden" name="diet_id" value="{{ $diet->id }}"> --}}
+      <input type="submit" value="Voeg dieet toe">
+
+      <input type="hidden" name="_token" value="{{ Session::token() }}">
+
+    </form>
+
+
 
   <section id="favorieten">
     <h1>Favorieten</h1>
