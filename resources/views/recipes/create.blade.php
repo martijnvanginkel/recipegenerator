@@ -17,7 +17,10 @@
       @endif
       <h1>Recepten toevoegen</h1>
       <label for="">Afbeelding:</label>
-      <input id="afbeeldingknop" type="file" name="image" accept="image/*"></textarea>
+      <label class="afbeeldingknop" id="afbeeldingknop">
+    Klik hier om een afbeelding te uploaden
+    <input type="file" name="image" accept="image"/>
+      </label>
       <label name="title">Titel:</label>
       <input placeholder="Typ hier de titel van dit gerecht" cols="30" rows="5" type="text" name="titel" id="titel"></textarea>
       <label name="ingredienten" for="">Ingrediënten:</label>
@@ -46,7 +49,7 @@
 
 
 
-      <input id="toevoegknop" type="submit" value="Voeg recept toe">
+      <input id="toevoegknop" type="submit" value="Klik hier om het recept toe te voegen">
 
       <input type="hidden" name="_token" value="{{ Session::token() }}">
     </form>
