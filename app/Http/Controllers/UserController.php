@@ -112,6 +112,14 @@ class UserController extends Controller
         return redirect()->route('users.index');
     }
 
+    public function destroyDiet($id)
+    {
+        $user = Auth::user();
+        $diet = Diet::find($id);
+        $user->diets()->detach($diet);
+        return redirect()->route('users.index');
+    }
+
     public function history()
     {
         $recipe = Recipe::find(13);
