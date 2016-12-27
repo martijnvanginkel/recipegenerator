@@ -27,6 +27,8 @@ Route::get('/home', 'RecipeController@generate')->name('recipe-generate');
 Route::post('/home', 'RecipeController@generate')->name('recipe-generate');
 Route::post('/users.index', 'RecipeController@favorite')->name('recipe-favorite');
 
+Route::delete('/users.index/{id}', 'UserController@destroyDiet')->name('destroy-diet');
+
 Auth::routes();
 
 
