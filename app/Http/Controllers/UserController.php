@@ -19,8 +19,20 @@ class UserController extends Controller
      */
     public function index()
     {
+        //definieer gebruiker
         $user = Auth::User();
-        $diets = Diet::all();
+        //alle dieeten 
+        $allDiets = Diet::all();
+        //dieeten van de gebruiker 
+        $userDiets = $user->diets()->get();
+        //zet de id's in arrays
+        $allDietsArray = $allDiets->pluck('id')->toArray();
+        $userDietsArray = $userDiets->pluck('id')->toArray();
+        //vergelijk arrays en zoek naar verschillen in id's
+        $dietsDifference = array_diff($allDietsArray, $userDietsArray);
+        //zoek de dieeten die bij de verschillende id's horen
+        $diets = Diet::findMany($dietsDifference);
+
         return view ('users.index')->with('user', $user)->with('diets', $diets);
     }
 
@@ -48,7 +60,7 @@ class UserController extends Controller
 
         $user->diets()->sync([$diet], false);
 
-        //return view('users.index')->with('user', $user)->with('diet', $diet)->with('diets', $diets);
+
         return redirect()->route('users.index', $diet);
 
     }
@@ -73,16 +85,27 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = Auth::user();
-        $diets = Diet::all();
+        // $user = Auth::user();
+        // // $diets = Diet::all();
+        // $diets = Diet::all();
 
-        $checked = "checked";
+        // //$test1 = Diet::where('id' ,'=' ,5)->pluck('id')->toArray();
 
-        //laat alle dieeten van de gebruiker zien
-        $userDiets = $user->diets()->get();
+        // $allDiets= diet::all();
 
+        // $allDietsArray = $allDiets->pluck('id')->toArray();
 
-        return view('users.edit')->with('diets', $diets)->with('user', $user)->with('userDiets', $userDiets)->with('checked', $checked);
+        // $fromUser = $user->diets()->get();
+
+        // $fromUserArray = $fromUser->pluck('id')->toArray();
+
+        // $dietsNotYetUser = array_diff($allDietsArray, $fromUserArray);
+
+        // Diet::findMany([$dietsNotYetUser]);
+
+        // $userDiets = $user->diets()->get();
+
+        // return view('users.edit')->with('diets', $diets)->with('user', $user)->with('userDiets', $userDiets);
     }
 
     /**
