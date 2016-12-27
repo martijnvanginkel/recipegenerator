@@ -19,7 +19,7 @@
           <td>
 
     <form method="POST" action="{{ route('destroy-diet', $diet->id) }}">
-      <input type="submit" value="Delete">
+      <input type="submit" value="Verwijder">
       <input type="hidden" name="_token" value="{{ Session::token() }}">
      {{ method_field('DELETE') }}
     </form>﻿ 
@@ -44,6 +44,8 @@
     <label name="diets" for="diets">Dieeten:</label>
     <select class="form-control" name="diet_id">
 
+    <option selected disabled>Selecteer een dieet</option>
+
       @foreach($diets as $diet)
      
           <option value="{{ $diet->id }}"> {{ $diet->titel }} </option>
@@ -52,8 +54,7 @@
 
    </select>
 
-      {{-- <input type="hidden" name="diet_id" value="{{ $diet->id }}"> --}}
-      <input type="submit" value="Voeg dieet toe">
+      <input type="submit" value="Voeg toe">
 
       <input type="hidden" name="_token" value="{{ Session::token() }}">
 
