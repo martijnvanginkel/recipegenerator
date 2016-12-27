@@ -58,11 +58,12 @@ class UserController extends Controller
         $diets = Diet::all();
         $diet = $request->diet_id;
 
-        $user->diets()->sync([$diet], false);
-
-
-        return redirect()->route('users.index', $diet);
-
+        if(empty($diet)){
+            return redirect()->route('users.index', $diet);
+        }else{
+            $user->diets()->sync([$diet], false);
+            return redirect()->route('users.index', $diet);
+        }
     }
 
     /**
@@ -86,22 +87,8 @@ class UserController extends Controller
     public function edit($id)
     {
         // $user = Auth::user();
-        // // $diets = Diet::all();
+       
         // $diets = Diet::all();
-
-        // //$test1 = Diet::where('id' ,'=' ,5)->pluck('id')->toArray();
-
-        // $allDiets= diet::all();
-
-        // $allDietsArray = $allDiets->pluck('id')->toArray();
-
-        // $fromUser = $user->diets()->get();
-
-        // $fromUserArray = $fromUser->pluck('id')->toArray();
-
-        // $dietsNotYetUser = array_diff($allDietsArray, $fromUserArray);
-
-        // Diet::findMany([$dietsNotYetUser]);
 
         // $userDiets = $user->diets()->get();
 
