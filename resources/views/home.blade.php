@@ -4,6 +4,7 @@
 <section id=container_generator>
   <a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
   <a href="/users"><img id="profile" src="img/icons/Profiel.png" alt="Profiel" width="50px" heigt="50px"></a>
+
   <form id="generator" method="POST" action=" {{ route('recipe-generate') }} ">
     {{ csrf_field() }}
     <input type="image" src="/img/rad.svg" name="genereer" value="Genereer" id="generateButton" alt="Submit" action="">
@@ -11,6 +12,7 @@
     <input type="hidden" name="_token" value="{{ Session::token() }}">
     {{ method_field('get') }}
   </form>
+
   <br>
 </section>
 
@@ -53,7 +55,7 @@
       <p>{{ $recipe->voedingswaarde }}</p>
     </div>
 
-<!-- <script type="text/javascript">
+{{-- <script type="text/javascript">
     $('#favorite').click(function(){
       $.ajax({
         type:"POST",
@@ -62,7 +64,7 @@
       });
     });
 
-    </script> -->
+    </script>  --}}
 
     <div id="social_media">
       <a href="#"><img class="icon" src="/img/icons/Twitter.png" alt="Twitter icon"></a>
