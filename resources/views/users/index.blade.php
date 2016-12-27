@@ -18,15 +18,11 @@
           <td>{{ $diet->titel }}</td>
           <td>
 
-{{--      <form method="POST" action="{{ route('users.destroy', $diet->id) }}">
+    <form method="POST" action="{{ route('destroy-diet', $diet->id) }}">
       <input type="submit" value="Delete">
       <input type="hidden" name="_token" value="{{ Session::token() }}">
      {{ method_field('DELETE') }}
     </form>﻿ 
- --}}
-
-
-
 
           </td>
         </tr>
