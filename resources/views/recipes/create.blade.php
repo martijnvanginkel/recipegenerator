@@ -22,7 +22,7 @@
     <input type="file" name="image" accept="image"/>
       </label>
       <label name="title">Titel:</label>
-      <input placeholder="Typ hier de titel van dit gerecht" cols="30" rows="5" type="text" name="titel" id="titel"></textarea>
+      <textarea placeholder="Typ hier de titel van dit gerecht" cols="30" rows="2" type="text" name="titel" id="titel"></textarea>
       <label name="ingredienten" for="">Ingrediënten:</label>
       <textarea placeholder="Typ hier de ingrediënten die zijn gebruikt voor dit gerecht" cols="30" rows="5" type="text" name="ingredienten" id="ingredienten" value=""></textarea>
       <label name="bereidingswijze">Bereidingswijze:</label>
