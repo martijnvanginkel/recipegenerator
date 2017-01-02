@@ -191,6 +191,7 @@ main
 		{
 
 			margin: 1.2%;
+			float: right;
 
 			.icon
 			{
@@ -210,23 +211,44 @@ main
 
 /* profile page */
 
+
+
 header{
 	padding:1.2%;
 
-	#logo{
+	#logo
+	{
 		margin: 0 auto;
 		display: block;
 	}
-	h1{
-		margin-bottom: 0.5%;
-	}
-	h2
+	.wrapper
 	{
-		margin-top: 0.5%;
-	}
-	a{
-		color: $white;
-		margin-bottom: 1%;
+		width: fit-content;
+		width: -moz-fit-content;
+		margin: 0 auto;
+
+		h1
+		{
+			margin-bottom: 0.5%;
+		}
+
+		input[type="submit"]
+		{
+			background-color: $yellow;
+			color: $white;
+			border: none;
+			padding: 5px;
+			margin-left: 10px;
+		}
+		input[type="submit"]:hover
+		{
+			background-color: $white;
+			color: $yellow;
+		}
+		input[type="option"]
+		{
+			padding: 5px;
+		}
 	}
 }
 
