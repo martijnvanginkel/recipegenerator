@@ -55,8 +55,8 @@
       <p>{{ $recipe->voedingswaarde }}</p>
     </div>
 
-{{-- <script type="text/javascript">
-    $('#favorite').click(function(){
+{{--   <script type="text/javascript">
+    $('#favorited').click(function(){
       $.ajax({
         type:"POST",
         url: "{{route ('recipe-favorite')}}",
@@ -64,7 +64,7 @@
       });
     });
 
-    </script>  --}}
+    </script>   --}} 
 
     <div id="social_media">
       <a href="#"><img class="icon" src="/img/icons/Twitter.png" alt="Twitter icon"></a>
