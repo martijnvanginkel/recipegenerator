@@ -16,4 +16,9 @@ class Recipe extends Model
     	return $this->belongsToMany('App\User');
     }
 
+    // public function users()
+    // {
+    // 	return $this->belongsToMany('App\User', 'history_user', 'history_id', 'user_id');
+    // }
+
 }
