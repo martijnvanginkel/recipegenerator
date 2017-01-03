@@ -18,24 +18,19 @@ Route::resource('recipes', 'RecipeController');
 Route::resource('diets', 'DietController', ['except' => ['create']]);
 Route::resource('users', 'UserController', ['except' => ['show']]);
 
-<<<<<<< HEAD
 Route::get('/users/favorites/{id}', 'UserController@favorite')->name('favorites');
 Route::get('/users/histories/{id}', 'UserController@history')->name('histories');
 
 Route::get('/users.index', 'RecipeController@history')->name('history');
 
 
-=======
->>>>>>> 1ab294dbf11d25d091ae23d4f0609c30ac177782
 Route::get('/home', 'RecipeController@generate')->name('generate');
 Route::get('/home', 'RecipeController@generate')->name('recipe-generate');
 Route::post('/home', 'RecipeController@generate')->name('recipe-generate');
 
-<<<<<<< HEAD
 
-=======
 Route::post('/users.index', 'RecipeController@favorite')->name('recipe-favorite');
->>>>>>> 1ab294dbf11d25d091ae23d4f0609c30ac177782
+
 Route::delete('/users.index/{id}', 'UserController@destroyDiet')->name('destroy-diet');
 
 Route::get('/users/favorites/{id}', 'UserController@show')->name('favorites');
