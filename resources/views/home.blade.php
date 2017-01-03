@@ -72,6 +72,37 @@
       <a href="#"><img class="icon" src="/img/icons/Mail.png" alt="Mail"></a>
     </div>
 
+  <h1>Reactie's</h1>
+    <ul>
+      @foreach ($recipe->comments as $comment)
+        <li>{{ $comment->name }}</li>
+        <li>{{ $comment->comment }}</li>
+        </li>
+
+      @endforeach
+    </ul>
+
+    <form id="form_new_recipe" method="POST" action="/recipes/{{ $recipe->id }}/comments" " enctype="multipart/form-data">
+
+      @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+      @endif
+
+      <h1>Reactie toevoegen</h1>
+      <label name="comment">Reactie:</label>
+      <input type="text" name="comment" id="comment">
+
+      <input type="submit" value="Voeg reactie toe">
+
+      <input type="hidden" name="_token" value="{{ Session::token() }}">
+    </form>
+
   </section>
   @endif
 </section>
