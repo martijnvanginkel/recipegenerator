@@ -20,7 +20,7 @@ class User extends Authenticatable
 
     public function histories()
     {
-        return $this->belongsToMany('App\History');
+        return $this->belongsToMany('App\Recipe', 'history_user', 'user_id', 'history_id');
     }
     
     use Notifiable;

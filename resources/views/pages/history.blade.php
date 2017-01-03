@@ -15,13 +15,6 @@
 	<h1>Voedingswaarde</h1>
 	<p> {{ $recipe->voedingswaarde }} </p><br>
 
-
-
-	<form method="POST" action="{{ route('users.destroy', $recipe->id) }}">
-    	<input type="submit" value="Delete">
-    	<input type="hidden" name="_token" value="{{ Session::token() }}">
-   		{{ method_field('DELETE') }}
-   	</form>
 	
 	<a href=" {{ route('users.index') }} ">Terug</a>
 

@@ -74,8 +74,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $recipe = Recipe::find($id);
-        return view('pages.favorites')->with('recipe', $recipe);
+
     }
 
     /**
@@ -86,13 +85,13 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        // $user = Auth::user();
+        $user = Auth::user();
        
-        // $diets = Diet::all();
+        $diets = Diet::all();
 
-        // $userDiets = $user->diets()->get();
+        $userDiets = $user->diets()->get();
 
-        // return view('users.edit')->with('diets', $diets)->with('user', $user)->with('userDiets', $userDiets);
+        return view('users.edit')->with('diets', $diets)->with('user', $user)->with('userDiets', $userDiets);
     }
 
     /**
@@ -130,9 +129,15 @@ class UserController extends Controller
         return redirect()->route('users.index');
     }
 
-    public function history()
+    public function favorite($id)
     {
-        $recipe = Recipe::find(13);
+        $recipe = Recipe::find($id);
+        return view('pages.favorites')->with('recipe', $recipe);
+    }
+
+    public function history($id)
+    {
+        $recipe = Recipe::find($id);
         return view('pages.history')->with('recipe', $recipe);
     }
 }

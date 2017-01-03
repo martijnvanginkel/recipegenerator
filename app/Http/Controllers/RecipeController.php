@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Recipe;
 use App\Diet;
+use App\User;
 use Image;
 use Auth;
 use Storage;
@@ -165,25 +166,34 @@ class RecipeController extends Controller
 
     public function generate()
     {
-
         $clicked =  Input::get('genereer');
-    
+        $user = Auth::user();
         $recipe = Recipe::inRandomOrder()->first();
+        if($clicked){
+            //DIT IS GOEDE CODE IN DEZE IFSTATEMENT
+            $generatedRecipe = Recipe::inRandomOrder()->get()->pluck('id')->first();
+            if ($user->histories()->count() < 10) {
+                $user->histories()->sync([$generatedRecipe], false);
 
-        if ($clicked) { 
-            //return redirect()->route('recipe-history')->with('recipe', $recipe)->with('clicked', $clicked);
-            //return redirect()->route('');
-            //als er geklikt is, ga door naar de route met $recipe->id.
-            //verwijs in de route naar de history functie
-            //in de history functie, sla met sync() op in database en verwijs naar /home 
-            
-            //$user->recipes()->sync([$recipe], false);
+                return view('/home')->with('recipe', $recipe)->with('clicked', $clicked)->with('user', $user);
+            }else{
+                $lastRecipe = $user->histories()->first();
+                $user->histories()->detach($lastRecipe);
+
+                $user->histories()->sync([$generatedRecipe], false);
+
+                return view('/home')->with('recipe', $recipe)->with('clicked', $clicked)->with('user', $user);
+            }
 
 
-            return view('/home')->with('recipe', $recipe)->with('clicked', $clicked);
-        }else {
-           return view('/home')->with('clicked', $clicked);
         }
+
+        return view('/home')->with('clicked', $clicked);
+    }
+
+    public function history()
+    {
+
     }
 
     public function favorite(request $request) 
@@ -193,8 +203,10 @@ class RecipeController extends Controller
         $recipe = $request->recipe_id;
         $user->recipes()->sync([$recipe], false);
 
-        return view('users.index')->with('user', $user)->with('recipe', $recipe)->with('diets', $diets);
+        return view('users.index')->with('user', $user)->with('diets', $diets);
     }
+
+
 
 
 

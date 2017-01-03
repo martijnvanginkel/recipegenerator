@@ -6,7 +6,7 @@
 
 		<a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
 		<div class="wrapper">
-			<h1>Welkom op je profiel, <em>{{ $user->name }}</em>! </h1>
+			<h1>Welkom op je profiel, <em>{{ ucfirst($user->name) }}</em>! </h1>
 			<!-- <a href=" {{ route('users.edit', $user->id) }} ">Hier kan je je instellingen wijzigen</a> -->
 
 	    <table class="table table-bordered">
@@ -78,27 +78,11 @@
   <section id="geschiedenis">
     <h1>Geschiedenis</h1>
     <div class="slide-favorieten">
-      <div>
-        <a href="{{ route('history') }}"><img src="http://placehold.it/400x200"></a>
-      </div>
-      <div>
-        <img src="http://placehold.it/400x200">
-      </div>
-      <div>
-        <img src="http://placehold.it/400x200">
-      </div>
-      <div>
-        <img src="http://placehold.it/400x200">
-      </div>
-      <div>
-        <img src="http://placehold.it/400x200">
-      </div>
-      <div>
-        <img src="http://placehold.it/400x200">
-      </div>
-      <div>
-        <img src="http://placehold.it/400x200">
-      </div>
+
+    @foreach($user->histories as $history)
+    	<a href="{{ route('histories', $history->id) }}"><img src="{{ asset('img/' . $history->image) }}"></a>
+    @endforeach
+ 
     </div>
   </section>
 
