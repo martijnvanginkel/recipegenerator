@@ -12,6 +12,11 @@ use Auth;
 
 class UserController extends Controller
 {
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -74,7 +79,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-
+        $recipe = Recipe::find($id);
+        return view('pages.favorites')->with('recipe', $recipe);
     }
 
     /**
@@ -131,8 +137,7 @@ class UserController extends Controller
 
     public function favorite($id)
     {
-        $recipe = Recipe::find($id);
-        return view('pages.favorites')->with('recipe', $recipe);
+
     }
 
     public function history($id)

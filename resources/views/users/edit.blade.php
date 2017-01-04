@@ -30,6 +30,11 @@
   		<input type="hidden" name="_token" value="{{ Session::token() }}">
 
   	</form>
+
+    @foreach($dietsNotFromUser as $dietNotFromUser)
+        <h3>{{ $dietNotFromUser->recipes }}</h3>
+    @endforeach
+
   </div>
 
 

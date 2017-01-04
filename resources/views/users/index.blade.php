@@ -80,7 +80,7 @@
     <div class="slide-favorieten">
 
     @foreach($user->histories->reverse() as $history)
-    	<a href="{{ route('histories', $history->id) }}"><img src="{{ asset('img/' . $history->image) }}"></a>
+    	<a href=""><img src="{{ asset('img/' . $history->image) }}"></a>
     @endforeach
  
     </div>

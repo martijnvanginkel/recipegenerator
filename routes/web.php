@@ -18,8 +18,10 @@ Route::resource('recipes', 'RecipeController');
 Route::resource('diets', 'DietController', ['except' => ['create']]);
 Route::resource('users', 'UserController', ['except' => ['show']]);
 
-Route::get('/users/favorites/{id}', 'UserController@favorite')->name('favorites');
+Route::get('/users/favorites/{id}', 'UserController@show')->name('favorites');
 Route::get('/users/histories/{id}', 'UserController@history')->name('histories');
+
+
 
 Route::get('/users.index', 'RecipeController@history')->name('history');
 

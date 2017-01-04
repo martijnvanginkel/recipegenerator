@@ -168,7 +168,41 @@ class RecipeController extends Controller
     {
         $clicked =  Input::get('genereer');
         $user = Auth::user();
-        $recipe = Recipe::inRandomOrder()->get()->first();
+
+
+//-------------------------------
+
+
+
+//-------------------------------
+        // $diets = Diet::all();
+
+        // $userDietsIds = $user->diets->pluck('id')->toArray(); //8, 14
+
+        // $allDiets = Diet::all()->pluck('id')->toArray(); // 8, 14, 15, 16
+
+        // $dietsNotFromUser = Diet::findMany(array_diff($allDiets, $userDietsIds)); // dieeten 15 en 16 zitten niet in die van de gebruiker
+
+        // $randomDiet = $dietsNotFromUser->random(1);
+
+        // $recipesFromRandomDiet = $randomDiet->recipes;
+
+        // $recipe = $recipesFromRandomDiet->random(1); //HOUDT REKENING MET DIEETEN
+
+        
+
+        $recipe = Recipe::whereHas('diets', function($q)
+        {
+            $user = Auth::user();
+            $userDietsIds = $user->diets->pluck('id')->toArray(); //8, 14
+            $q->where('diet_id', '=', [$userDietsIds]);
+        })->get()->random(1);
+
+
+
+
+//-------------------------------
+
         if($clicked){
             $generatedRecipe = $recipe->id;
             if ($user->histories()->count() < 5) {
