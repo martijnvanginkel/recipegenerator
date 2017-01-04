@@ -22,14 +22,14 @@
 
   <script type="text/javascript">
     $(document).ready(function(){
-      $('html, body').animate({
+      $('html, body').delay(1500).animate({
         scrollTop: $("#recept").offset().top
       }, 1000);
     });
   </script>
 
   <section id="recept">
-    <img id="image_recipe" src="{{ asset('img/' . $recipe->image) }}" alt="" height="250px" width="900px"/>
+    <img id="image_recipe" src="{{ asset('img/' . $recipe->image) }}" alt="" height="250px" width="100%"/>
 
     <form method="POST" action="{{ route('recipe-favorite') }}">
      {{ csrf_field() }}
@@ -64,7 +64,7 @@
       });
     });
 
-    </script>   --}} 
+    </script>   --}}
 
     <div id="social_media">
       <a href="#"><img class="icon" src="/img/icons/Twitter.png" alt="Twitter icon"></a>
@@ -87,10 +87,10 @@
     @endif
 
     <h1>Reageren</h1>
-    <label name="comment">Reactie:</label>
-    <input type="text" name="comment" id="comment">
 
-    <input type="submit" value="Voeg reactie toe">
+    <textarea name="comment" id="comment" rows="8" cols="80"></textarea><br>
+
+    <input type="submit" value="Reageer">
 
     <input type="hidden" name="_token" value="{{ Session::token() }}">
   </form>

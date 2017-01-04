@@ -2,6 +2,18 @@
 @mixin background-size($b-size) {
 	-webkit-background-size: $b-size;
      -moz-background-size: $b-size;
-       -o-background-size: $b-size;
           background-size: $b-size;
+}
+
+@mixin animation($animation) {
+	-webkit-animation:spin $animation;
+		 -moz-animation:spin $animation;
+		 			animation:spin $animation;
+}
+
+@mixin keyframe($keyframe)
+{
+	@-moz-keyframes spin { 100% { -moz-transform: $keyframe; } }
+	@-webkit-keyframes spin { 100% { -webkit-transform: $keyframe; } }
+	@keyframes spin { 100% {transform: $keyframe; } }
 }

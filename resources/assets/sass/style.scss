@@ -85,29 +85,14 @@ main
 		margin-top: -200px;
    	margin-left: -200px;
 		position: absolute;
+
+		@include animation( 1s linear infinite);
+		animation-iteration-count: 1;
+		animation-timing-function: ease-out;
 	}
 
-	#generateButton:hover{
-		#circle{
-			background-color: blue;
-		}
-	}
+@include keyframe(rotate(360deg * 3));
 
-	// input[type="submit"]
-	// {
-	// 	height: 100px;
-	// 	width: 200px;
-	// 	font-size:30px;
-	// 	background-color: $yellow;
-	// 	border: none;
-	// 	margin: 0 auto;
-	// 	color: $white;
-	// }
-	// input[type="submit"]:hover
-	// {
-	// 	color: $yellow;
-	// 	background-color: $white;
-	// }
 }
 
 #container_recept
@@ -220,6 +205,26 @@ main
 	#form_new_recipe
 	{
 		// display: flex;
+		input[type="submit"]
+		{
+			background-color: $lightblue;
+			color: $white;
+			border: none;
+			float: right;
+			width: 100px;
+			height: 35px;
+		}
+		input[type="submit"]:hover
+		{
+				background-color:$white;
+				color: $lightblue;
+		}
+		textarea
+		{
+			border: none;
+			background-color: $lightgrey;
+				// font-size: ;
+		}
 	}
 
 	.comments
