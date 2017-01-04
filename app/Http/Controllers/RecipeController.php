@@ -168,15 +168,15 @@ class RecipeController extends Controller
     {
         $clicked =  Input::get('genereer');
         $user = Auth::user();
-        $recipe = Recipe::inRandomOrder()->first();
+        $recipe = Recipe::inRandomOrder()->get()->first();
         if($clicked){
-            //DIT IS GOEDE CODE IN DEZE IFSTATEMENT
-            $generatedRecipe = Recipe::inRandomOrder()->get()->pluck('id')->first();
-            if ($user->histories()->count() < 10) {
+            $generatedRecipe = $recipe->id;
+            if ($user->histories()->count() < 5) {
                 $user->histories()->sync([$generatedRecipe], false);
 
                 return view('/home')->with('recipe', $recipe)->with('clicked', $clicked)->with('user', $user);
-            }else{
+            }
+            if($user->histories()->count() >= 5){
                 $lastRecipe = $user->histories()->first();
                 $user->histories()->detach($lastRecipe);
 
@@ -205,9 +205,6 @@ class RecipeController extends Controller
 
         return view('users.index')->with('user', $user)->with('diets', $diets);
     }
-
-
-
 
 
 }

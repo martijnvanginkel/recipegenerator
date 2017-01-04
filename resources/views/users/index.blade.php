@@ -76,10 +76,10 @@
     </div>
   </section>
   <section id="geschiedenis">
-    <h1>Geschiedenis</h1>
+    <h1>Recent bekeken</h1>
     <div class="slide-favorieten">
 
-    @foreach($user->histories as $history)
+    @foreach($user->histories->reverse() as $history)
     	<a href="{{ route('histories', $history->id) }}"><img src="{{ asset('img/' . $history->image) }}"></a>
     @endforeach
  
