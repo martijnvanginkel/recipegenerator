@@ -209,10 +209,26 @@ main
 	}
 }
 
+#comments
+{
+	width: 100%;
+	background-color: $white;
+	display: flex;
+	justify-content: center;
+	background-color: $yellow;
+
+	#form_new_recipe
+	{
+		// display: flex;
+	}
+
+	.comments
+	{
+			display: flex;
+	}
+}
+
 /* profile page */
-
-
-
 header{
 	padding:1.2%;
 
@@ -278,7 +294,64 @@ header{
 }
 
 .slick-prev:before, .slick-next:before {
-	color:red !important;
+	color:$black !important;
+}
+
+/* Recept fav/geschiedenis */
+
+#container_recept_fav
+{
+	width: 900px;
+	margin: 0 auto;
+	background-color: $lightblue;
+
+	h1
+	{
+		margin-left: 1.2%;
+	}
+
+	#ingredients
+	{
+		margin-left: 1.2%;
+	}
+
+	#steps
+	{
+			margin-left: 1.2%;
+			margin-right: 1.2%;
+	}
+
+	#nutritional_values
+	{
+		margin-left: 1.2%;
+		margin-right: 1.2%;
+		margin-bottom: 1.2%;
+	}
+
+	input[type="submit"]
+	{
+		padding: 5px;
+		background-color: red;
+		border: none;
+		color: $white;
+		margin-left: 1.2%;
+	}
+		input[type="submit"]:hover
+		{
+			background-color: $white;
+			color: red;
+		}
+	a{
+		color: $white;
+		margin-bottom: 10px;
+		clear: both;
+		margin-left: 1.2%;
+		margin-bottom: 1.2%;
+	}
+	a:hover
+	{
+		color: $yellow;
+	}
 }
 
 /* Footer */
@@ -297,5 +370,8 @@ footer
 
 	a{
 		color: $white;
+	}
+	a:hover{
+		color: $lightblue;
 	}
 }
