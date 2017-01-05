@@ -56,7 +56,6 @@ class RecipeController extends Controller
             'bereidingswijze' => 'required',
             'voedingswaarde' => 'required',
             'image' => 'required|image',
-            'diets' => 'required',
         ]);
 
         $recipe = new Recipe;
@@ -75,7 +74,11 @@ class RecipeController extends Controller
         //--
 
         $recipe->save();
-        $recipe->diets()->sync($request->diets, false);
+
+        if($request->diets){
+            $recipe->diets()->sync($request->diets, false);
+        }
+
 
         return redirect()->route('recipes.show', $recipe->id);
     }
@@ -170,42 +173,37 @@ class RecipeController extends Controller
         $user = Auth::user();
 
 
-//-------------------------------
+        $historyRecipes = $user->histories()->pluck('history_id')->toArray();
+        $userDietsIds = $user->diets->pluck('id')->toArray(); 
 
 
 
-//-------------------------------
-        // $diets = Diet::all();
+        if($user->diets->isEmpty()){
+            $recipe = Recipe::all()->random(1);
+        }
+        else{
 
-        // $userDietsIds = $user->diets->pluck('id')->toArray(); //8, 14
+            $recipess = Recipe::whereHas('diets', function($q)
+            {
+                $user = Auth::user();
+                $userDietsIds = $user->diets->pluck('id')->toArray(); 
+                
+                $q->whereIn('diet_id', $userDietsIds);
 
-        // $allDiets = Diet::all()->pluck('id')->toArray(); // 8, 14, 15, 16
+            })->pluck('id')->toArray();
 
-        // $dietsNotFromUser = Diet::findMany(array_diff($allDiets, $userDietsIds)); // dieeten 15 en 16 zitten niet in die van de gebruiker
+        }
 
-        // $randomDiet = $dietsNotFromUser->random(1);
+        $recipes = array_diff($recipess, $historyRecipes);
 
-        // $recipesFromRandomDiet = $randomDiet->recipes;
-
-        // $recipe = $recipesFromRandomDiet->random(1); //HOUDT REKENING MET DIEETEN
-
-        
-
-        $recipe = Recipe::whereHas('diets', function($q)
-        {
-            $user = Auth::user();
-            $userDietsIds = $user->diets->pluck('id')->toArray(); //8, 14
-            $q->where('diet_id', '=', [$userDietsIds]);
-        })->get()->random(1);
-
-
+        $recipe = Recipe::findMany(array_diff($recipess, $historyRecipes))->random(1);
 
 
 //-------------------------------
 
         if($clicked){
             $generatedRecipe = $recipe->id;
-            if ($user->histories()->count() < 5) {
+            if ($user->histories()->count() <= 4) {
                 $user->histories()->sync([$generatedRecipe], false);
 
                 return view('/home')->with('recipe', $recipe)->with('clicked', $clicked)->with('user', $user);
