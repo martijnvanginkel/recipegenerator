@@ -39,7 +39,7 @@
       <input type="checkbox" name="allergy_6" value=""> -->
 
 
-      <label name="diets[]" for="diets">Dieet:</label>
+      <label name="diets[]" for="diets">Dit gerecht past binnen de volgende dieeten:</label>
 
         <ul>
       @foreach($diets as $diet)
