@@ -66,10 +66,9 @@
     <h1>Favorieten</h1>
     <div class="slide-favorieten">
 
-
     @foreach($user->recipes as $recipe)
       <div>
-        <a href="{{ route('favorites', $recipe->id) }}"><img src="{{ asset('img/' . $recipe->image) }}"></a>
+        <a href="{{ route('favorite-recipes', $recipe->id) }}"><img src="{{ asset('img/' . $recipe->image) }}"></a>
       </div>
     @endforeach
 
@@ -79,8 +78,8 @@
     <h1>Recent bekeken</h1>
     <div class="slide-favorieten">
 
-    @foreach($user->histories->reverse() as $history)
-    	<a href=""><img src="{{ asset('img/' . $history->image) }}"></a>
+    @foreach($user->histories as $recipe)
+    	<a href="{{ route('history-recipes', $recipe->id) }}"><img src="{{ asset('img/' . $recipe->image) }}"></a>
     @endforeach
  
     </div>

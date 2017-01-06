@@ -137,7 +137,8 @@ class UserController extends Controller
 
     public function favorite($id)
     {
-
+        $recipe = Recipe::find($id);
+        return view('pages.favorites')->with('recipe', $recipe);
     }
 
     public function history($id)

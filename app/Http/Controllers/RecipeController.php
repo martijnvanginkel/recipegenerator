@@ -71,10 +71,11 @@ class RecipeController extends Controller
         $location = public_path('img/' . $filename);
         Image::make($image)->resize(900, 250)->save($location);
         $recipe->image = $filename;
-        //--
 
+        //recept opslaan
         $recipe->save();
 
+        //koppel het recept aan een dieet als die zijn aangegeven
         if($request->diets){
             $recipe->diets()->sync($request->diets, false);
         }
@@ -93,7 +94,7 @@ class RecipeController extends Controller
     {
         //zoek het recept die je hebt aangeklikt op in de database
         $recipe = Recipe::find($id);
-        //
+        
         return view('recipes.show')->with('recipe', $recipe);
     }
 
@@ -142,13 +143,13 @@ class RecipeController extends Controller
             Image::make($image)->resize(900, 250)->save($location);
             $oldFilename = $recipe->image;
         
-            //opslaan in database
             $recipe->image = $filename;
 
             //verwijder de vorige foto
             Storage::delete($oldFilename);
         }
 
+        //sla het recept opnieuw op
         $recipe->save();
 
         return redirect()->route('recipes.show', $recipe->id);
@@ -172,14 +173,15 @@ class RecipeController extends Controller
         $clicked =  Input::get('genereer');
         $user = Auth::user();
 
-
         $historyRecipes = $user->histories()->pluck('history_id')->toArray();
         $userDietsIds = $user->diets->pluck('id')->toArray(); 
 
-
+        $allRecipes = Recipe::all()->pluck('id')->toArray();
 
         if($user->diets->isEmpty()){
-            $recipe = Recipe::all()->random(1);
+
+            $recipe = Recipe::findMany(array_diff($allRecipes, $historyRecipes))->random(1);
+
         }
         else{
 
@@ -192,14 +194,9 @@ class RecipeController extends Controller
 
             })->pluck('id')->toArray();
 
+            $recipe = Recipe::findMany(array_diff($recipess, $historyRecipes))->random(1);
+
         }
-
-        $recipes = array_diff($recipess, $historyRecipes);
-
-        $recipe = Recipe::findMany(array_diff($recipess, $historyRecipes))->random(1);
-
-
-//-------------------------------
 
         if($clicked){
             $generatedRecipe = $recipe->id;
@@ -223,10 +220,6 @@ class RecipeController extends Controller
         return view('/home')->with('clicked', $clicked);
     }
 
-    public function history()
-    {
-
-    }
 
     public function favorite(request $request) 
     {
