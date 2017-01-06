@@ -15,6 +15,7 @@ Route::get('/', 'PagesController@getIndex');
 
 Route::resource('recipes', 'RecipeController');
 Route::resource('diets', 'DietController', ['except' => ['create']]);
+Route::resource('allergies', 'AllergyController');
 Route::resource('users', 'UserController', ['except' => ['show']]);
 
 Route::get('/users/favorites/{id}', 'UserController@favorite')->name('favorite-recipes');
