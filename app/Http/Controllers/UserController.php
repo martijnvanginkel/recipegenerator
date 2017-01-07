@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\User;
 use App\Diet;
+use App\Allergy;
 use App\Recipe;
 use DB;
 use Auth;
@@ -36,9 +37,9 @@ class UserController extends Controller
         //vergelijk arrays en zoek naar verschillen in id's
         $dietsDifference = array_diff($allDietsArray, $userDietsArray);
         //zoek de dieeten die bij de verschillende id's horen
-        $diets = Diet::findMany($dietsDifference);
+        $notChosenDiets = Diet::findMany($dietsDifference);
 
-        return view ('users.index')->with('user', $user)->with('diets', $diets);
+        return view ('users.index')->with('user', $user)->with('notChosenDiets', $notChosenDiets);
     }
 
     /**
@@ -69,6 +70,7 @@ class UserController extends Controller
             $user->diets()->sync([$diet], false);
             return redirect()->route('users.index', $diet);
         }
+
     }
 
     /**
@@ -91,13 +93,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = Auth::user();
-       
-        $diets = Diet::all();
 
-        $userDiets = $user->diets()->get();
-
-        return view('users.edit')->with('diets', $diets)->with('user', $user)->with('userDiets', $userDiets);
     }
 
     /**
@@ -137,7 +133,8 @@ class UserController extends Controller
 
     public function favorite($id)
     {
-
+        $recipe = Recipe::find($id);
+        return view('pages.favorites')->with('recipe', $recipe);
     }
 
     public function history($id)

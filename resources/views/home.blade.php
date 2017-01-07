@@ -2,6 +2,18 @@
 
 @section('content')
 <section id=container_generator>
+
+  <div>                          
+    <a href="{{ url('/logout') }}"
+        onclick="event.preventDefault();
+               document.getElementById('logout-form').submit();">
+            Uitloggen
+    </a>
+
+     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+         {{ csrf_field() }}
+     </form>
+  </div>
   <a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
   <a href="/users"><img id="profile" src="img/icons/Profiel.png" alt="Profiel" width="50px" heigt="50px"></a>
 

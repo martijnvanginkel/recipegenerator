@@ -96,12 +96,6 @@ class DietController extends Controller
      */
     public function destroy($id)
     {
-        // $user = User::all();
-        // $diet = Diet::find($id);
-        // $user->diets()->detach($diet);
-
-        // return redirect()->route('diets.index');
-
         $diet = Diet::find($id);
         $diet->delete();
         return redirect()->route('diets.index');

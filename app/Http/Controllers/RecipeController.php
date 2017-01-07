@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Recipe;
 use App\Diet;
+use App\Allergy;
 use App\User;
 use Image;
 use Auth;
@@ -37,7 +38,8 @@ class RecipeController extends Controller
     public function create()
     {
         $diets = Diet::all();
-        return view('recipes.create')->with('diets', $diets);
+        $allergies = Allergy::all();
+        return view('recipes.create')->with('diets', $diets)->with('allergies', $allergies);
     }
 
     /**
@@ -56,7 +58,6 @@ class RecipeController extends Controller
             'bereidingswijze' => 'required',
             'voedingswaarde' => 'required',
             'image' => 'required|image',
-            'diets' => 'required',
         ]);
 
         $recipe = new Recipe;
@@ -72,10 +73,17 @@ class RecipeController extends Controller
         $location = public_path('img/' . $filename);
         Image::make($image)->resize(900, 250)->save($location);
         $recipe->image = $filename;
-        //--
 
+        //recept opslaan
         $recipe->save();
-        $recipe->diets()->sync($request->diets, false);
+
+        //koppel het recept aan een dieet als die zijn aangegeven
+        if($request->diets){
+            $recipe->diets()->sync($request->diets, false);
+        }
+        if($request->allergies){
+            $recipe->allergies()->sync($request->allergies, false);
+        }
 
         return redirect()->route('recipes.show', $recipe->id);
     }
@@ -90,7 +98,7 @@ class RecipeController extends Controller
     {
         //zoek het recept die je hebt aangeklikt op in de database
         $recipe = Recipe::find($id);
-        //
+        
         return view('recipes.show')->with('recipe', $recipe);
     }
 
@@ -139,13 +147,13 @@ class RecipeController extends Controller
             Image::make($image)->resize(900, 250)->save($location);
             $oldFilename = $recipe->image;
         
-            //opslaan in database
             $recipe->image = $filename;
 
             //verwijder de vorige foto
             Storage::delete($oldFilename);
         }
 
+        //sla het recept opnieuw op
         $recipe->save();
 
         return redirect()->route('recipes.show', $recipe->id);
@@ -169,43 +177,34 @@ class RecipeController extends Controller
         $clicked =  Input::get('genereer');
         $user = Auth::user();
 
+        $historyRecipes = $user->histories()->pluck('history_id')->toArray();
+        $userDietsIds = $user->diets->pluck('id')->toArray(); 
 
-//-------------------------------
+        $allRecipes = Recipe::all()->pluck('id')->toArray();
 
+        if($user->diets->isEmpty()){
 
+            $recipe = Recipe::findMany(array_diff($allRecipes, $historyRecipes))->random(1);
 
-//-------------------------------
-        // $diets = Diet::all();
+        }
+        else{
 
-        // $userDietsIds = $user->diets->pluck('id')->toArray(); //8, 14
+            $recipess = Recipe::whereHas('diets', function($q)
+            {
+                $user = Auth::user();
+                $userDietsIds = $user->diets->pluck('id')->toArray(); 
+                
+                $q->whereIn('diet_id', $userDietsIds);
 
-        // $allDiets = Diet::all()->pluck('id')->toArray(); // 8, 14, 15, 16
+            })->pluck('id')->toArray();
 
-        // $dietsNotFromUser = Diet::findMany(array_diff($allDiets, $userDietsIds)); // dieeten 15 en 16 zitten niet in die van de gebruiker
+            $recipe = Recipe::findMany(array_diff($recipess, $historyRecipes))->random(1);
 
-        // $randomDiet = $dietsNotFromUser->random(1);
-
-        // $recipesFromRandomDiet = $randomDiet->recipes;
-
-        // $recipe = $recipesFromRandomDiet->random(1); //HOUDT REKENING MET DIEETEN
-
-        
-
-        $recipe = Recipe::whereHas('diets', function($q)
-        {
-            $user = Auth::user();
-            $userDietsIds = $user->diets->pluck('id')->toArray(); //8, 14
-            $q->where('diet_id', '=', [$userDietsIds]);
-        })->get()->random(1);
-
-
-
-
-//-------------------------------
+        }
 
         if($clicked){
             $generatedRecipe = $recipe->id;
-            if ($user->histories()->count() < 5) {
+            if ($user->histories()->count() <= 4) {
                 $user->histories()->sync([$generatedRecipe], false);
 
                 return view('/home')->with('recipe', $recipe)->with('clicked', $clicked)->with('user', $user);
@@ -225,19 +224,14 @@ class RecipeController extends Controller
         return view('/home')->with('clicked', $clicked);
     }
 
-    public function history()
-    {
-
-    }
 
     public function favorite(request $request) 
     {
-        $diets = Diet::all();
         $user = Auth::user();
         $recipe = $request->recipe_id;
         $user->recipes()->sync([$recipe], false);
 
-        return view('users.index')->with('user', $user)->with('diets', $diets);
+        return view('users.index')->with('user', $user);
     }
 
 

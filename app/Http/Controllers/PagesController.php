@@ -8,8 +8,4 @@ class PagesController extends Controller {
 		return view('pages.welcome');
 	}
 
-	public function getProfile() {
-		return view('pages.profile');
-	}
-
 }
