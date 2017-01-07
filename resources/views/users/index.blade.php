@@ -1,8 +1,8 @@
 @extends('main')
 
 @section('content')
-  
-	<div>                          
+
+	<div class="logout">                          
 		<a href="{{ url('/logout') }}"
 	    	onclick="event.preventDefault();
 	             document.getElementById('logout-form').submit();">
@@ -80,7 +80,7 @@
     @foreach($user->histories->reverse() as $recipe)
     	<a href="{{ route('history-recipes', $recipe->id) }}"><img src="{{ asset('img/' . $recipe->image) }}"></a>
     @endforeach
- 
+
     </div>
   </section>
 

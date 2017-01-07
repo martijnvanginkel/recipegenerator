@@ -57,6 +57,29 @@ main
 	width: 80px;
 }
 
+.logout
+{
+	width: fit-content;
+	width: -moz-fit-content;
+	float: right;
+
+	a
+	{
+		color: $white;
+		text-decoration: none;
+	}
+	a:hover{
+		color: $yellow;
+	}
+}
+
+.home
+{
+	right: 3.3%;
+	top: 17%;
+	position: absolute;
+}
+
 #container_generator
 {
 	width: 100%;
