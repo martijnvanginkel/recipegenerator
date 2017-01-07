@@ -15,11 +15,8 @@
 
   <br>
 </section>
-
-<section id="container_recept">
-
 @if($clicked)
-
+<section id="container_recept">
   <script type="text/javascript">
     $(document).ready(function(){
       $('html, body').delay(1500).animate({
