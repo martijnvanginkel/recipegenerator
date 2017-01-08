@@ -38,8 +38,7 @@ class RecipeController extends Controller
     public function create()
     {
         $diets = Diet::all();
-        $allergies = Allergy::all();
-        return view('recipes.create')->with('diets', $diets)->with('allergies', $allergies);
+        return view('recipes.create')->with('diets', $diets);
     }
 
     /**
@@ -218,7 +217,6 @@ class RecipeController extends Controller
                 return view('/home')->with('recipe', $recipe)->with('clicked', $clicked)->with('user', $user);
             }
 
-
         }
 
         return view('/home')->with('clicked', $clicked);
@@ -231,7 +229,7 @@ class RecipeController extends Controller
         $recipe = $request->recipe_id;
         $user->recipes()->sync([$recipe], false);
 
-        return view('users.index')->with('user', $user);
+        return redirect()->route('users.index');
     }
 
 

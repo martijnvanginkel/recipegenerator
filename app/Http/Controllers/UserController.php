@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\User;
 use App\Diet;
-use App\Allergy;
 use App\Recipe;
 use DB;
 use Auth;

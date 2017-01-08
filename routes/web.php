@@ -13,9 +13,7 @@
 
 Route::get('/', 'PagesController@getIndex');
 
-Route::resource('recipes', 'RecipeController');
-Route::resource('diets', 'DietController', ['except' => ['create']]);
-Route::resource('allergies', 'AllergyController');
+//Route::resource('recipes', 'RecipeController');
 Route::resource('users', 'UserController', ['except' => ['show']]);
 
 Route::get('/users/favorites/{id}', 'UserController@favorite')->name('favorite-recipes');
@@ -37,6 +35,14 @@ Route::post('/recipes/{recipe}/comments', 'CommentsController@store');
 
 Auth::routes();
 
+// Route::get('admin_area', ['middleware' => 'admin', function () {
+    
+// }]);
+
+Route::group(['middleware' => ['admin']], function () {
+    Route::resource('recipes', 'RecipeController');
+    Route::resource('diets', 'DietController', ['except' => ['create']]);
+});
 
 
 //Route::get('/home', 'HomeController@index'); // VERWIJST OOK NAAR AUTHENTICATION IN HOMECONTROLLER. __CONSTRUCT /staat alleen homepage toe als ingelogt

@@ -38,16 +38,6 @@
         @endforeach
       </ul>
 
-      <label name="allergies[]" for="allergies">Dit recept bevat: (en kan iemand met deze allergieën dus niet maken)</label>
-
-        <ul>
-      @foreach($allergies as $allergy)
-        <li> <input name="allergies[]" type="checkbox" id="{{$allergy->titel}}" value="{{ $allergy->id }}" ><label for="{{$allergy->titel}}" >{{$allergy->titel}}</label> </li>
-        @endforeach
-      </ul>
-
-
-
       <input id="toevoegknop" type="submit" value="Klik hier om het recept toe te voegen">
 
       <input type="hidden" name="_token" value="{{ Session::token() }}">
