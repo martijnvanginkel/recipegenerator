@@ -222,12 +222,13 @@ main
 	width: 100%;
 	background-color: $white;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	background-color: $yellow;
 
 	#form_new_recipe
 	{
-		// display: flex;
+		margin: 0 auto;
+
 		input[type="submit"]
 		{
 			background-color: $lightblue;
@@ -246,13 +247,39 @@ main
 		{
 			border: none;
 			background-color: $lightgrey;
-				// font-size: ;
+			width: 580px;
+			height: 180px;
+			font-size: 150%;
 		}
 	}
 
 	.comments
 	{
-			display: flex;
+			justify-content: center;
+			width: 580px;
+			margin: 0 auto;
+
+			h1
+			{
+					width: fit-content;
+			}
+
+			li
+			{
+				margin-bottom: 1.2%;
+			}
+
+			.name
+			{
+					font-size: 120%;
+					 text-transform: capitalize;
+			}
+
+			hr
+			{
+					border-style: solid;
+					margin-top: 2.2%;
+			}
 	}
 }
 
@@ -332,6 +359,9 @@ header{
 	width: 900px;
 	margin: 0 auto;
 	background-color: $lightblue;
+	margin-bottom: 125px;
+	margin-top: 125px;
+
 
 	h1
 	{

@@ -3,7 +3,7 @@
 @section('content')
 <section id=container_generator>
 
-  <div class="logout home">                          
+  <div class="logout home">
     <a href="{{ url('/logout') }}"
         onclick="event.preventDefault();
                document.getElementById('logout-form').submit();">
@@ -54,7 +54,6 @@
      {{ csrf_field() }}
       <input type="hidden" name="recipe_id" id="favorited" value="{{ $recipe->id }}">
       <input type="submit" class="icon-favorite" name="favorited" value="Voeg {{$recipe->titel}} als Favoriet">
-
     </form>
 
     <h1>{{ $recipe->titel }}</h1>
@@ -97,22 +96,23 @@
 
     <h1>Reageren</h1>
 
-    <textarea name="comment" id="comment" rows="8" cols="80"></textarea><br>
+    <textarea name="comment" id="comment"></textarea><br>
 
     <input type="submit" value="Reageer">
 
     <input type="hidden" name="_token" value="{{ Session::token() }}">
   </form>
+
   <div class="comments">
     <h1>Reactie's</h1>
       <ul>
         @foreach ($recipe->comments as $comment)
-          <li>{{ $comment->name }}</li>
+          <li class="name">{{ $comment->name }}</li>
           <li>{{ $comment->comment }}</li>
-
+          <hr>
         @endforeach
       </ul>
-      </div>
+  </div>
     @endif
 </section>
 @endsection
