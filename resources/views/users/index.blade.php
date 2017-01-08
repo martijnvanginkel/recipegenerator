@@ -14,6 +14,13 @@
 	   </form>
 	</div>
 
+	<div>
+		@if (Auth::user()->admin == 1)
+			<a href="{{ route('recipes.index') }}">Recepten</a>
+			<a href="{{ route('diets.index') }}">Diëten</a>
+		@endif
+	</div>
+
 	<header>
 		<a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
 		<div class="wrapper">

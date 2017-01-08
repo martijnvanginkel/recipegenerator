@@ -17,13 +17,23 @@
   <a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
   <a href="/users"><img id="profile" src="img/icons/Profiel.png" alt="Profiel" width="50px" heigt="50px"></a>
 
-  <form id="generator" method="POST" action=" {{ route('recipe-generate') }} ">
+  <form id="generator" method="POST" action="{{ route('recipe-generate') }} ">
     {{ csrf_field() }}
     <input type="image" src="/img/rad.svg" name="genereer" value="Genereer" id="generateButton" alt="Submit" action="">
 
     <input type="hidden" name="_token" value="{{ Session::token() }}">
     {{ method_field('get') }}
   </form>
+
+
+{{-- <script type="text/javascript">
+    $('#generator').click(function(){
+      $.ajax({
+        type:"POST",
+        url: "{{route ('recipe-generate')}}",
+      });
+    });
+</script>   --}}
 
   <br>
 </section>
@@ -63,17 +73,7 @@
       <!-- vanuit PHP -->
       <p>{{ $recipe->voedingswaarde }}</p>
     </div>
-
-{{--   <script type="text/javascript">
-    $('#favorited').click(function(){
-      $.ajax({
-        type:"POST",
-        url: "{{route ('recipe-favorite')}}",
-        data: {id:1},
-      });
-    });
-
-    </script>   --}}
+  
 
     <div id="social_media">
       <a href="#"><img class="icon" src="/img/icons/Twitter.png" alt="Twitter icon"></a>

@@ -13,6 +13,7 @@
 
 Route::get('/', 'PagesController@getIndex');
 
+
 //Route::resource('recipes', 'RecipeController');
 Route::resource('users', 'UserController', ['except' => ['show']]);
 
@@ -34,10 +35,6 @@ Route::delete('/users.index/{id}', 'UserController@destroyDiet')->name('destroy-
 Route::post('/recipes/{recipe}/comments', 'CommentsController@store');
 
 Auth::routes();
-
-// Route::get('admin_area', ['middleware' => 'admin', function () {
-    
-// }]);
 
 Route::group(['middleware' => ['admin']], function () {
     Route::resource('recipes', 'RecipeController');

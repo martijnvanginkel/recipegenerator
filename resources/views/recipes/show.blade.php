@@ -20,4 +20,6 @@
 		<!-- vanuit PHP -->
 		<p>{{ $recipe->voedingswaarde }}</p>
 	</div>
-</section>@endsection
+</section>
+
+@endsection
