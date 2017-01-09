@@ -62,15 +62,20 @@ main
 	width: fit-content;
 	width: -moz-fit-content;
 	float: right;
+}
 
-	a
-	{
-		color: $white;
-		text-decoration: none;
-	}
-	a:hover{
-		color: $yellow;
-	}
+.admin_menu
+{
+	float: right;
+}
+
+a
+{
+	color: $white;
+	text-decoration: none;
+}
+a:hover{
+	color: $yellow;
 }
 
 .home
