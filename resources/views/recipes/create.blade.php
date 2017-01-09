@@ -4,7 +4,7 @@
 
 
   <div id="container">
-    <form id="form_new_recipe" method="POST" action=" {{ route('recipes.store') }} " enctype="multipart/form-data">
+    <form id="forms" method="POST" action=" {{ route('recipes.store') }} " enctype="multipart/form-data">
 
       @if (count($errors) > 0)
             <div class="alert alert-danger">
@@ -22,13 +22,13 @@
     <input type="file" name="image" accept="image"/>
       </label>
       <label name="title">Titel:</label>
-      <textarea placeholder="Typ hier de titel van dit gerecht" cols="30" rows="2" type="text" name="titel" id="titel"></textarea>
+      <textarea placeholder="Typ hier de titel van dit gerecht" rows="2" type="text" name="titel" id="titel"></textarea>
       <label name="ingredienten" for="">Ingrediënten:</label>
-      <textarea placeholder="Typ hier de ingrediënten die zijn gebruikt voor dit gerecht" cols="30" rows="5" type="text" name="ingredienten" id="ingredienten" value=""></textarea>
+      <textarea placeholder="Typ hier de ingrediënten die zijn gebruikt voor dit gerecht" rows="5" type="text" name="ingredienten" id="ingredienten" value=""></textarea>
       <label name="bereidingswijze">Bereidingswijze:</label>
-      <textarea placeholder="Typ hier hoe dit gerecht klaargemaakt wordt" cols="30" rows="5" type="text" name="bereidingswijze" id="bereidingswijze"></textarea>
+      <textarea placeholder="Typ hier hoe dit gerecht klaargemaakt wordt" rows="5" type="text" name="bereidingswijze" id="bereidingswijze"></textarea>
       <label name="voedingswaarde" for="">Voedingswaarden:</label>
-      <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" cols="30" rows="5" name="voedingswaarde" id="voedingswaarde"></textarea>
+      <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="voedingswaarde" id="voedingswaarde"></textarea>
 
       <label name="diets[]" for="diets">Dit recept past binnen de volgende dieeten:</label>
 
