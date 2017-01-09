@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<div class="logout">                          
+	<div class="logout">
 		<a href="{{ url('/logout') }}"
 	    	onclick="event.preventDefault();
 	             document.getElementById('logout-form').submit();">
@@ -14,7 +14,7 @@
 	   </form>
 	</div>
 
-	<div>
+	<div class="admin_menu">
 		@if (Auth::user()->admin == 1)
 			<a href="{{ route('recipes.index') }}">Recepten</a>
 			<a href="{{ route('diets.index') }}">Diëten</a>
@@ -90,8 +90,8 @@
 
     </div>
   </section>
-	
-	<section>	
+
+	<section>
 	   <div class="comments">
 	    <h1>Reactie's</h1>
 	      <ul>
