@@ -100,7 +100,6 @@
         @foreach ($recipe->comments as $comment)
           <li>{{ $comment->name }}</li>
           <li>{{ $comment->comment }}</li>
-
         @endforeach
       </ul>
       </div>
