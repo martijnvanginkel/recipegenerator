@@ -9,11 +9,17 @@ use App\Recipe;
 
 class CommentsController extends Controller
 {
+    public function index()
+    {
+        $comments = Comment::all();
+
+        return view('users.index')->with('comments', $comments);
+    }
+
     //plaatsen van reactie op home pagina
     public function store(Request $request, Recipe $recipe)
     {
         $user = Auth::user();
-
 
         $this->validate($request,
         [
@@ -22,8 +28,7 @@ class CommentsController extends Controller
 
         $comment = new Comment;
 
-        $comment->name = $user->name;
-        $comment->email = $user->email;
+        $comment->user_id= $user->id;
         $comment->comment = $request->comment;
 
         $recipe->comments()->save($comment);
@@ -50,7 +55,7 @@ class CommentsController extends Controller
 
         $comment->comment = $request->comment;
 
-        $recipe->comments()->save($comment);
+        $user->comments()->save($comment);
 
         return redirect()->route('users.index');
     }
