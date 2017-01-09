@@ -22,6 +22,11 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Recipe', 'history_user', 'user_id', 'history_id');
     }
+
+     public function comments()
+    {
+        return $this->belongsToMany('App\Comment');
+    }
     
     use Notifiable;
 
