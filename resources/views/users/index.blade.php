@@ -95,7 +95,11 @@
 	   <div class="comments">
 	    <h1>Reactie's</h1>
 	      <ul>
-			@foreach ($recipe->comments as $comment)
+			<p>{{ $user->comments->pluck('comment') }}</p>
+			@foreach ($comments as $comment)
+			<p>{{ $comment }}</p>
+			@endforeach
+			<!-- @foreach ($recipe->comments as $comment)
 	          <li>{{ $recipe->titel }}</li>
 	          <li>{{ $comment->comment }}</li>
 	          <li>
@@ -109,7 +113,7 @@
 		    	<p></p>
 				<a href=" {{ route('comments-edit', $comment->id) }} ">Wijzig</a></td>
 		      </li>
-	        @endforeach
+	        @endforeach -->
 	      </ul>
       </div>
     </section>
