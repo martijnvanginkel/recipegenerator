@@ -15,7 +15,7 @@
                 </ul>
             </div>
       @endif
-      <h1>Recepten toevoegen</h1>
+      <h1 id="head">Recepten toevoegen</h1>
       <label for="">Afbeelding:</label>
       <label class="afbeeldingknop" id="afbeeldingknop">
     Klik hier om een afbeelding te uploaden

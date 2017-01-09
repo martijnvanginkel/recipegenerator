@@ -6,7 +6,7 @@
 <div id="container">
     
 <form id="forms" method="POST" action="{{ route('recipes.update', $recipe->id) }}" enctype="multipart/form-data">
-    <h1>Recept wijzigen</h1>
+    <h1 id="head">Recept wijzigen</h1>
      <!-- <label name="title">Titel:</label>
      <textarea placeholder="Typ hier de titel van dit gerecht" cols="30" rows="2" type="text" name="titel" id="titel"></textarea>
       <label name="ingredienten" for="">Ingrediënten:</label>
