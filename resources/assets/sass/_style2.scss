@@ -22,13 +22,13 @@ ul {
 
 /*Login scherm opmaak*/
 
-#login-screen{
+#login-screen, #register-screen{
 	width: 300px;
     margin: 0 auto; 
 }
 
 
-#email, #password{
+#email, #password, #name{
 	margin: 20px auto;
 	width: 300px;
 	resize: none;
