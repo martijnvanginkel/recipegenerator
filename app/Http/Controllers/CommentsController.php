@@ -11,9 +11,7 @@ class CommentsController extends Controller
 {
     public function index()
     {
-        $comments = Comment::all();
 
-        return view('users.index')->with('comments', $comments);
     }
 
     //plaatsen van reactie op home pagina
@@ -57,12 +55,15 @@ class CommentsController extends Controller
 
         $user->comments()->save($comment);
 
+        $comments = Comment::all();
+
         return redirect()->route('users.index');
     }
 
     //verwijderen van reactie op user pagina
     public function destroy($id)
     {
+        $user = Auth::user();
         $comment = Comment::find($id);
         $comment->delete();
         return redirect()->route('users.index');
