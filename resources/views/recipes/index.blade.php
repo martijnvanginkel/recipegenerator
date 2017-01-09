@@ -35,5 +35,6 @@
 				</tr>
 			@endforeach
 	</table>
+	<a href="{{ route('users.index') }}">Terug</a>
 </div>
 @endsection

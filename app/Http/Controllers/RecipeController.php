@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Recipe;
 use App\Diet;
+use App\Allergy;
 use App\User;
 use Image;
 use Auth;
@@ -79,7 +80,9 @@ class RecipeController extends Controller
         if($request->diets){
             $recipe->diets()->sync($request->diets, false);
         }
-
+        if($request->allergies){
+            $recipe->allergies()->sync($request->allergies, false);
+        }
 
         return redirect()->route('recipes.show', $recipe->id);
     }
@@ -214,7 +217,6 @@ class RecipeController extends Controller
                 return view('/home')->with('recipe', $recipe)->with('clicked', $clicked)->with('user', $user);
             }
 
-
         }
 
         return view('/home')->with('clicked', $clicked);
@@ -223,12 +225,11 @@ class RecipeController extends Controller
 
     public function favorite(request $request) 
     {
-        $diets = Diet::all();
         $user = Auth::user();
         $recipe = $request->recipe_id;
         $user->recipes()->sync([$recipe], false);
 
-        return view('users.index')->with('user', $user)->with('diets', $diets);
+        return redirect()->route('users.index');
     }
 
 

@@ -13,8 +13,8 @@
 
 Route::get('/', 'PagesController@getIndex');
 
-Route::resource('recipes', 'RecipeController');
-Route::resource('diets', 'DietController', ['except' => ['create']]);
+
+//Route::resource('recipes', 'RecipeController');
 Route::resource('users', 'UserController', ['except' => ['show']]);
 
 Route::get('/users/favorites/{id}', 'UserController@favorite')->name('favorite-recipes');
@@ -38,6 +38,10 @@ Route::post('/users/{comments}', 'CommentsController@update')->name('comments-up
 
 Auth::routes();
 
+Route::group(['middleware' => ['admin']], function () {
+    Route::resource('recipes', 'RecipeController');
+    Route::resource('diets', 'DietController', ['except' => ['create']]);
+});
 
 
 //Route::get('/home', 'HomeController@index'); // VERWIJST OOK NAAR AUTHENTICATION IN HOMECONTROLLER. __CONSTRUCT /staat alleen homepage toe als ingelogt

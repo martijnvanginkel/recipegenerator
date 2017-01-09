@@ -30,24 +30,13 @@
       <label name="voedingswaarde" for="">Voedingswaarden:</label>
       <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" cols="30" rows="5" name="voedingswaarde" id="voedingswaarde"></textarea>
 
-      <!-- <label name="allergieen" for="">Allergieën:</label>
-      <input type="checkbox" name="allergy_1" value="">
-      <input type="checkbox" name="allergy_2" value="">
-      <input type="checkbox" name="allergy_3" value="">
-      <input type="checkbox" name="allergy_4" value="">
-      <input type="checkbox" name="allergy_5" value="">
-      <input type="checkbox" name="allergy_6" value=""> -->
-
-
-      <label name="diets[]" for="diets">Dit gerecht past binnen de volgende dieeten:</label>
+      <label name="diets[]" for="diets">Dit recept past binnen de volgende dieeten:</label>
 
         <ul>
       @foreach($diets as $diet)
         <li> <input name="diets[]" type="checkbox" id="{{$diet->titel}}" value="{{ $diet->id }}" ><label for="{{$diet->titel}}" >{{$diet->titel}}</label> </li>
         @endforeach
       </ul>
-
-
 
       <input id="toevoegknop" type="submit" value="Klik hier om het recept toe te voegen">
 

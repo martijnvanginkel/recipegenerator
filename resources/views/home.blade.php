@@ -2,10 +2,22 @@
 
 @section('content')
 <section id=container_generator>
+
+  <div class="logout home">
+    <a href="{{ url('/logout') }}"
+        onclick="event.preventDefault();
+               document.getElementById('logout-form').submit();">
+            Uitloggen
+    </a>
+
+     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+         {{ csrf_field() }}
+     </form>
+  </div>
   <a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
   <a href="/users"><img id="profile" src="img/icons/Profiel.png" alt="Profiel" width="50px" heigt="50px"></a>
 
-  <form id="generator" method="POST" action=" {{ route('recipe-generate') }} ">
+  <form id="generator" method="POST" action="{{ route('recipe-generate') }} ">
     {{ csrf_field() }}
     <input type="image" src="/img/rad.svg" name="genereer" value="Genereer" id="generateButton" alt="Submit" action="">
 
@@ -13,13 +25,20 @@
     {{ method_field('get') }}
   </form>
 
+
+{{-- <script type="text/javascript">
+    $('#generator').click(function(){
+      $.ajax({
+        type:"POST",
+        url: "{{route ('recipe-generate')}}",
+      });
+    });
+</script>   --}}
+
   <br>
 </section>
-
-<section id="container_recept">
-
 @if($clicked)
-
+<section id="container_recept">
   <script type="text/javascript">
     $(document).ready(function(){
       $('html, body').delay(1500).animate({
@@ -35,7 +54,6 @@
      {{ csrf_field() }}
       <input type="hidden" name="recipe_id" id="favorited" value="{{ $recipe->id }}">
       <input type="submit" class="icon-favorite" name="favorited" value="Voeg {{$recipe->titel}} als Favoriet">
-
     </form>
 
     <h1>{{ $recipe->titel }}</h1>
@@ -54,17 +72,7 @@
       <!-- vanuit PHP -->
       <p>{{ $recipe->voedingswaarde }}</p>
     </div>
-
-{{--   <script type="text/javascript">
-    $('#favorited').click(function(){
-      $.ajax({
-        type:"POST",
-        url: "{{route ('recipe-favorite')}}",
-        data: {id:1},
-      });
-    });
-
-    </script>   --}}
+  
 
     <div id="social_media">
       <a href="#"><img class="icon" src="/img/icons/Twitter.png" alt="Twitter icon"></a>
@@ -88,21 +96,24 @@
 
     <h1>Reageren</h1>
 
-    <textarea name="comment" id="comment" rows="8" cols="80"></textarea><br>
+    <textarea name="comment" id="comment"></textarea><br>
 
     <input type="submit" value="Reageer">
 
     <input type="hidden" name="_token" value="{{ Session::token() }}">
   </form>
+
   <div class="comments">
     <h1>Reactie's</h1>
       <ul>
         @foreach ($recipe->comments as $comment)
-          <li>{{ $comment->name }}</li>
+          <li class="name">{{ $comment->name }}</li>
           <li>{{ $comment->comment }}</li>
+          <hr>
+
         @endforeach
       </ul>
-      </div>
+  </div>
     @endif
 </section>
 @endsection
