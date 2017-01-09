@@ -95,8 +95,8 @@
 	   <div class="comments">
 	    <h1>Reactie's</h1>
 	      <ul>
-	        @foreach ($recipe->comments as $comment)
-	          <li>{{ $recipe->title }}</li>
+			@foreach ($recipe->comments as $comment)
+	          <li>{{ $recipe->titel }}</li>
 	          <li>{{ $comment->comment }}</li>
 	          <li>
 		        <form method="POST" action="{{ route('destroy-comment', $comment->id) }}">
