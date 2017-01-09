@@ -65,6 +65,8 @@
                                 <button id="register-button" type="submit" class="btn btn-primary">
                                     Registreren
                                 </button>
+
+                                <a href="{{ url('/login') }}">Of Log in</a>
                             </div>
                         </div>
 

@@ -57,6 +57,7 @@
                                 <a id="forgot-password" class="btn btn-link" href="{{ url('/password/reset') }}">
                                     Wachtwoord vergeten?
                                 </a>
+                                <a href="{{ url('/register') }}">Of Registreer</a>
                             
                         </div>
                     </form>
