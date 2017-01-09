@@ -37,7 +37,7 @@ ul {
 
 /*Login scherm opmaak*/
 /* line 29, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
-#login-screen, #register-screen {
+#login-screen, #register-screen, #password-screen, #diet-screen {
   width: 300px;
   margin: 0 auto;
 }
@@ -61,7 +61,7 @@ ul {
 }
 
 /* line 52, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
-#login-button, #register-button {
+#login-button, #register-button, #password-button {
   background-color: #F1C410;
   color: white;
   padding: 15px 32px;
