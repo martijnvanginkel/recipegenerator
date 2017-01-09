@@ -31,7 +31,7 @@ Route::post('/users.index', 'RecipeController@favorite')->name('recipe-favorite'
 Route::delete('/users.index/{id}', 'UserController@destroyDiet')->name('destroy-diet');
 
 Route::post('/recipes/{recipe}/comments', 'CommentsController@store');
-Route::delete('/recipes/{recipe}', 'CommentsController@destroy')->name('destroy-comment');
+Route::delete('/users', 'CommentsController@destroy')->name('destroy-comment');
 
 Route::get('/users/{comments}', 'CommentsController@edit')->name('comments-edit');
 Route::post('/users/{comments}', 'CommentsController@update')->name('comments-update');
