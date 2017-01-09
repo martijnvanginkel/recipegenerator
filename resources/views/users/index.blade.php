@@ -106,6 +106,7 @@
 		        </form>﻿
 		      </li>
 		      <li>
+		    	<p></p>
 				<a href=" {{ route('comments-edit', $comment->id) }} ">Wijzig</a></td>
 		      </li>
 	        @endforeach
