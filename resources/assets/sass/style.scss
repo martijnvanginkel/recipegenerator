@@ -46,7 +46,7 @@ main
 {
 	width: 10%;
 	margin-left: 3%;
-	margin-top: 3%;
+	margin-top: 1%;
 }
 
 #profile{
@@ -81,7 +81,7 @@ a:hover{
 .home
 {
 	right: 3.3%;
-	top: 17%;
+	top: 20%;
 	position: absolute;
 }
 
@@ -126,7 +126,7 @@ a:hover{
 #container_recept
 {
 	width: 100%;
-	background-color: $white;
+	// background-color: $white;
 	display: flex;
 	justify-content: center;
 	padding-top: 50px;
@@ -234,58 +234,55 @@ a:hover{
 	{
 		margin: 0 auto;
 
-		input[type="submit"]
-		{
-			background-color: $lightblue;
-			color: $white;
-			border: none;
-			float: right;
-			width: 100px;
-			height: 35px;
-		}
-		input[type="submit"]:hover
-		{
-				background-color:$white;
-				color: $lightblue;
-		}
 		textarea
 		{
 			border: none;
 			background-color: $lightgrey;
 			width: 580px;
-			height: 180px;
+			height: 140px;
 			font-size: 150%;
 		}
 	}
+}
 
-	.comments
-	{
-			justify-content: center;
+.comments
+{
+		background-color: $yellow;
+
+		.wrapper
+		{
 			width: 580px;
 			margin: 0 auto;
+		}
 
-			h1
-			{
-					width: fit-content;
-			}
+		h1
+		{
+				width: fit-content;
+		}
 
-			li
-			{
-				margin-bottom: 1.2%;
-			}
+		li
+		{
+			margin-bottom: 1.2%;
+		}
 
-			.name
-			{
-					font-size: 120%;
-					 text-transform: capitalize;
-			}
+		.name
+		{
+				font-size: 120%;
+				text-transform: capitalize;
+				color: $lightblue;
+		}
 
-			hr
-			{
-					border-style: solid;
-					margin-top: 2.2%;
-			}
-	}
+		hr
+		{
+				border-style: solid;
+				margin-top: 2.2%;
+		}
+}
+
+.user
+{
+	background-color: $white;
+	color: $black;
 }
 
 /* profile page */
@@ -417,26 +414,15 @@ header{
 	}
 }
 
+<<<<<<< HEAD
 #container_recipes_index
 
+=======
+.container_index
+>>>>>>> 6681eb4111ff777ce74f98992da94c4165d6a825
 {
 	width: fit-content;
 	margin: 0 auto;
-
-	.button
-	{
-		background-color: $yellow;
-		color: $white;
-		border: none;
-		width: 130px;
-		padding: 1%;
-	}
-
-	.button:hover
-	{
-		background-color: $white;
-		color: $yellow;
-	}
 
 	table, table a
 	{
@@ -534,7 +520,7 @@ footer
 
 			#image_recipe
 			{
-				height: 150px;	
+				height: 150px;
 			}
 
 			#ingredients
@@ -582,24 +568,67 @@ footer
 				margin-left: 1.2%;
 			}
 		}
-		.comments
-		{
-			width: 100%;
-			margin: 1.2%;
-		}
+	}
 
-		ul
-		{
-			width: 100%;
-		}
+	.comments
+	{
+		width: 100%;
 
-		hr
-		{
+		.wrapper{
 			width: 100%;
+			padding: 1.2%;
+			overflow: hidden;
 		}
 	}
+
+	ul
+	{
+		width: 100%;
+	}
+
+	hr
+	{
+		width: 100%;
+	}
+
 	.slide-favorieten
 	{
 		width: 80%;
 	}
+}
+
+.button
+{
+	background-color: $yellow;
+	color: $white;
+	border: none;
+	width: 130px;
+	padding: 1%;
+}
+
+.button:hover
+{
+	background-color: $white;
+	color: $yellow;
+}
+
+.blue
+{
+	background-color: $lightblue;
+	color: $white;
+	border: none;
+	float: right;
+	width: 100px;
+	height: 35px;
+	margin-bottom: 1.2%;
+}
+.blue:hover
+{
+		background-color:$white;
+		color: $lightblue;
+}
+
+.left
+{
+	float: none;
 }
