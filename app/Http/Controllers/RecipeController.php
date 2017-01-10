@@ -117,8 +117,8 @@ class RecipeController extends Controller
     {
         //zoek het recept die je hebt aangeklikt op in de database
         $recipe = Recipe::find($id);
-
-        return view('recipes.edit')->with('recipe', $recipe);
+        $foodrestrictions = Foodrestriction::all();
+        return view('recipes.edit')->with('recipe', $recipe)->with('foodrestrictions', $foodrestrictions);
     }
 
     /**
