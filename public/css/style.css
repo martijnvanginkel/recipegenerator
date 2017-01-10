@@ -56,7 +56,7 @@ ul {
 }
 
 /* line 49, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
-#login-button, #register-button, #password-button, #add-diet-button {
+.button, #login-button, #register-button, #password-button, #add-diet-button {
   background-color: #F1C410;
   color: white;
   padding: 15px 32px;
@@ -74,29 +74,85 @@ ul {
   margin-top: 20px;
 }
 
+/* Tabels */
+/* line 68, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#diet-table {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/* line 73, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#diet-table .button {
+  background-color: #F1C410;
+  color: #fff;
+  border: none;
+  width: 130px;
+  padding: 1%;
+}
+
+/* line 82, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#diet-table .button:hover {
+  background-color: #fff;
+  color: #F1C410;
+}
+
+/* line 88, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#diet-table table, #diet-table table a {
+  color: #313332;
+}
+
+/* line 93, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#diet-table table {
+  border-collapse: collapse;
+  margin-top: 1.2%;
+  margin-bottom: 1.2%;
+}
+
+/* line 100, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#diet-table th {
+  background-color: #009245;
+  color: #fff;
+}
+
+/* line 106, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#diet-table td, #diet-table th {
+  padding: 10px;
+  border: 1px solid #828383;
+}
+
+/* line 112, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#diet-table tr:nth-child(even) {
+  background-color: #fff;
+}
+
+/* line 116, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#diet-table tr:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+
 /* Formulieren stijl */
-/* line 75, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 128, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
 #container #forms {
   margin: 0 auto;
   color: white;
   width: 60%;
 }
 
-/* line 82, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 135, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
 #container #forms label {
   display: block;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-/* line 88, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 141, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
 #container #forms input, #container #forms textarea {
   margin-top: 20px;
   margin-bottom: 20px;
   display: block;
 }
 
-/* line 94, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 147, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
 #container #forms input[type=text], #container #forms textarea {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -108,7 +164,7 @@ ul {
   outline: none;
 }
 
-/* line 107, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 160, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
 #container #forms #afbeeldingknop [type=file] {
   cursor: inherit;
   display: inline-block;
@@ -120,7 +176,7 @@ ul {
   top: 0;
 }
 
-/* line 118, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 171, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
 #container #forms #toevoegknop, #container #forms #save-button, #container #forms #afbeeldingknop {
   background-color: #F1C410;
   color: white;
@@ -136,14 +192,14 @@ ul {
   outline: inherit;
 }
 
-/* line 143, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 196, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: absolute;
   left: -99999px;
 }
 
-/* line 148, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 201, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
 [type="checkbox"]:not(:checked) + label,
 [type="checkbox"]:checked + label {
   position: relative;
@@ -152,7 +208,7 @@ ul {
 }
 
 /* checkbox aspect */
-/* line 156, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 209, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
 [type="checkbox"]:not(:checked) + label:before,
 [type="checkbox"]:checked + label:before {
   content: '';
@@ -168,7 +224,7 @@ ul {
 }
 
 /* checked mark aspect */
-/* line 169, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 222, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
   content: '✔';
@@ -178,17 +234,17 @@ ul {
   font-size: 18px;
   line-height: 0.8;
   color: #54B364;
-  transition: all .35s;
+  transition: all 0.35s;
 }
 
 /* checked mark aspect changes */
-/* line 181, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 234, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
 [type="checkbox"]:not(:checked) + label:after {
   opacity: 0;
   transform: scale(0);
 }
 
-/* line 185, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 238, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
 [type="checkbox"]:checked + label:after {
   opacity: 1;
   transform: scale(1);
