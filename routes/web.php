@@ -29,7 +29,7 @@ Route::post('/home', 'RecipeController@generate')->name('recipe-generate');
 
 Route::post('/users.index', 'RecipeController@favorite')->name('recipe-favorite');
 
-Route::delete('/users.index/{id}', 'UserController@destroyDiet')->name('destroy-diet');
+Route::delete('/users.index/{id}', 'UserController@destroyFoodrestriction')->name('destroy-foodrestriction');
 Route::delete('/users.index/comment/{id}', 'CommentsController@destroy')->name('destroy-comment');
 
 Route::post('/recipes/{recipe}/comments', 'CommentsController@store');
@@ -41,6 +41,7 @@ Auth::routes();
 
 Route::group(['middleware' => ['admin']], function () {
     Route::resource('recipes', 'RecipeController');
+    Route::resource('foodrestrictions', 'FoodrestrictionController');
     Route::resource('diets', 'DietController', ['except' => ['create']]);
 });
 

@@ -17,7 +17,6 @@
   @endif
 
 
-<<<<<<< HEAD
 <h1 id="head">Recepten toevoegen</h1>
   <label for="">Afbeelding:</label>
     <label class="afbeeldingknop" id="afbeeldingknop">
@@ -37,11 +36,19 @@
   <label name="voedingswaarde" for="">Voedingswaarden:</label>
     <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="voedingswaarde" id="voedingswaarde"></textarea>
 
-  <label name="diets[]" for="diets">Dit recept past binnen de volgende diëten:</label>
+  <label name="foodrestrictions[]" for="foodrestrictions">Dit recept past binnen de volgende allergieën:</label>
 
     <ul>
-  @foreach($diets as $diet)
-      <li> <input name="diets[]" type="checkbox" id="{{$diet->titel}}" value="{{ $diet->id }}" ><label for="{{$diet->titel}}" >{{$diet->titel}}</label> </li>
+  @foreach($foodrestrictions->where('allergy', true) as $foodrestriction)
+      <li> <input name="foodrestrictions[]" type="checkbox" id="{{$foodrestriction->title}}" value="{{ $foodrestriction->id }}" ><label for="{{$foodrestriction->title}}" >{{$foodrestriction->title}}</label> </li>
+  @endforeach
+    </ul>
+
+    <label name="foodrestrictions[]" for="foodrestrictions">Dit recept past binnen de volgende diëten:</label>
+
+    <ul>
+  @foreach($foodrestrictions->where('diet', true) as $foodrestriction)
+      <li> <input name="foodrestrictions[]" type="checkbox" id="{{$foodrestriction->title}}" value="{{ $foodrestriction->id }}" ><label for="{{$foodrestriction->title}}" >{{$foodrestriction->title}}</label> </li>
   @endforeach
     </ul>
 
@@ -50,11 +57,11 @@
     <input type="hidden" name="_token" value="{{ Session::token() }}">
   </form>
 </div>
-=======
+
       <input type="hidden" name="_token" value="{{ Session::token() }}">
     </form>
 
     <a href=" {{ route('recipes.index') }} ">Terug</a>
   </div>
->>>>>>> eb732f809d5edcf97206896c44f89bd19536029c
+
 @endsection

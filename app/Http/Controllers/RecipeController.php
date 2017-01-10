@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Recipe;
 use App\Diet;
-use App\Allergy;
+use App\Foodrestriction;
 use App\User;
 use Image;
 use Auth;
@@ -39,8 +39,8 @@ class RecipeController extends Controller
     public function create()
     {
         //haalt de diëten op uit de database
-        $diets = Diet::all();
-        return view('recipes.create')->with('diets', $diets);
+        $foodrestrictions = Foodrestriction::all();
+        return view('recipes.create')->with('foodrestrictions', $foodrestrictions);
     }
 
     /**
@@ -84,11 +84,8 @@ class RecipeController extends Controller
         $recipe->save();
 
         //koppel het recept aan een dieet als die zijn aangegeven
-        if($request->diets){
-            $recipe->diets()->sync($request->diets, false);
-        }
-        if($request->allergies){
-            $recipe->allergies()->sync($request->allergies, false);
+        if($request->foodrestrictions){
+            $recipe->foodrestrictions()->sync($request->foodrestrictions, false);
         }
 
         return redirect()->route('recipes.show', $recipe->id);
@@ -200,23 +197,23 @@ class RecipeController extends Controller
         $user = Auth::user();
 
         $historyRecipes = $user->histories()->pluck('history_id')->toArray();
-        $userDietsIds = $user->diets->pluck('id')->toArray(); 
+        $userFoodrestrictionsIds = $user->foodrestrictions->pluck('id')->toArray(); 
 
         $allRecipes = Recipe::all()->pluck('id')->toArray();
 
-        if($user->diets->isEmpty()){
+        if($user->foodrestrictions->isEmpty()){
 
             $recipe = Recipe::findMany(array_diff($allRecipes, $historyRecipes))->random(1);
 
         }
         else{
 
-            $recipess = Recipe::whereHas('diets', function($q)
+            $recipess = Recipe::whereHas('foodrestrictions', function($q)
             {
                 $user = Auth::user();
-                $userDietsIds = $user->diets->pluck('id')->toArray(); 
+                $userFoodrestrictionsIds = $user->foodrestrictions->pluck('id')->toArray(); 
                 
-                $q->whereIn('diet_id', $userDietsIds);
+                $q->whereIn('foodrestriction_id', $userFoodrestrictionsIds);
 
             })->pluck('id')->toArray();
 

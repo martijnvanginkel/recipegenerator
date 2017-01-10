@@ -13,6 +13,11 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Diet');
     }
 
+    public function foodrestrictions()
+    {
+        return $this->belongsToMany('App\Foodrestriction');
+    }
+
     public function recipes()
     {
         return $this->belongsToMany('App\Recipe');

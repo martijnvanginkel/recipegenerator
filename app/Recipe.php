@@ -11,6 +11,11 @@ class Recipe extends Model
     	return $this->belongsToMany('App\Diet');
     }
 
+    public function foodrestrictions()
+    {
+        return $this->belongsToMany('App\Foodrestriction');
+    }
+
     public function users()
     {
     	return $this->belongsToMany('App\User');
