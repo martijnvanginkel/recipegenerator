@@ -40,9 +40,9 @@
 
 		<h1 id="head">Toegevoegde diëten</h1>
 
+<div id="container_recipes_index">
 
-
-			<table id="diet-table" >
+			<table id="container_recipes_index">
 				<tr>
 					<th>#</th>
 					<th>Dieet</th>
@@ -57,6 +57,7 @@
 			@endforeach
 	</table>
 
+</div>
 
   
 @endsection
