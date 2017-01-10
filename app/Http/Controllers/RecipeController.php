@@ -23,7 +23,7 @@ class RecipeController extends Controller
     {
         $this->middleware('auth');
     }
-
+    //laat alle recepten uit de database op de /recipe pagina zien
     public function index()
     {
         $recipes = Recipe::all();
@@ -35,8 +35,10 @@ class RecipeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //geeft de mogelijkheid om een recept toe te voegen
     public function create()
     {
+        //haalt de diëten op uit de database
         $diets = Diet::all();
         return view('recipes.create')->with('diets', $diets);
     }
@@ -49,7 +51,7 @@ class RecipeController extends Controller
      */
     public function store(Request $request)
     {
-        //validate data
+        //valideert de data
         $this->validate($request,
         [
             'titel' => 'required',
@@ -59,17 +61,22 @@ class RecipeController extends Controller
             'image' => 'required|image',
         ]);
 
+        //nieuw recept wordt aangemaakt
         $recipe = new Recipe;
 
+        //ingevulde data door de gebruiker wordt gevalideert door bovenstaande
         $recipe->titel = $request->titel;
         $recipe->ingredienten = $request->ingredienten;
         $recipe->bereidingswijze = $request->bereidingswijze;
         $recipe->voedingswaarde = $request->voedingswaarde;
 
-        //afbeelding toevoegen aan recept
+        //img toevoegen aan recept
         $image = $request->image;
+        //verandert de filenaam naar de tijd en datum, zodat er nooit dezelfde afbeeldingen in de database komen te staan
         $filename = time() . '.' . $image->getClientOriginalExtension();
+        //de locatie van de img
         $location = public_path('img/' . $filename);
+        //maakt de img aan, verandert de grootte en slaat hem op
         Image::make($image)->resize(900, 250)->save($location);
         $recipe->image = $filename;
 
@@ -93,6 +100,7 @@ class RecipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //laat een recept zien zoals hij in de database staat
     public function show($id)
     {
         //zoek het recept die je hebt aangeklikt op in de database
@@ -107,8 +115,10 @@ class RecipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //geeft de mogelijkheid op een recept te bewerken
     public function edit($id)
     {
+        //zoek het recept die je hebt aangeklikt op in de database
         $recipe = Recipe::find($id);
 
         return view('recipes.edit')->with('recipe', $recipe);
@@ -121,8 +131,10 @@ class RecipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //na het bewerken wordt het recept door middel van deze functie aangepast in de database
     public function update(Request $request, $id)
     {
+        //valideert de data
         $this->validate($request, array(
             'titel' => 'required',
             'ingredienten' => 'required',
@@ -131,21 +143,28 @@ class RecipeController extends Controller
             'image' => 'image',
             ));
 
+        //zoek het recept op in de database
         $recipe = Recipe::find($id);
 
+        //ingevulde data door de gebruiker wordt gevalideert door bovenstaande
         $recipe->titel = $request->input('titel');
         $recipe->ingredienten = $request->input('ingredienten');
         $recipe->bereidingswijze = $request->input('bereidingswijze');
         $recipe->voedingswaarde = $request->input('voedingswaarde');
 
+        //wanneer de img wordt gewijzigd wordt het volgende uitgevoerd
         if ($request->hasFile('image')) {
-            //nieuwe foto toevoegen
+            //nieuwe img toevoegen
             $image = $request->file('image');
+            //verandert de filenaam naar de tijd en datum, zodat er nooit dezelfde afbeeldingen in de database komen te staan
             $filename = time() . '.' . $image->getClientOriginalExtension();
+            //de locatie van de img
             $location = public_path('img/' . $filename);
+            //maakt de img aan, verandert de grootte en slaat hem op
             Image::make($image)->resize(900, 250)->save($location);
+            //de oude img
             $oldFilename = $recipe->image;
-        
+            //de nieuwe img
             $recipe->image = $filename;
 
             //verwijder de vorige foto
@@ -164,13 +183,17 @@ class RecipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //geeft de mogelijkheid om het recept te verwijderen
     public function destroy($id)
     {
+        //zoek het recept op in de database
         $recipe = Recipe::find($id);
+        //verwijdert het recept
         $recipe->delete();
         return redirect()->route('recipes.index');
     }
 
+    //genereer functie van het recept op de homepagina
     public function generate()
     {
         $clicked =  Input::get('genereer');
@@ -222,7 +245,7 @@ class RecipeController extends Controller
         return view('/home')->with('clicked', $clicked);
     }
 
-
+    //geeft de mogelijkheid om het recept toe te voegen als favoriet
     public function favorite(request $request) 
     {
         $user = Auth::user();

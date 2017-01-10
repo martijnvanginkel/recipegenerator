@@ -17,6 +17,7 @@
   @endif
 
 
+<<<<<<< HEAD
 <h1 id="head">Recepten toevoegen</h1>
   <label for="">Afbeelding:</label>
     <label class="afbeeldingknop" id="afbeeldingknop">
@@ -49,4 +50,11 @@
     <input type="hidden" name="_token" value="{{ Session::token() }}">
   </form>
 </div>
+=======
+      <input type="hidden" name="_token" value="{{ Session::token() }}">
+    </form>
+
+    <a href=" {{ route('recipes.index') }} ">Terug</a>
+  </div>
+>>>>>>> eb732f809d5edcf97206896c44f89bd19536029c
 @endsection

@@ -417,6 +417,59 @@ header{
 	}
 }
 
+#container_recipes_index
+{
+	width: fit-content;
+	margin: 0 auto;
+
+	.button
+	{
+		background-color: $yellow;
+		color: $white;
+		border: none;
+		width: 130px;
+		padding: 1%;
+	}
+
+	.button:hover
+	{
+		background-color: $white;
+		color: $yellow;
+	}
+
+	table, table a
+	{
+    color: $black;
+	}
+
+	table
+	{
+		border-collapse: collapse;
+		margin-top: 1.2%;
+		margin-bottom: 1.2%;
+	}
+
+	th
+	{
+		background-color: $dark_green;
+		color: $white;
+	}
+
+	td, th
+	{
+		padding: 10px;
+		border: 1px solid $darkgrey;
+	}
+
+	tr:nth-child(even) {
+    background-color: $white;
+	}
+
+	tr:nth-child(odd) {
+    background-color: $lightgrey;
+	}
+}
+
 /* Footer */
 footer
 {
@@ -436,5 +489,116 @@ footer
 	}
 	a:hover{
 		color: $lightblue;
+	}
+}
+
+@media (max-width: 415px)
+{
+
+	#profile
+	{
+		right: 1.2%;
+		height: 75px;
+		width: 60px;
+	}
+
+	.home
+	{
+		right: 1%;
+	}
+
+	#logo
+	{
+		width: 30%;
+	}
+
+	#generator
+	{
+		#generateButton
+		{
+			width: 200px;
+    	height: 200px;
+			margin-top: -100px;
+			margin-left: -100px;
+		}
+	}
+
+	#container_recept
+	{
+		padding: 0;
+
+		#recept
+		{
+			width: 100%;
+
+			#image_recipe
+			{
+				height: 150px;	
+			}
+
+			#ingredients
+			{
+				float: none;
+				margin: 0;
+				width: 100%;
+				margin-top: 8.2%;
+			}
+
+			#steps
+			{
+					margin: 0;
+			}
+
+			#nutritional_values
+			{
+				float: none;
+				margin: 0;
+				width: 100%;
+			}
+
+			#social_media
+			{
+				.icon
+				{
+					width: 9%;
+				}
+			}
+		}
+	}
+
+	#comments
+	{
+		#form_new_recipe
+		{
+			margin: 0%;
+
+			textarea
+			{
+				width: 100%;
+			}
+			h1
+			{
+				margin-left: 1.2%;
+			}
+		}
+		.comments
+		{
+			width: 100%;
+			margin: 1.2%;
+		}
+
+		ul
+		{
+			width: 100%;
+		}
+
+		hr
+		{
+			width: 100%;
+		}
+	}
+	.slide-favorieten
+	{
+		width: 80%;
 	}
 }

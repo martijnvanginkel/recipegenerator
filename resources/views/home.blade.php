@@ -41,7 +41,7 @@
 <section id="container_recept">
   <script type="text/javascript">
     $(document).ready(function(){
-      $('html, body').delay(1500).animate({
+      $('html, body').delay(1300).animate({
         scrollTop: $("#recept").offset().top
       }, 1000);
     });
@@ -72,7 +72,7 @@
       <!-- vanuit PHP -->
       <p>{{ $recipe->voedingswaarde }}</p>
     </div>
-  
+
 
     <div id="social_media">
       <a href="#"><img class="icon" src="/img/icons/Twitter.png" alt="Twitter icon"></a>

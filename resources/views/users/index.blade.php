@@ -1,7 +1,8 @@
 @extends('main')
 
 @section('content')
-
+	
+	<a href="/home">Home</a>
 	<div class="logout">                          
 		<a href="{{ url('/logout') }}"
 	    	onclick="event.preventDefault();
