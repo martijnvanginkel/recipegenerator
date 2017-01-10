@@ -1,18 +1,15 @@
 @extends('main')
 
 @section('content')
-<div class="container">
+<div id="container_recipes_index">
 	<h1>Recepten</h1>
-	<div class="panel panel-default">
-		<div class="panel-heading">Acties</div>
-		<div class="panel-body">
-			<a href="{{route('recipes.create')}}" class="btn btn-primary">
-				Recept Toevoegen!
-			</a>
-		</div>
-	</div>
 
-	<table class="table table-bordered" style="background-color: white">
+	<a href="{{route('recipes.create')}}">
+		<button class="button" value="Recept toevoegen">Recept toevoegen</button>
+	</a>
+
+
+	<table class="table table-bordered">
 		<tr>
 			<th>#</th>
 			<th>Titel</th>
