@@ -5,7 +5,7 @@
 
 	<div id="diet-screen" class="panel-body">
 
-		<form id="forms" method="POST" action=" {{ route('diets.store') }} " enctype="multipart/form-data">
+		<form  method="POST" action=" {{ route('diets.store') }} " enctype="multipart/form-data">
 
   		@if (count($errors) > 0)
   			    <div class="alert alert-danger">
@@ -15,12 +15,16 @@
   			            @endforeach
   			        </ul>
   			    </div>
+
+  			    </form>
+	</div>
   		@endif
 
       <h1>Dieet toevoegen</h1>
   
 
-    <textarea placeholder="Typ hier de naam van het dieet" rows="1" type="text" name="titel" id="diet"></textarea>
+
+                                    <input placeholder="Typ hier de naam van het dieet" rows="1" type="text" name="titel" id="diet"/>
 
 
   	
@@ -36,7 +40,9 @@
 
 		<h1 id="head">Toegevoegde diëten</h1>
 
-			<table class="table table-bordered" >
+
+
+			<table id="diet-table" >
 				<tr>
 					<th>#</th>
 					<th>Dieet</th>
@@ -52,6 +58,5 @@
 	</table>
 
 
-  	</form>
-	</div>
+  
 @endsection

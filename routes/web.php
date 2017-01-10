@@ -34,9 +34,6 @@ Route::delete('/users.index/comment/{id}', 'CommentsController@destroy')->name('
 
 Route::post('/recipes/{recipe}/comments', 'CommentsController@store');
 
-Route::get('/users/{comments}', 'CommentsController@edit')->name('comments-edit');
-Route::post('/users/{comments}', 'CommentsController@update')->name('comments-update');
-
 Auth::routes();
 
 Route::group(['middleware' => ['admin']], function () {

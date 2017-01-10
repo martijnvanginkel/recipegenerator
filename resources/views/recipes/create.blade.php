@@ -16,7 +16,6 @@
     </div>
   @endif
 
-
 <h1 id="head">Recepten toevoegen</h1>
   <label for="">Afbeelding:</label>
     <label class="afbeeldingknop" id="afbeeldingknop">
@@ -54,9 +53,6 @@
 
     <input id="toevoegknop" type="submit" value="Voeg toe">
 
-    <input type="hidden" name="_token" value="{{ Session::token() }}">
-  </form>
-</div>
 
       <input type="hidden" name="_token" value="{{ Session::token() }}">
     </form>
