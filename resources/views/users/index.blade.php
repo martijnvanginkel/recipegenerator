@@ -18,7 +18,7 @@
 	<div>
 		@if (Auth::user()->admin == 1)
 			<a href="{{ route('recipes.index') }}">Recepten</a>
-			<a href="{{ route('diets.index') }}">Diëten</a>
+			<a href="{{ route('foodrestrictions.index') }}">Allergieën en diëten</a>
 		@endif
 	</div>
 
@@ -28,13 +28,13 @@
 
 			<h1>Welkom op je profiel, <em>{{ ucfirst($user->name) }}</em>! </h1>
 
-		    <table class="table table-bordered">
+		  <table class="table table-bordered">
 		    <h3>Dit zijn jouw diëten:</h3>
-		      @foreach ($user->diets as $diet)
+		      @foreach ($user->foodrestrictions->where('diet', true) as $foodrestriction)
 		        <tr>
-		        	<td>{{ $diet->titel }}</td>
+		        	<td>{{ $foodrestriction->title }}</td>
 		          	<td>
-				  		<form method="POST" action="{{ route('destroy-diet', $diet->id) }}">
+				  		<form method="POST" action="{{ route('destroy-foodrestriction', $foodrestriction->id) }}">
 						    <input type="submit" value="Verwijder">
 						    <input type="hidden" name="_token" value="{{ Session::token() }}">
 						    {{ method_field('DELETE') }}
@@ -56,14 +56,54 @@
 		            </div>
 		      	@endif
 
-		    	<select class="form-control" name="diet_id">
+		    	<select class="form-control" name="foodrestriction_id">
 		    	<option selected disabled>Selecteer een dieet</option>
-		      	@foreach($notChosenDiets as $diet)
-		        	<option value="{{ $diet->id }}"> {{ $diet->titel }} </option>
+		      	@foreach($notChosenFoodrestrictions->where('diet', true) as $foodrestriction)
+		        	<option value="{{ $foodrestriction->id }}"> {{ $foodrestriction->title }} </option>
 		      	@endforeach
 		   		</select>
 		      	<input type="submit" value="Voeg toe">
 		      	<input type="hidden" name="_token" value="{{ Session::token() }}">
+
+		    </form>
+
+		    <table class="table table-bordered">
+		    <h3>Dit zijn jouw allergieën:</h3>
+		      @foreach ($user->foodrestrictions->where('allergy', true) as $foodrestriction)
+		        <tr>
+		        	<td>{{ $foodrestriction->title }}</td>
+		          	<td>
+				  		<form method="POST" action="{{ route('destroy-foodrestriction', $foodrestriction->id) }}">
+						    <input type="submit" value="Verwijder">
+						    <input type="hidden" name="_token" value="{{ Session::token() }}">
+						    {{ method_field('DELETE') }}
+					    </form>﻿
+		          </td>
+		        </tr>
+		      @endforeach
+		  </table>
+
+		  	<form id="form_new_recipe" method="POST" action=" {{ route('users.store') }} " enctype="multipart/form-data">
+
+		      	@if (count($errors) > 0)
+		            <div class="alert alert-danger">
+		                <ul>
+		                    @foreach ($errors->all() as $error)
+		                        <li>{{ $error }}</li>
+		                    @endforeach
+		                </ul>
+		            </div>
+		      	@endif
+
+		    	<select class="form-control" name="foodrestriction_id">
+		    	<option selected disabled>Selecteer een allergie</option>
+		      	@foreach($notChosenFoodrestrictions->where('allergy', true) as $foodrestriction)
+		        	<option value="{{ $foodrestriction->id }}"> {{ $foodrestriction->title }} </option>
+		      	@endforeach
+		   		</select>
+		      	<input type="submit" value="Voeg toe">
+		      	<input type="hidden" name="_token" value="{{ Session::token() }}">
+
 		    </form>
 
 		</div>

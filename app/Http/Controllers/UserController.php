@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\User;
-use App\Diet;
+use App\Foodrestriction;
 use App\Recipe;
 use DB;
 use Auth;
@@ -27,18 +27,18 @@ class UserController extends Controller
         //definieer gebruiker
         $user = Auth::User();
         //alle dieeten 
-        $allDiets = Diet::all();
+        $allFoodrestrictions = Foodrestriction::all();
         //dieeten van de gebruiker 
-        $userDiets = $user->diets()->get();
+        $userFoodrestrictions = $user->foodrestrictions()->get();
         //zet de id's in arrays
-        $allDietsArray = $allDiets->pluck('id')->toArray();
-        $userDietsArray = $userDiets->pluck('id')->toArray();
+        $allFoodrestrictionsArray = $allFoodrestrictions->pluck('id')->toArray();
+        $userFoodrestrictionsArray = $userFoodrestrictions->pluck('id')->toArray();
         //vergelijk arrays en zoek naar verschillen in id's
-        $dietsDifference = array_diff($allDietsArray, $userDietsArray);
+        $foodrestrictionsDifference = array_diff($allFoodrestrictionsArray, $userFoodrestrictionsArray);
         //zoek de dieeten die bij de verschillende id's horen
-        $notChosenDiets = Diet::findMany($dietsDifference);
+        $notChosenFoodrestrictions = Foodrestriction::findMany($foodrestrictionsDifference);
 
-        return view ('users.index')->with('user', $user)->with('notChosenDiets', $notChosenDiets);
+        return view ('users.index')->with('user', $user)->with('notChosenFoodrestrictions', $notChosenFoodrestrictions);
     }
 
     /**
@@ -60,14 +60,14 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = Auth::User();
-        $diets = Diet::all();
-        $diet = $request->diet_id;
+        $foodrestrictions = Foodrestriction::all();
+        $foodrestriction = $request->foodrestriction_id;
 
-        if(empty($diet)){
-            return redirect()->route('users.index', $diet);
+        if(empty($foodrestriction)){
+            return redirect()->route('users.index', $foodrestriction);
         }else{
-            $user->diets()->sync([$diet], false);
-            return redirect()->route('users.index', $diet);
+            $user->foodrestrictions()->sync([$foodrestriction], false);
+            return redirect()->route('users.index', $foodrestriction);
         }
 
     }
@@ -122,11 +122,11 @@ class UserController extends Controller
         return redirect()->route('users.index');
     }
 
-    public function destroyDiet($id)
+    public function destroyFoodrestriction($id)
     {
         $user = Auth::user();
-        $diet = Diet::find($id);
-        $user->diets()->detach($diet);
+        $foodrestriction = Foodrestriction::find($id);
+        $user->foodrestrictions()->detach($foodrestriction);
         return redirect()->route('users.index');
     }
 

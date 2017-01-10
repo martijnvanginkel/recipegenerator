@@ -4,11 +4,8 @@
 @import url('https://fonts.googleapis.com/css?family=Exo+2');
 
 /*Standaard teksten*/
-p:first-letter{
-  text-transform: capitalize;
-}
 
-label:first-letter{
+label:first-letter, p:first-letter, ul:first-letter, td:first-letter{
   text-transform: capitalize;
 }
 
@@ -24,15 +21,15 @@ ul {
   margin-top: 50px;
 }
 
+
 /*Login scherm opmaak*/
 
-#login-screen, #register-screen, #password-screen, #diet-screen{
+#login-screen, #register-screen, #password-screen, #diet-screen {
 	width: 300px;
     margin: 0 auto; 
 }
 
-
-#email, #password, #name, #password-confirm{
+#email, #password, #name, #password-confirm, #diet{
 	margin: 20px auto;
 	width: 300px;
 	resize: none;
@@ -49,12 +46,11 @@ ul {
 }
 
 
-#login-button, #register-button, #password-button {
+.button, #login-button, #register-button, #password-button, #add-diet-button{
     background-color: $yellow;
     color: white;
     padding: 15px 32px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
     font-family: 'Exo 2', sans-serif;
     font-size: 20px;
@@ -67,9 +63,62 @@ ul {
 	margin-top: 20px;
 }
 
+/* Tabels */
 
+#diet-table
+{
+  width: fit-content;
+  margin: 0 auto;
 
-/* Formulier recepten */
+  .button
+  {
+    background-color: $yellow;
+    color: $white;
+    border: none;
+    width: 130px;
+    padding: 1%;
+  }
+
+  .button:hover
+  {
+    background-color: $white;
+    color: $yellow;
+  }
+
+  table, table a
+  {
+    color: $black;
+  }
+
+  table
+  {
+    border-collapse: collapse;
+    margin-top: 1.2%;
+    margin-bottom: 1.2%;
+  }
+
+  th
+  {
+    background-color: $dark_green;
+    color: $white;
+  }
+
+  td, th
+  {
+    padding: 10px;
+    border: 1px solid $darkgrey;
+  }
+
+  tr:nth-child(even) {
+    background-color: $white;
+  }
+
+  tr:nth-child(odd) {
+    background-color: $lightgrey;
+  }
+}
+
+/* Formulieren stijl */
 
 #container
 {
@@ -106,46 +155,37 @@ ul {
 			outline: none;
 		}
 
-		#afbeeldingknop {
-			background-color: $yellow;
-    		border: none;
-    		color: white;
-    		padding-top: 15px;
-    		padding-bottom: 15px;
-    		text-align: center;
-    		text-decoration: none;
-    		display: inline-block;
-    		font-family: 'Exo 2', sans-serif;
-   	 		margin: 4px 2px;
-    		cursor: pointer;
-			width: 100%;
-			outline: yes;
-		}
+		
 
 		#afbeeldingknop [type=file] {
 		    cursor: inherit;
-    		display: block;
+    		display: inline-block;
     		filter: alpha(opacity=0);
     		opacity: 0;
+        left: -99999px;
     		position: absolute;
     		right: 0;
     		top: 0;
 		}
 
-		#toevoegknop, #save-button {
+		#toevoegknop, #save-button, #afbeeldingknop {
 			background-color: $yellow;
-    		border: none;
     		color: white;
     		padding-top: 15px;
     		padding-bottom: 15px;
     		text-align: center;
-    		text-decoration: none;
     		display: inline-block;
     		font-family: 'Exo 2', sans-serif;
-    		font-size: 1em;
+    		font-size: 20px;
    	 		margin: 4px 2px;
     		cursor: pointer;
 	    	width: 100%;
+        outline: inherit;
+
+    #afbeeldingknop {
+
+    }
+
 		}
 	}
 } 
@@ -156,7 +196,7 @@ ul {
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: absolute;
-  left: -9999px;
+  left: -99999px;
 }
 [type="checkbox"]:not(:checked) + label,
 [type="checkbox"]:checked + label {
@@ -175,8 +215,9 @@ ul {
   border: 1px solid #aaa;
   background: #f8f8f8;
   border-radius: 3px;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,.3)
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.3)
 }
+
 /* checked mark aspect */
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
@@ -186,8 +227,9 @@ ul {
   font-size: 18px;
   line-height: 0.8;
   color: $background_color_green;
-  transition: all .2s;
+  transition: all 0.35s;
 }
+
 /* checked mark aspect changes */
 [type="checkbox"]:not(:checked) + label:after {
   opacity: 0;

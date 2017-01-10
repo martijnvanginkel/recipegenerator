@@ -1,19 +1,52 @@
 @extends('main')
 
 @section('content')
-<div id="container">
-<div id="login-screen" class="panel-body">
-	<h1 id="head">Diëten</h1>
-	<div class="panel panel-default">
-		<div class="panel-body">
-		</div>
-	</div>
 
-	<table class="table table-bordered" >
-		<tr>
-			<th>#</th>
-			<th>Titel</th>
-		</tr>
+
+	<div id="diet-screen" class="panel-body">
+
+		<form  method="POST" action=" {{ route('diets.store') }} " enctype="multipart/form-data">
+
+  		@if (count($errors) > 0)
+  			    <div class="alert alert-danger">
+  			        <ul>
+  			            @foreach ($errors->all() as $error)
+  			                <li>{{ $error }}</li>
+  			            @endforeach
+  			        </ul>
+  			    </div>
+
+  			    </form>
+	</div>
+  		@endif
+
+      <h1>Dieet toevoegen</h1>
+  
+
+
+                                    <input placeholder="Typ hier de naam van het dieet" rows="1" type="text" name="titel" id="diet"/>
+
+
+  	
+ 		<button id="add-diet-button" type="submit" class="btn btn-primary">
+                                    Voeg toe
+                                </button>
+
+  		<input type="hidden" name="_token" value="{{ Session::token() }}">
+
+
+  	<a href="{{ route('users.index') }}">Terug</a>
+
+
+		<h1 id="head">Toegevoegde diëten</h1>
+
+
+
+			<table id="diet-table" >
+				<tr>
+					<th>#</th>
+					<th>Dieet</th>
+				</tr>
 
 			@foreach ($diets as $diet)
 				<tr>
@@ -24,30 +57,6 @@
 			@endforeach
 	</table>
 
-	<form id="form_new_recipe" method="POST" action=" {{ route('diets.store') }} " enctype="multipart/form-data">
 
-  		@if (count($errors) > 0)
-  			    <div class="alert alert-danger">
-  			        <ul>
-  			            @foreach ($errors->all() as $error)
-  			                <li>{{ $error }}</li>
-  			            @endforeach
-  			        </ul>
-  			    </div>
-  		@endif
-
-      <h1>Dieet toevoegen</h1>
-
-  		<label name="titel">Titel:</label>
-  		<input type="text" name="titel" id="titel">
-
-  		<input type="submit" value="Voeg dieet toe">
-
-  		<input type="hidden" name="_token" value="{{ Session::token() }}">
-  	</form>
-
-  	<a href="{{ route('users.index') }}">Terug</a>
-
-</div>
-</div>
+  
 @endsection
