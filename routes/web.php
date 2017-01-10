@@ -13,6 +13,7 @@
 
 Route::get('/', 'PagesController@getIndex');
 
+Route::get('/users.index', 'CommentsController@index');
 
 //Route::resource('recipes', 'RecipeController');
 Route::resource('users', 'UserController', ['except' => ['show']]);
@@ -29,9 +30,9 @@ Route::post('/home', 'RecipeController@generate')->name('recipe-generate');
 Route::post('/users.index', 'RecipeController@favorite')->name('recipe-favorite');
 
 Route::delete('/users.index/{id}', 'UserController@destroyDiet')->name('destroy-diet');
+Route::delete('/users.index/comment/{id}', 'CommentsController@destroy')->name('destroy-comment');
 
 Route::post('/recipes/{recipe}/comments', 'CommentsController@store');
-Route::delete('/users', 'CommentsController@destroy')->name('destroy-comment');
 
 Route::get('/users/{comments}', 'CommentsController@edit')->name('comments-edit');
 Route::post('/users/{comments}', 'CommentsController@update')->name('comments-update');

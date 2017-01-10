@@ -8,8 +8,7 @@
 /* Achtergrond */
 /* Mixins */
 @import url("https://fonts.googleapis.com/css?family=Exo+2");
-/*Standaard teksten*/
-@import url("https://fonts.googleapis.com/css?family=Exo+2");
+
 /* line 7, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 p:first-letter {
   text-transform: capitalize;
@@ -30,15 +29,27 @@ ul {
   text-align: center;
 }
 
+/* line 23, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#head {
+  margin-top: 50px;
+}
+
 /*Login scherm opmaak*/
+
 /* line 25, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 #login-screen, #register-screen {
+
+/* line 29, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#login-screen, #register-screen, #password-screen, #diet-screen {
   width: 300px;
   margin: 0 auto;
 }
 
 /* line 31, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 #email, #password, #name {
+
+/* line 35, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#email, #password, #name, #password-confirm {
   margin: 20px auto;
   width: 300px;
   resize: none;
@@ -48,6 +59,8 @@ ul {
 }
 
 /* line 40, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+
+/* line 44, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
 .btn.btn-link, .checkbox {
   display: block;
   margin-top: 0px;
@@ -55,8 +68,11 @@ ul {
   color: #fff;
 }
 
+
 /* line 48, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 #login-button {
+/* line 52, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#login-button, #register-button, #password-button {
   background-color: #F1C410;
   color: white;
   padding: 15px 32px;
@@ -71,34 +87,56 @@ ul {
 }
 
 /* line 62, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+
+/* line 66, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
 #forgot-password {
   margin-top: 20px;
 }
 
 /* Formulier recepten */
+
 /* line 75, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 #container #form_new_recipe {
+
+/* line 79, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#container #forms {
+
   margin: 0 auto;
   color: white;
   width: 60%;
 }
 
+
 /* line 82, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 #container #form_new_recipe label {
+
+/* line 86, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#container #forms label {
+
   display: block;
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
 
 /* line 88, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 #container #form_new_recipe input, #container #form_new_recipe textarea {
+
+/* line 92, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#container #forms input, #container #forms textarea {
+
   margin-top: 20px;
   margin-bottom: 20px;
   display: block;
 }
 
+
 /* line 94, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 #container #form_new_recipe input[type=text], #container #form_new_recipe textarea {
+
+/* line 98, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#container #forms input[type=text], #container #forms textarea {
+
   margin-top: 20px;
   margin-bottom: 20px;
   display: block;
@@ -109,8 +147,13 @@ ul {
   outline: none;
 }
 
+
 /* line 105, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 #container #form_new_recipe #afbeeldingknop {
+
+/* line 109, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#container #forms #afbeeldingknop {
+
   background-color: #F1C410;
   border: none;
   color: white;
@@ -126,8 +169,13 @@ ul {
   outline: yes;
 }
 
+
 /* line 121, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 #container #form_new_recipe #afbeeldingknop [type=file] {
+
+/* line 125, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#container #forms #afbeeldingknop [type=file] {
+
   cursor: inherit;
   display: block;
   filter: alpha(opacity=0);
@@ -137,8 +185,13 @@ ul {
   top: 0;
 }
 
+
 /* line 131, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 #container #form_new_recipe #toevoegknop {
+
+/* line 135, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+#container #forms #toevoegknop, #container #forms #save-button {
+
   background-color: #F1C410;
   border: none;
   color: white;
@@ -154,14 +207,22 @@ ul {
   width: 100%;
 }
 
+
 /* line 152, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+
+/* line 156, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: absolute;
   left: -9999px;
 }
 
+
 /* line 157, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+
+/* line 161, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+
 [type="checkbox"]:not(:checked) + label,
 [type="checkbox"]:checked + label {
   position: relative;
@@ -170,7 +231,11 @@ ul {
 }
 
 /* checkbox aspect */
+
 /* line 165, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+
+/* line 169, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+
 [type="checkbox"]:not(:checked) + label:before,
 [type="checkbox"]:checked + label:before {
   content: '';
@@ -186,7 +251,11 @@ ul {
 }
 
 /* checked mark aspect */
+
 /* line 177, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+
+/* line 181, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
   content: '✔';
@@ -200,13 +269,21 @@ ul {
 }
 
 /* checked mark aspect changes */
+
 /* line 188, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+
+/* line 192, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+
 [type="checkbox"]:not(:checked) + label:after {
   opacity: 0;
   transform: scale(0);
 }
 
+
 /* line 192, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+
+/* line 196, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
+
 [type="checkbox"]:checked + label:after {
   opacity: 1;
   transform: scale(1);

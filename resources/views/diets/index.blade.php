@@ -1,15 +1,15 @@
 @extends('main')
 
 @section('content')
-<div class="container">
-	<h1>Dieeten</h1>
+<div id="container">
+<div id="login-screen" class="panel-body">
+	<h1 id="head">Diëten</h1>
 	<div class="panel panel-default">
-		<div class="panel-heading">Acties</div>
 		<div class="panel-body">
 		</div>
 	</div>
 
-	<table class="table table-bordered" style="background-color: white">
+	<table class="table table-bordered" >
 		<tr>
 			<th>#</th>
 			<th>Titel</th>
@@ -48,5 +48,6 @@
 
   	<a href="{{ route('users.index') }}">Terug</a>
 
+</div>
 </div>
 @endsection

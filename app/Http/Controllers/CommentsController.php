@@ -9,11 +9,15 @@ use App\Recipe;
 
 class CommentsController extends Controller
 {
+    public function index()
+    {
+
+    }
+
     //plaatsen van reactie op home pagina
     public function store(Request $request, Recipe $recipe)
     {
         $user = Auth::user();
-
 
         $this->validate($request,
         [
@@ -22,8 +26,7 @@ class CommentsController extends Controller
 
         $comment = new Comment;
 
-        $comment->name = $user->name;
-        $comment->email = $user->email;
+        $comment->user_id= $user->id;
         $comment->comment = $request->comment;
 
         $recipe->comments()->save($comment);
@@ -50,7 +53,9 @@ class CommentsController extends Controller
 
         $comment->comment = $request->comment;
 
-        $recipe->comments()->save($comment);
+        $user->comments()->save($comment);
+
+        $comments = Comment::all();
 
         return redirect()->route('users.index');
     }
@@ -58,6 +63,7 @@ class CommentsController extends Controller
     //verwijderen van reactie op user pagina
     public function destroy($id)
     {
+        $user = Auth::user();
         $comment = Comment::find($id);
         $comment->delete();
         return redirect()->route('users.index');

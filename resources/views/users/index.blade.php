@@ -95,21 +95,20 @@
 	   <div class="comments">
 	    <h1>Reactie's</h1>
 	      <ul>
-			@foreach ($recipe->comments as $comment)
-	          <li>{{ $recipe->titel }}</li>
-	          <li>{{ $comment->comment }}</li>
-	          <li>
-		        <form method="POST" action="{{ route('destroy-comment', $comment->id) }}">
-		            <input type="submit" value="Verwijder">
-		            <input type="hidden" name="_token" value="{{ Session::token() }}">
-		          	{{ method_field('DELETE') }}
-		        </form>﻿
-		      </li>
-		      <li>
-		    	<p></p>
-				<a href=" {{ route('comments-edit', $comment->id) }} ">Wijzig</a></td>
-		      </li>
-	        @endforeach
+			@foreach ($user->comments as $comment)
+			<li>{{ $comment->recipe->titel }}</li>
+			<li>{{ date('d-m-Y ', strtotime($comment->updated_at)) }}</li>
+			<li>{{ $comment->comment}}</li>
+			<li>
+                <form method="POST" action="{{ route('destroy-comment', $comment->id ) }}">
+                    <input type="submit" value="Verwijder">
+                    <input type="hidden" name="_token" value="{{ Session::token() }}">
+                    {{ method_field('DELETE') }}
+                </form>
+            </li>
+			<hr>
+			@endforeach
+			
 	      </ul>
       </div>
     </section>

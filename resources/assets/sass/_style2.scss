@@ -20,15 +20,19 @@ ul {
 	text-align: center
 }
 
+#head {
+  margin-top: 50px;
+}
+
 /*Login scherm opmaak*/
 
-#login-screen, #register-screen{
+#login-screen, #register-screen, #password-screen, #diet-screen{
 	width: 300px;
     margin: 0 auto; 
 }
 
 
-#email, #password, #name{
+#email, #password, #name, #password-confirm{
 	margin: 20px auto;
 	width: 300px;
 	resize: none;
@@ -45,7 +49,7 @@ ul {
 }
 
 
-#login-button {
+#login-button, #register-button, #password-button {
     background-color: $yellow;
     color: white;
     padding: 15px 32px;
@@ -72,7 +76,7 @@ ul {
 
 
 
-	#form_new_recipe
+	#forms
 	{
 		margin: 0 auto;
 		color: white;
@@ -128,7 +132,7 @@ ul {
     		top: 0;
 		}
 
-		#toevoegknop {
+		#toevoegknop, #save-button {
 			background-color: $yellow;
     		border: none;
     		color: white;
