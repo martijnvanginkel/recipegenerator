@@ -42,5 +42,7 @@
 
       <input type="hidden" name="_token" value="{{ Session::token() }}">
     </form>
+
+    <a href=" {{ route('recipes.index') }} ">Terug</a>
   </div>
 @endsection
