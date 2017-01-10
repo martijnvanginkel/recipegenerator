@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Recipe;
-use App\Diet;
 use App\Foodrestriction;
 use App\User;
 use Image;
