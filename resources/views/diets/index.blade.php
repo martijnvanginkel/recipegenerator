@@ -1,30 +1,11 @@
 @extends('main')
 
 @section('content')
-<div id="container">
-<div id="login-screen" class="panel-body">
-	<h1 id="head">Diëten</h1>
-	<div class="panel panel-default">
-		<div class="panel-body">
-		</div>
-	</div>
 
-	<table class="table table-bordered" >
-		<tr>
-			<th>#</th>
-			<th>Titel</th>
-		</tr>
 
-			@foreach ($diets as $diet)
-				<tr>
-					<td>{{ $diet->id }}</td>
-					<td>{{ $diet->titel }}</td>
-					<td><a href="{{ route('diets.edit', $diet->id) }}">Wijzig</a></td>
-				</tr>
-			@endforeach
-	</table>
+	<div id="diet-screen" class="panel-body">
 
-	<form id="form_new_recipe" method="POST" action=" {{ route('diets.store') }} " enctype="multipart/form-data">
+		<form id="forms" method="POST" action=" {{ route('diets.store') }} " enctype="multipart/form-data">
 
   		@if (count($errors) > 0)
   			    <div class="alert alert-danger">
@@ -37,17 +18,40 @@
   		@endif
 
       <h1>Dieet toevoegen</h1>
+  
 
-  		<label name="titel">Titel:</label>
-  		<input type="text" name="titel" id="titel">
+    <textarea placeholder="Typ hier de naam van het dieet" rows="1" type="text" name="titel" id="diet"></textarea>
 
-  		<input type="submit" value="Voeg dieet toe">
+
+  	
+ 		<button id="add-diet-button" type="submit" class="btn btn-primary">
+                                    Voeg toe
+                                </button>
 
   		<input type="hidden" name="_token" value="{{ Session::token() }}">
-  	</form>
+
 
   	<a href="{{ route('users.index') }}">Terug</a>
 
-</div>
-</div>
+
+		<h1 id="head">Toegevoegde diëten</h1>
+
+			<table class="table table-bordered" >
+				<tr>
+					<th>#</th>
+					<th>Dieet</th>
+				</tr>
+
+			@foreach ($diets as $diet)
+				<tr>
+					<td>{{ $diet->id }}</td>
+					<td>{{ $diet->titel }}</td>
+					<td><a href="{{ route('diets.edit', $diet->id) }}">Wijzig</a></td>
+				</tr>
+			@endforeach
+	</table>
+
+
+  	</form>
+	</div>
 @endsection
