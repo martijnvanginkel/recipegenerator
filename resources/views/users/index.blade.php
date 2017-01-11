@@ -1,9 +1,8 @@
 @extends('main')
 
 @section('content')
-
-	<a href="/home">Home</a>
 	<div class="logout">
+		<a href="/home">Home</a>
 		<a href="{{ url('/logout') }}"
 	    	onclick="event.preventDefault();
 	             document.getElementById('logout-form').submit();">
@@ -15,7 +14,7 @@
 	   </form>
 	</div>
 
-	<div>
+	<div class="admin_menu">
 		@if (Auth::user()->admin == 1)
 			<a href="{{ route('recipes.index') }}">Recepten</a>
 			<a href="{{ route('foodrestrictions.index') }}">Allergieën en diëten</a>

@@ -4,6 +4,12 @@
 <div class="container_index">
 	<h1>Recepten</h1>
 
+	<a href="{{ route('users.index') }}">
+		<button class="button back">
+			<img src="img/icons/back.png" alt="Terug">
+		</button>
+	</a>
+
 	<a href="{{route('recipes.create')}}">
 		<button class="button" value="Recept toevoegen">Recept toevoegen</button>
 	</a>
@@ -32,6 +38,5 @@
 				</tr>
 			@endforeach
 	</table>
-	<a href="{{ route('users.index') }}">Terug</a>
 </div>
 @endsection
