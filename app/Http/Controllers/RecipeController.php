@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Input;
 use App\Recipe;
 use App\Foodrestriction;
 use App\User;
+use App\Ingredient;
 use Image;
 use Auth;
 use Storage;
@@ -57,17 +58,20 @@ class RecipeController extends Controller
             'ingredienten' => 'required',
             'bereidingswijze' => 'required',
             'voedingswaarde' => 'required',
-            'image' => 'required|image',
+            
         ]);
 
         //nieuw recept wordt aangemaakt
         $recipe = new Recipe;
+        $ingredient = New Ingredient;
 
         //ingevulde data door de gebruiker wordt gevalideert door bovenstaande
-        $recipe->titel = $request->titel;
-        $recipe->ingredienten = $request->ingredienten;
+        $recipe->titel = $request->titel;      
         $recipe->bereidingswijze = $request->bereidingswijze;
-        $recipe->voedingswaarde = $request->voedingswaarde;
+        $recipe->voedingswaarde = $request->voedingswaarde;  
+
+        $ingredientenArray = $ingredient->ingredient = $request->ingredienten;
+
 
         //img toevoegen aan recept
         $image = $request->image;
@@ -82,6 +86,14 @@ class RecipeController extends Controller
         //recept opslaan
         $recipe->save();
 
+        foreach ($ingredientenArray as $ingredient) {
+             $ingredient = New Ingredient;
+             $recipe->ingredients()->save($ingredient);
+         } 
+        
+       
+        
+    
         //koppel het recept aan een dieet als die zijn aangegeven
         if($request->foodrestrictions){
             $recipe->foodrestrictions()->sync($request->foodrestrictions, false);

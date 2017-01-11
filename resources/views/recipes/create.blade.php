@@ -26,8 +26,14 @@
   <label name="title">Titel:</label>
     <textarea placeholder="Typ hier de titel van dit gerecht" rows="2" type="text" name="titel" id="titel"></textarea>
 
-  <label name="ingredienten" for="">Ingrediënten:</label>
-    <textarea placeholder="Typ hier de ingrediënten die zijn gebruikt voor dit gerecht" rows="5" type="text" name="ingredienten" id="ingredienten" value=""></textarea>
+ {{--  <label name="ingredienten[]" for="">Ingrediënten:</label>
+    <textarea placeholder="Typ hier de ingrediënten die zijn gebruikt voor dit gerecht" rows="1" type="text" name="ingredienten" id="ingredienten"  value=""></textarea>
+  <label name="ingredienten[]" for="">Ingrediënten:</label>
+    <textarea placeholder="Typ hier de ingrediënten die zijn gebruikt voor dit gerecht" rows="1" type="text" name="ingredienten" id="ingredienten"  value=""></textarea> --}}
+
+  <input type="textarea" name="ingredienten[]">
+   <input type="textarea" name="ingredienten[]">
+  
 
   <label name="bereidingswijze">Bereidingswijze:</label>
     <textarea placeholder="Typ hier hoe dit gerecht klaargemaakt wordt" rows="5" type="text" name="bereidingswijze" id="bereidingswijze"></textarea>

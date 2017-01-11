@@ -17,7 +17,7 @@ class CreateRecipesTable extends Migration
             //recept zelf
             $table->increments('id');
             $table->string('titel');
-            $table->text('ingredienten');
+            $table->text('ingredienten')->default(NULL);
             $table->text('bereidingswijze');
             $table->text('voedingswaarde');
             //gelinkt aan user
