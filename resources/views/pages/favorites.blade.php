@@ -3,7 +3,11 @@
 @section('content')
 <section id="container_recept_fav">
 	<img id="image_recipe" src="{{ asset('img/' . $recipe->image) }}" alt="" height="250px" width="900px"/>
-	<a href=" {{ route('users.index') }} ">Terug</a>
+	<a href=" {{ route('users.index') }} ">
+		<button class="button back">
+			<img src={{asset('img/icons/back.png')}} alt="Terug">
+		</button>
+	</a>
 	<h1>{{ $recipe->titel }}</h1>
 	<ul id="ingredients">
 		<h3>Ingrediënten</h3>
