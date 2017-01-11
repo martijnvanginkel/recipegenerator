@@ -407,12 +407,12 @@ a:hover {
 /* line 106, C:/laragon/www/recipegenerator/resources/assets/sass/style.scss */
 #generator #generateButton {
   display: block;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  width: 400px;
-  height: 400px;
-  margin-top: -200px;
-  margin-left: -200px;
+  width: 500px;
+  height: 500px;
+  margin-top: -250px;
+  margin-left: -250px;
   position: absolute;
   -webkit-animation: spin 1s linear infinite;
   -moz-animation: spin 1s linear infinite;
