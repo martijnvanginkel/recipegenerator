@@ -125,7 +125,7 @@ ul {
 
 
 
-	#forms
+	#forms, .forms
 	{
 		margin: 0 auto;
 		color: white;
@@ -182,15 +182,63 @@ ul {
 	    	width: 100%;
         outline: inherit;
 
-    #afbeeldingknop {
 
-    }
 
 		}
 	}
 } 
 
+.container_index_diet_or_allergy
+{
+  margin: 0 auto;
+  width: 60%;
 
+  table, table a
+  {
+    color: $black;
+  }
+
+  table
+  {
+    border-collapse: collapse;
+    margin-top: 1.2%;
+    margin-bottom: 1.2%;
+    width: 100%
+  }
+
+  .number_table{
+  width: 25px;
+
+  }
+
+  .diet_allergy_table{
+
+  }
+
+  .edit_table{
+  width: 60px;
+  }
+
+  th
+  {
+    background-color: $dark_green;
+    color: $white;
+  }
+
+  td, th
+  {
+    padding: 10px;
+    border: 1px solid $darkgrey;
+  }
+
+  tr:nth-child(even) {
+    background-color: $white;
+  }
+
+  tr:nth-child(odd) {
+    background-color: $lightgrey;
+  }
+}
 
 
 [type="checkbox"]:not(:checked),
