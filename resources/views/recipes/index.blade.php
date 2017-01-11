@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('content')
-<div id="container_recipes_index">
+<div class="container_index">
 	<h1>Recepten</h1>
 
 	<a href="{{route('recipes.create')}}">
