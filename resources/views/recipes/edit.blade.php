@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <div id="container">
     
 <form id="forms" method="POST" action="{{ route('recipes.update', $recipe->id) }}" enctype="multipart/form-data">
@@ -29,6 +28,15 @@
     <textarea placeholder="Typ hier hoe dit gerecht klaargemaakt wordt" type="text" id="bereidingswijze" name="bereidingswijze" rows="10">{{ $recipe->bereidingswijze }}</textarea>
     <label for="voedingswaarde">Voedingswaarden:</label>
     <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" type="text" id="voedingswaarde" name="voedingswaarde" rows="10">{{ $recipe->voedingswaarde }}</textarea>
+
+    <label name="foodrestrictions[]" for="foodrestrictions">Dit recept past binnen de volgende diëten:</label>
+
+{{--     <ul>
+  @foreach($foodrestrictions->where('diet', true) as $foodrestriction)
+      <li> <input name="foodrestrictions[]" type="checkbox" id="{{$foodrestriction->title}}" value="{{ $foodrestriction->id }}" ><label for="{{$foodrestriction->title}}" >{{$foodrestriction->title}}</label> </li>
+      <li> <input name="foodrestrictions[]" type="checkbox" {{$foodrestriction}}  id="{{$foodrestriction->title}}" value="{{ $foodrestriction->id }}" ><label for="{{$foodrestriction->title}}" >{{$foodrestriction->title}}</label> </li>
+  @endforeach
+    </ul> --}}
 
 	<button id="save-button" type="submit">Opslaan</button>
     

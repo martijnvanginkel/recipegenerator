@@ -26,4 +26,8 @@ class Recipe extends Model
     	return $this->hasMany('App\Comment');
     }
 
+    public function ingredients()
+    {
+        return $this->hasMany('App\Ingredient');
+    }
 }
