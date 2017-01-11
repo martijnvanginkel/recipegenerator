@@ -1,11 +1,10 @@
 /* Import config, mixins, font */
 @import "config.scss";
 @import "mixins.scss";
-@import url('https://fonts.googleapis.com/css?family=Exo+2');
 
 /*Standaard teksten*/
 
-label:first-letter, p:first-letter, ul:first-letter, td:first-letter{
+label:first-letter, p:first-letter, {
   text-transform: capitalize;
 }
 
@@ -239,6 +238,7 @@ ul {
     background-color: $lightgrey;
   }
 }
+
 
 
 [type="checkbox"]:not(:checked),

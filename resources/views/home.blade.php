@@ -15,7 +15,13 @@
      </form>
   </div>
   <a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
-  <a href="/users"><img id="profile" src="img/icons/Profiel.png" alt="Profiel" width="50px" heigt="50px"></a>
+
+
+  <a href="/users"><img id="profile" src="img/icons/Profiel.png" alt="Profiel" width="50px" height="50px"></a>
+
+
+
+<!-- href="/users" -->
 
   <form id="generator" method="POST" action="{{ route('recipe-generate') }} ">
     {{ csrf_field() }}
