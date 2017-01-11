@@ -15,7 +15,22 @@
      </form>
   </div>
   <a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
-  <a href="/users"><img id="profile" src="img/icons/Profiel.png" alt="Profiel" width="50px" heigt="50px"></a>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<a>
+  <img class="dropbtn" id="profile" src="http://placehold.it/350x350" alt="Profiel" width="50px" height="50px">
+
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+  </img>
+</a>
+
+
+
+<!-- href="/users" -->
 
   <form id="generator" method="POST" action="{{ route('recipe-generate') }} ">
     {{ csrf_field() }}
