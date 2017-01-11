@@ -98,12 +98,13 @@
 
     <textarea name="comment" id="comment"></textarea><br>
 
-    <input type="submit" value="Reageer">
+    <input class="button blue" type="submit" value="Reageer">
 
     <input type="hidden" name="_token" value="{{ Session::token() }}">
   </form>
-
-  <div class="comments">
+</section>
+<section class="comments">
+  <div class="wrapper">
     <h1>Reactie's</h1>
       <ul>
         @foreach ($recipe->comments as $comment)
@@ -113,7 +114,7 @@
 
         @endforeach
       </ul>
-  </div>
-    @endif
+    </div>
 </section>
+    @endif
 @endsection
