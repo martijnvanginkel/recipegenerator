@@ -20,12 +20,6 @@
          {{ csrf_field() }}
      </form>
   </div>
-
-</div>
-
-
-	
-
 </div>
 
 	<header>
