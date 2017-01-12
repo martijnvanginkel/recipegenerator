@@ -27,16 +27,17 @@
     <textarea placeholder="Typ hier de titel van dit gerecht" rows="2" type="text" name="titel" id="titel"></textarea>
 
   <label>Ingredienten:</label>
-  <input type="textarea" name="ingredienten[]">
-  <input type="textarea" name="ingredienten[]"> 
-  <input type="textarea" name="ingredienten[]"> 
-  <input type="textarea" name="ingredienten[]">
-  <input type="textarea" name="ingredienten[]"> 
-  <input type="textarea" name="ingredienten[]">
-  <input type="textarea" name="ingredienten[]"> 
-  <input type="textarea" name="ingredienten[]">
-  <input type="textarea" name="ingredienten[]"> 
-  <input type="textarea" name="ingredienten[]">
+  <textarea name="ingredienten[]"></textarea>
+  <textarea name="ingredienten[]"></textarea>
+  <textarea name="ingredienten[]"></textarea>
+  <textarea name="ingredienten[]"></textarea>
+  <textarea name="ingredienten[]"></textarea>
+  <textarea name="ingredienten[]"></textarea>
+  <textarea name="ingredienten[]"></textarea>
+  <textarea name="ingredienten[]"></textarea>
+  <textarea name="ingredienten[]"></textarea>
+  <textarea name="ingredienten[]"></textarea>   
+
 
   <label name="bereidingswijze">Bereidingswijze:</label>
     <textarea placeholder="Typ hier hoe dit gerecht klaargemaakt wordt" rows="5" type="text" name="bereidingswijze" id="bereidingswijze"></textarea>

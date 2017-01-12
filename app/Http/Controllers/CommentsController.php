@@ -31,7 +31,7 @@ class CommentsController extends Controller
 
         $recipe->comments()->save($comment);
 
-        return back();
+        return redirect()->route('users.index');
     }
 
     //verwijderen van reactie op user pagina

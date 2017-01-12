@@ -135,9 +135,11 @@ class RecipeController extends Controller
         //zoek het recept die je hebt aangeklikt op in de database
         $recipe = Recipe::find($id);
         $ingredients = Ingredient::all();
+
+        $recipeWithRestrictions = $recipe->foodrestrictions()->get()->pluck('id');
         $foodrestrictions = Foodrestriction::all();
 
-        return view('recipes.edit')->with('recipe', $recipe)->with('foodrestrictions', $foodrestrictions)->with('ingredients', $ingredients);
+        return view('recipes.edit')->with('recipe', $recipe)->with('foodrestrictions', $foodrestrictions)->with('ingredients', $ingredients)->with('recipeWithRestrictions', $recipeWithRestrictions);
     }
 
     /**
@@ -164,7 +166,6 @@ class RecipeController extends Controller
 
         //ingevulde data door de gebruiker wordt gevalideert door bovenstaande
         $recipe->titel = $request->input('titel');
-        $recipe->ingredienten = $request->input('ingredienten');
         $recipe->bereidingswijze = $request->input('bereidingswijze');
         $recipe->voedingswaarde = $request->input('voedingswaarde');   
 
@@ -189,10 +190,6 @@ class RecipeController extends Controller
 
         //sla het recept opnieuw op
         $recipe->save();
-
-    
-             // $recipe->ingredients()->save($ingredient);     
-         
 
         return redirect()->route('recipes.show', $recipe->id);
     }
