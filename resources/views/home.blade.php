@@ -17,11 +17,17 @@
   <a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
 
 
-  <a href="/users"><img id="profile" src="img/icons/Profiel.png" alt="Profiel" width="50px" height="50px"></a>
+<div class="dropdown">
 
+  <img class="dropbtn" id="profile" src="img/icons/Profiel.png" alt="Profiel" width="50px" height="50px">
+  <div class="dropdown-content">
+    <a href="/users">Profiel</a>
+    <a href="#">link2</a>
+    <a href="#">link3</a>
+  </div>
 
+</div>
 
-<!-- href="/users" -->
 
   <form id="generator" method="POST" action="{{ route('recipe-generate') }} ">
     {{ csrf_field() }}
