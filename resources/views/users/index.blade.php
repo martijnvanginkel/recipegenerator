@@ -3,6 +3,7 @@
 @section('content')
 	<div class="logout">
 		<a href="/home">Home</a>
+		<a href="/users">Profiel</a>
 		<a href="{{ url('/logout') }}"
 	    	onclick="event.preventDefault();
 	             document.getElementById('logout-form').submit();">
