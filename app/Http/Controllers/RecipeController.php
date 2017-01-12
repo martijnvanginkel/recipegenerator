@@ -63,13 +63,13 @@ class RecipeController extends Controller
 
         //nieuw recept wordt aangemaakt
         $recipe = new Recipe;
-        $ingredient = New Ingredient;
 
         //ingevulde data door de gebruiker wordt gevalideert door bovenstaande
         $recipe->titel = $request->titel;      
         $recipe->bereidingswijze = $request->bereidingswijze;
         $recipe->voedingswaarde = $request->voedingswaarde;  
 
+        $ingredient = new Ingredient;
         $ingredientenArray = $ingredient->ingredient = $request->ingredienten;
 
 
@@ -86,9 +86,11 @@ class RecipeController extends Controller
         //recept opslaan
         $recipe->save();
 
-        foreach ($ingredientenArray as $ingredient) {
+        foreach ($ingredientenArray as $requestIngredient) {
              $ingredient = New Ingredient;
+             $ingredient->ingredient = $requestIngredient;
              $recipe->ingredients()->save($ingredient);
+             
          } 
         
        
