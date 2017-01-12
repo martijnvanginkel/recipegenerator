@@ -9,7 +9,7 @@
 
   <img class="dropbtn" src="img/icons/Profiel.png" alt="Profiel" width="80px">
   <div class="dropdown-content">
-    <a href="/Home">Home</a>
+    <a href="/home">Home</a>
 		@if (Auth::user()->admin == 1)
 			<a href="{{ route('recipes.index') }}">Recepten</a>
 			<a href="{{ route('foodrestrictions.index') }}">Allergieën en diëten</a>
