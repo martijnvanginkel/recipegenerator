@@ -2,10 +2,6 @@
 
 @section('content')
 <section id=container_generator>
-
-  <div class="logout home">
-  
-  </div>
   <a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
 
 
@@ -76,7 +72,7 @@
       <h3>Ingrediënten</h3>
       <!-- vanuit PHP -->
       @foreach($ingredients->where('recipe_id', $recipe->id) as $ingredient)
-      <li>{{ $ingredient->ingredient }}</li>  
+      <li>{{ $ingredient->ingredient }}</li>
     @endforeach
     </ul>
     <div id="steps">
