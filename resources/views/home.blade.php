@@ -11,7 +11,7 @@
 
 <div class="dropdown">
 
-  <img class="dropbtn" id="profile" src="img/icons/Profiel.png" alt="Profiel" width="50px" height="50px">
+  <img class="dropbtn" src="img/icons/Profiel.png" alt="Profiel" width="80px">
   <div class="dropdown-content">
     <a href="/users">Profiel</a>
     <a href="#">Linkje</a>
