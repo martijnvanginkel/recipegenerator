@@ -23,7 +23,7 @@
       <h1>Dieet of allergie toevoegen</h1>
 
   		<label name="title">Titel:</label>
-  		<input placeholder="Typ hier het dieet of de allergie" type="text" name="titel" id="titel"></input>
+  		<input placeholder="Typ hier het dieet of de allergie" type="text" name="title" id="title"></input>
   		<input name="allergy" type="checkbox" id="allergy" ><label for="allergy" >Allergie</label>
   		<input name="diet" type="checkbox" id="diet" ><label for="diet" >Dieet</label>
 
