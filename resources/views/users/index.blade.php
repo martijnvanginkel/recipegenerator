@@ -1,10 +1,6 @@
 @extends('main')
 
 @section('content')
-
-
-
-
 <div class="dropdown">
 
   <img class="dropbtn" src="img/icons/Profiel.png" alt="Profiel" width="80px">
@@ -24,17 +20,12 @@
          {{ csrf_field() }}
      </form>
   </div>
-
-</div>
-
-
-	
-
 </div>
 
 	<header>
-		<div class="wrapper">
-  <a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
+    <a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
+  	<div class="wrapper">
+
 			<h1>Welkom op je profiel, <em>{{ ucfirst($user->name) }}</em>! </h1>
 
 		  <table class="table table-bordered">
