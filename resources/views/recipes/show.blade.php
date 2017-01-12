@@ -11,8 +11,9 @@
 	<h1>{{ $recipe->titel }}</h1>
 	<ul id="ingredients">
 		<h3>Ingrediënten</h3>
-		<!-- vanuit PHP -->
-		<li>{{ $recipe->ingredienten }}</li>
+		@foreach($ingredients->where('recipe_id', $recipe->id) as $ingredient)
+			<li>{{ $ingredient->ingredient }}</li>	
+		@endforeach	
 	</ul>
 	<div id="steps">
 		<h3>Bereidingswijze</h3>
