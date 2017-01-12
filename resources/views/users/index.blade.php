@@ -24,13 +24,14 @@
 </div>
 
 
-	
+
 
 </div>
 
 	<header>
-		<div class="wrapper">
-  <a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
+    <a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
+  	<div class="wrapper">
+
 			<h1>Welkom op je profiel, <em>{{ ucfirst($user->name) }}</em>! </h1>
 
 		  <table class="table table-bordered">
