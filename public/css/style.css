@@ -247,7 +247,7 @@ ul {
 .dropdown {
   display: inline-block;
   position: fixed;
-  margin-right: 20px;
+  right: 20px;
 }
 
 /* line 250, /Users/larsvanurk/Documents/Sites/recipegenerator/resources/assets/sass/_style2.scss */
@@ -265,9 +265,9 @@ ul {
   display: none;
   position: absolute;
   margin-top: 119px;
-  margin-left: 13px;
+  margin-left: -107px;
   background-color: #f9f9f9;
-  min-width: 160px;
+  width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 

@@ -4,15 +4,7 @@
 <section id=container_generator>
 
   <div class="logout home">
-    <a href="{{ url('/logout') }}"
-        onclick="event.preventDefault();
-               document.getElementById('logout-form').submit();">
-            Uitloggen
-    </a>
-
-     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-         {{ csrf_field() }}
-     </form>
+  
   </div>
   <a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
 
@@ -22,8 +14,17 @@
   <img class="dropbtn" id="profile" src="img/icons/Profiel.png" alt="Profiel" width="50px" height="50px">
   <div class="dropdown-content">
     <a href="/users">Profiel</a>
-    <a href="#">link2</a>
-    <a href="#">link3</a>
+    <a href="#">Linkje</a>
+    <a href="#">Linkje</a>
+      <a href="{{ url('/logout') }}"
+        onclick="event.preventDefault();
+               document.getElementById('logout-form').submit();">
+            Uitloggen
+    </a>
+
+     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+         {{ csrf_field() }}
+     </form>
   </div>
 
 </div>
