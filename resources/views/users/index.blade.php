@@ -1,30 +1,36 @@
 @extends('main')
 
 @section('content')
-	<div class="logout">
-		<a href="/home">Home</a>
-		<a href="{{ url('/logout') }}"
-	    	onclick="event.preventDefault();
-	             document.getElementById('logout-form').submit();">
-	    			Uitloggen
-		</a>
+<div class="dropdown">
 
-	   <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-	       {{ csrf_field() }}
-	   </form>
-	</div>
-
-	<div class="admin_menu">
+  <img class="dropbtn" src="img/icons/Profiel.png" alt="Profiel" width="80px">
+  <div class="dropdown-content">
+    <a href="/home">Home</a>
 		@if (Auth::user()->admin == 1)
 			<a href="{{ route('recipes.index') }}">Recepten</a>
 			<a href="{{ route('foodrestrictions.index') }}">Allergieën en diëten</a>
 		@endif
-	</div>
+    <a href="{{ url('/logout') }}"
+        onclick="event.preventDefault();
+               document.getElementById('logout-form').submit();">
+            Uitloggen
+    </a>
+
+     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+         {{ csrf_field() }}
+     </form>
+  </div>
+
+</div>
+
+
+	
+
+</div>
 
 	<header>
-		<a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
 		<div class="wrapper">
-
+  <a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
 			<h1>Welkom op je profiel, <em>{{ ucfirst($user->name) }}</em>! </h1>
 
 		  <table class="table table-bordered">

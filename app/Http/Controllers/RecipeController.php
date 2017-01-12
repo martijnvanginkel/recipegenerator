@@ -27,7 +27,10 @@ class RecipeController extends Controller
     public function index()
     {
         $recipes = Recipe::all();
-        return view('recipes.index', compact('recipes'));
+
+        $ingredients = Ingredient::all();
+
+        return view('recipes.index', compact('recipes'), compact('ingredients'));
     }
 
     /**
@@ -89,8 +92,7 @@ class RecipeController extends Controller
         foreach ($ingredientenArray as $requestIngredient) {
              $ingredient = New Ingredient;
              $ingredient->ingredient = $requestIngredient;
-             $recipe->ingredients()->save($ingredient);
-             
+             $recipe->ingredients()->save($ingredient);     
          } 
         
        
@@ -115,8 +117,10 @@ class RecipeController extends Controller
     {
         //zoek het recept die je hebt aangeklikt op in de database
         $recipe = Recipe::find($id);
-        
-        return view('recipes.show')->with('recipe', $recipe);
+
+        $ingredients = Ingredient::all();
+
+        return view('recipes.show')->with('recipe', $recipe)->with('ingredients', $ingredients);
     }
 
     /**
@@ -130,8 +134,10 @@ class RecipeController extends Controller
     {
         //zoek het recept die je hebt aangeklikt op in de database
         $recipe = Recipe::find($id);
+        $ingredients = Ingredient::all();
         $foodrestrictions = Foodrestriction::all();
-        return view('recipes.edit')->with('recipe', $recipe)->with('foodrestrictions', $foodrestrictions);
+
+        return view('recipes.edit')->with('recipe', $recipe)->with('foodrestrictions', $foodrestrictions)->with('ingredients', $ingredients);
     }
 
     /**
@@ -160,7 +166,7 @@ class RecipeController extends Controller
         $recipe->titel = $request->input('titel');
         $recipe->ingredienten = $request->input('ingredienten');
         $recipe->bereidingswijze = $request->input('bereidingswijze');
-        $recipe->voedingswaarde = $request->input('voedingswaarde');
+        $recipe->voedingswaarde = $request->input('voedingswaarde');   
 
         //wanneer de img wordt gewijzigd wordt het volgende uitgevoerd
         if ($request->hasFile('image')) {
@@ -183,6 +189,10 @@ class RecipeController extends Controller
 
         //sla het recept opnieuw op
         $recipe->save();
+
+    
+             // $recipe->ingredients()->save($ingredient);     
+         
 
         return redirect()->route('recipes.show', $recipe->id);
     }
@@ -208,6 +218,8 @@ class RecipeController extends Controller
     {
         $clicked =  Input::get('genereer');
         $user = Auth::user();
+
+        $ingredients = Ingredient::all();
 
         $historyRecipes = $user->histories()->pluck('history_id')->toArray();
         $userFoodrestrictionsIds = $user->foodrestrictions->pluck('id')->toArray(); 
@@ -239,7 +251,7 @@ class RecipeController extends Controller
             if ($user->histories()->count() <= 4) {
                 $user->histories()->sync([$generatedRecipe], false);
 
-                return view('/home')->with('recipe', $recipe)->with('clicked', $clicked)->with('user', $user);
+                return view('/home')->with('recipe', $recipe)->with('clicked', $clicked)->with('user', $user)->with('ingredients', $ingredients);
             }
             if($user->histories()->count() >= 5){
                 $lastRecipe = $user->histories()->first();
@@ -247,7 +259,7 @@ class RecipeController extends Controller
 
                 $user->histories()->sync([$generatedRecipe], false);
 
-                return view('/home')->with('recipe', $recipe)->with('clicked', $clicked)->with('user', $user);
+                return view('/home')->with('recipe', $recipe)->with('clicked', $clicked)->with('user', $user)->with('ingredients', $ingredients);
             }
 
         }

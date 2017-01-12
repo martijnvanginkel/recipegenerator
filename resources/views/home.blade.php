@@ -11,11 +11,13 @@
 
 <div class="dropdown">
 
-  <img class="dropbtn" id="profile" src="img/icons/Profiel.png" alt="Profiel" width="50px" height="50px">
+  <img class="dropbtn" src="img/icons/Profiel.png" alt="Profiel" width="80px">
   <div class="dropdown-content">
     <a href="/users">Profiel</a>
-    <a href="#">Linkje</a>
-    <a href="#">Linkje</a>
+    @if (Auth::user()->admin == 1)
+      <a href="{{ route('recipes.index') }}">Recepten</a>
+      <a href="{{ route('foodrestrictions.index') }}">Allergieën en diëten</a>
+    @endif
       <a href="{{ url('/logout') }}"
         onclick="event.preventDefault();
                document.getElementById('logout-form').submit();">
@@ -73,7 +75,9 @@
     <ul id="ingredients">
       <h3>Ingrediënten</h3>
       <!-- vanuit PHP -->
-      <li>{{ $recipe->ingredienten }}</li>
+      @foreach($ingredients->where('recipe_id', $recipe->id) as $ingredient)
+      <li>{{ $ingredient->ingredient }}</li>  
+    @endforeach
     </ul>
     <div id="steps">
       <h3>Bereidingswijze</h3>

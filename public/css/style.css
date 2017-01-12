@@ -248,9 +248,10 @@ ul {
   display: inline-block;
   position: fixed;
   right: 20px;
+  z-index: 1;
 }
 
-/* line 250, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 251, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 .dropbtn {
   background-color: transparent;
   color: white;
@@ -260,18 +261,18 @@ ul {
   cursor: pointer;
 }
 
-/* line 261, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 262, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 .dropdown-content {
   display: none;
   position: absolute;
-  margin-top: 119px;
-  margin-left: -107px;
+  margin-top: -19px;
+  margin-left: -104px;
   background-color: #f9f9f9;
   width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-/* line 271, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 272, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
@@ -279,29 +280,29 @@ ul {
   display: block;
 }
 
-/* line 278, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 279, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 .dropdown-content a:hover {
   background-color: #f1f1f1;
 }
 
-/* line 280, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 281, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* line 284, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 285, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 .dropdown:hover .dropbtn {
   background-color: #transparent;
 }
 
-/* line 291, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 292, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: absolute;
   left: -99999px;
 }
 
-/* line 296, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 297, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 [type="checkbox"]:not(:checked) + label,
 [type="checkbox"]:checked + label {
   position: relative;
@@ -310,7 +311,7 @@ ul {
 }
 
 /* checkbox aspect */
-/* line 304, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 305, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 [type="checkbox"]:not(:checked) + label:before,
 [type="checkbox"]:checked + label:before {
   content: '';
@@ -326,7 +327,7 @@ ul {
 }
 
 /* checked mark aspect */
-/* line 317, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 318, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
   content: '✔';
@@ -340,13 +341,13 @@ ul {
 }
 
 /* checked mark aspect changes */
-/* line 329, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 330, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 [type="checkbox"]:not(:checked) + label:after {
   opacity: 0;
   transform: scale(0);
 }
 
-/* line 333, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
+/* line 334, C:/laragon/www/recipegenerator/resources/assets/sass/_style2.scss */
 [type="checkbox"]:checked + label:after {
   opacity: 1;
   transform: scale(1);

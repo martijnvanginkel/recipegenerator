@@ -27,10 +27,19 @@
 		</tr>
 
 			@foreach ($recipes as $recipe)
+
 				<tr>
 					<td>{{ $recipe->id }}</td>
 					<td>{{ substr($recipe->titel, 0, 30) }} {{ strlen($recipe->titel) > 30 ? "..." : "" }}</td>
-					<td>{{ substr($recipe->ingredienten, 0, 30) }} {{ strlen($recipe->ingredienten) > 30 ? "..." : "" }} </td>
+					<td> 
+						<ul>
+						@foreach($ingredients->where('recipe_id', $recipe->id) as $ingredient)
+							<li>
+								{{ $ingredient->ingredient }}  {{ strlen($ingredient->ingredient) > 30 ? "..." : "" }}
+							</li>
+						@endforeach
+						</ul>
+					</td>		
 					<td>{{ substr($recipe->bereidingswijze, 0, 30) }} {{ strlen($recipe->bereidingswijze) > 30 ? "..." : "" }}</td>
 					<td>{{ substr($recipe->voedingwaarde, 0, 30) }} {{ strlen($recipe->voedingwaarde) > 30 ? "..." : "" }}</td>
 					<td><a href=" {{ route('recipes.show', $recipe->id) }} ">Bekijk</a>  </td>

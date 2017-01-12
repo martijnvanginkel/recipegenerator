@@ -23,20 +23,32 @@
     <label for="titel">Titel:</label>
     <textarea placeholder="Typ hier de titel van dit gerecht" type="text" id="titel" name="titel" rows="2" style="resize:none;">{{ $recipe->titel }}</textarea>
     <label for="ingredienten">Ingrediënten:</label>
-    <textarea placeholder="Typ hier de ingrediënten die zijn gebruikt voor dit gerecht" type="text" id="ingredienten" name="ingredienten" rows="10">{{ $recipe->ingredienten }}</textarea>
+
+    @foreach($ingredients->where('recipe_id', $recipe->id) as $ingredient)
+      <textarea>{{ $ingredient->ingredient }}</textarea> 
+    @endforeach
+
     <label for="bereidingswijze">Bereidingswijze:</label>
     <textarea placeholder="Typ hier hoe dit gerecht klaargemaakt wordt" type="text" id="bereidingswijze" name="bereidingswijze" rows="10">{{ $recipe->bereidingswijze }}</textarea>
     <label for="voedingswaarde">Voedingswaarden:</label>
     <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" type="text" id="voedingswaarde" name="voedingswaarde" rows="10">{{ $recipe->voedingswaarde }}</textarea>
 
+  <label name="foodrestrictions[]" for="foodrestrictions">Dit recept past binnen de volgende allergieën:</label>
+    <ul>
+  @foreach($foodrestrictions->where('allergy', true) as $foodrestriction)
+      <li> <input name="foodrestrictions[]" type="checkbox" id="{{$foodrestriction->title}}" value="{{ $foodrestriction->id }}" ><label for="{{$foodrestriction->title}}" >
+      
+      {{$foodrestriction->title}}</label> </li>
+  @endforeach
+    </ul>
+
     <label name="foodrestrictions[]" for="foodrestrictions">Dit recept past binnen de volgende diëten:</label>
 
-{{--     <ul>
+    <ul>
   @foreach($foodrestrictions->where('diet', true) as $foodrestriction)
       <li> <input name="foodrestrictions[]" type="checkbox" id="{{$foodrestriction->title}}" value="{{ $foodrestriction->id }}" ><label for="{{$foodrestriction->title}}" >{{$foodrestriction->title}}</label> </li>
-      <li> <input name="foodrestrictions[]" type="checkbox" {{$foodrestriction}}  id="{{$foodrestriction->title}}" value="{{ $foodrestriction->id }}" ><label for="{{$foodrestriction->title}}" >{{$foodrestriction->title}}</label> </li>
   @endforeach
-    </ul> --}}
+    </ul>
 
 	<button id="save-button" type="submit">Opslaan</button>
     
