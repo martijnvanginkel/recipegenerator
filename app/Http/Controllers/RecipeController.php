@@ -83,7 +83,7 @@ class RecipeController extends Controller
         //de locatie van de img
         $location = public_path('img/' . $filename);
         //maakt de img aan, verandert de grootte en slaat hem op
-        Image::make($image)->resize(900, 250)->save($location);
+        Image::make($image)->save($location);
         $recipe->image = $filename;
 
         //recept opslaan
@@ -177,7 +177,7 @@ class RecipeController extends Controller
             //de locatie van de img
             $location = public_path('img/' . $filename);
             //maakt de img aan, verandert de grootte en slaat hem op
-            Image::make($image)->resize(900, 250)->save($location);
+            Image::make($image)->save($location);
             //de oude img
             $oldFilename = $recipe->image;
             //de nieuwe img
