@@ -11,7 +11,13 @@
 |
 */
 
-Route::get('/', 'PagesController@getIndex');
+Route::group(['middleware' => ['guest']], function(){
+	Route::get('/', 'PagesController@getIndex');
+	Route::get('/', 'RecipeController@noUserGenerate')->name('no-user-generate');
+Route::post('/', 'RecipeController@noUserGenerate')->name('no-user-generate');
+});
+
+
 
 Route::get('/users.index', 'CommentsController@index');
 
@@ -26,8 +32,7 @@ Route::get('/home', 'RecipeController@generate')->name('generate');
 Route::get('/home', 'RecipeController@generate')->name('recipe-generate');
 Route::post('/home', 'RecipeController@generate')->name('recipe-generate');
 
-Route::get('/', 'RecipeController@noUserGenerate')->name('no-user-generate');
-Route::post('/', 'RecipeController@noUserGenerate')->name('no-user-generate');
+
 
 Route::post('/users.index', 'RecipeController@favorite')->name('recipe-favorite');
 

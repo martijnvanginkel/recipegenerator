@@ -6,7 +6,7 @@
 
   <div class="dropdown">
 
-    <img class="dropbtn" src="img/icons/Profiel.png" alt="Profiel" width="80px">
+    <img class="dropbtn" src="img/icons/Menu.png" alt="Profiel" width="50px">
     <div class="dropdown-content">
       <a href="/users">Profiel</a>
       @if (Auth::user()->admin == 1)
