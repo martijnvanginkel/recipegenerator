@@ -8,15 +8,15 @@
 		</button>
 	</a>
 
-	<div class="dropdown">
+ <div class="dropdown">
 
-  <img class="dropbtn" src="img/icons/Menu.png" alt="Profiel" width="50px">
+  <img class="dropbtn" src="img/icons/Menu.png" alt="Menu" width="50px">
   <div class="dropdown-content">
     <a href="/home">Home</a>
     <a href="/users">Profiel</a>
     @if (Auth::user()->admin == 1)
       <a href="{{ route('recipes.index') }}">Recepten</a>
-      <a href="{{ route('foodrestrictions.index') }}">Allergieën en diëten</a>
+      <a href="{{ route('foodrestrictions.index') }}">Diëten en allergieën</a>
     @endif
     <a href="{{ url('/logout') }}"
         onclick="event.preventDefault();
@@ -29,7 +29,6 @@
      </form>
   </div>
 </div>
-
 	<h1>Recepten</h1>
 
 
