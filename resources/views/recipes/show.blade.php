@@ -1,7 +1,34 @@
 @extends('main')
 
 @section('content')
+
+
+<div class="dropdown">
+
+  <img class="dropbtn" src="img/icons/Menu.png" alt="Menu" width="50px">
+  <div class="dropdown-content">
+    <a href="/home">Home</a>
+    <a href="/users">Profiel</a>
+    @if (Auth::user()->admin == 1)
+      <a href="{{ route('recipes.index') }}">Recepten</a>
+      <a href="{{ route('foodrestrictions.index') }}">Diëten en allergieën</a>
+    @endif
+    <a href="{{ url('/logout') }}"
+        onclick="event.preventDefault();
+               document.getElementById('logout-form').submit();">
+            Uitloggen
+    </a>
+
+     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+         {{ csrf_field() }}
+     </form>
+  </div>
+</div>
+
 <section id="container_recept_fav">
+
+
+
 	<img id="image_recipe" src="{{ asset('img/' . $recipe->image) }}" alt="" height="250px" width="900px"/>
 	<a href=" {{ route('recipes.index', $recipe->id) }} ">
 		<button class="button back">

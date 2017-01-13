@@ -2,8 +2,36 @@
 
 @section('content')
 <div id="container">
+
+ <div class="dropdown">
+
+  <img class="dropbtn" src="img/icons/Menu.png" alt="Menu" width="50px">
+  <div class="dropdown-content">
+    <a href="/home">Home</a>
+    <a href="/users">Profiel</a>
+    @if (Auth::user()->admin == 1)
+      <a href="{{ route('recipes.index') }}">Recepten</a>
+      <a href="{{ route('foodrestrictions.index') }}">Diëten en allergieën</a>
+    @endif
+    <a href="{{ url('/logout') }}"
+        onclick="event.preventDefault();
+               document.getElementById('logout-form').submit();">
+            Uitloggen
+    </a>
+
+     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+         {{ csrf_field() }}
+     </form>
+  </div>
+</div>
+
+
 <form id="forms" method="POST" action="{{ route('foodrestrictions.update', $foodrestriction->id) }}">
       
+ <a href="{{ route('users.index') }}"><img src={{asset('img/icons/back.png')}}  class="button back" ></a>
+
+
+
           <h1 id="head">Dieet of allergie wijzigen</h1>
 
     <label name="title">Titel:</label>
@@ -19,12 +47,13 @@
 
 
 
+
+
 <form method="POST" action="{{ route('foodrestrictions.destroy', $foodrestriction->id) }}">
     <input type="submit" value="Delete">
     <input type="hidden" name="_token" value="{{ Session::token() }}">
    {{ method_field('DELETE') }}
 
-   <a href=" {{ route('foodrestrictions.index') }} ">Terug</a>
 </form>﻿
 </form>﻿
 

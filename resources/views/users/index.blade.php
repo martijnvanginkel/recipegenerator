@@ -1,15 +1,15 @@
 @extends('main')
 
 @section('content')
-<div class="dropdown">
+ <div class="dropdown">
 
-  <img class="dropbtn" src="img/icons/Menu.png" alt="Profiel" width="50px">
+  <img class="dropbtn" src="img/icons/Menu.png" alt="Menu" width="50px">
   <div class="dropdown-content">
     <a href="/home">Home</a>
-		@if (Auth::user()->admin == 1)
-			<a href="{{ route('recipes.index') }}">Recepten</a>
-			<a href="{{ route('foodrestrictions.index') }}">Allergieën en diëten</a>
-		@endif
+    @if (Auth::user()->admin == 1)
+      <a href="{{ route('recipes.index') }}">Recepten</a>
+      <a href="{{ route('foodrestrictions.index') }}">Diëten en allergieën</a>
+    @endif
     <a href="{{ url('/logout') }}"
         onclick="event.preventDefault();
                document.getElementById('logout-form').submit();">
