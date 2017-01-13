@@ -60,7 +60,12 @@ class RecipeController extends Controller
             'titel' => 'required',
             'ingredienten' => 'required',
             'bereidingswijze' => 'required',
-            'voedingswaarde' => 'required',
+            'energie' => 'required',
+            'eiwit' => 'required',
+            'koolhydraten' => 'required',
+            'vet' => 'required',
+            'voedingsvezel' => 'required',
+            'natrium' => 'required',
             
         ]);
 
@@ -70,7 +75,12 @@ class RecipeController extends Controller
         //ingevulde data door de gebruiker wordt gevalideert door bovenstaande
         $recipe->titel = $request->titel;      
         $recipe->bereidingswijze = $request->bereidingswijze;
-        $recipe->voedingswaarde = $request->voedingswaarde;  
+        $recipe->energie = $request->energie;
+        $recipe->eiwit = $request->eiwit;
+        $recipe->koolhydraten = $request->koolhydraten;
+        $recipe->vet = $request->vet;
+        $recipe->voedingsvezel = $request->voedingsvezel;
+        $recipe->natrium = $request->natrium; 
 
         $ingredient = new Ingredient;
         $ingredientenArray = $ingredient->ingredient = $request->ingredienten;
@@ -157,7 +167,12 @@ class RecipeController extends Controller
             'titel' => 'required',
             'ingredienten' => 'required',
             'bereidingswijze' => 'required',
-            'voedingswaarde' => 'required',
+            'energie' => 'required',
+            'eiwit' => 'required',
+            'koolhydraten' => 'required',
+            'vet' => 'required',
+            'voedingsvezel' => 'required',
+            'natrium' => 'required',
             'image' => 'image',
             ));
 
@@ -167,7 +182,12 @@ class RecipeController extends Controller
         //ingevulde data door de gebruiker wordt gevalideert door bovenstaande
         $recipe->titel = $request->input('titel');
         $recipe->bereidingswijze = $request->input('bereidingswijze');
-        $recipe->voedingswaarde = $request->input('voedingswaarde');   
+        $recipe->energie = $request->input('energie');
+        $recipe->eiwit = $request->input('eiwit');
+        $recipe->koolhydraten = $request->input('koolhydraten');
+        $recipe->vet = $request->input('vet');
+        $recipe->voedingsvezel = $request->input('voedingsvezel');
+        $recipe->natrium = $request->input('natrium');   
 
         //wanneer de img wordt gewijzigd wordt het volgende uitgevoerd
         if ($request->hasFile('image')) {

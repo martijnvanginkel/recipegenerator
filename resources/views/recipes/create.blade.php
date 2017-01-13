@@ -42,8 +42,23 @@
   <label name="bereidingswijze">Bereidingswijze:</label>
     <textarea placeholder="Typ hier hoe dit gerecht klaargemaakt wordt" rows="5" type="text" name="bereidingswijze" id="bereidingswijze"></textarea>
 
-  <label name="voedingswaarde" for="">Voedingswaarden:</label>
-    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="voedingswaarde" id="voedingswaarde"></textarea>
+  <label name="energie" for="">Energie:</label>
+    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="energie" id="energie"></textarea>
+
+      <label name="eiwit" for="">Eiwit:</label>
+    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="eiwit" id="eiwit"></textarea>
+
+      <label name="koolhydraten" for="">Koolhydraten:</label>
+    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="koolhydraten" id="koolhydraten"></textarea>
+
+      <label name="vet" for="">Vet:</label>
+    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="vet" id="vet"></textarea>
+
+      <label name="voedingsvezel" for="">Voedingsvezel:</label>
+    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="voedingsvezel" id="voedingsvezel"></textarea>
+
+      <label name="natrium" for="">Natrium:</label>
+    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="natrium" id="natrium"></textarea>
 
   <label name="foodrestrictions[]" for="foodrestrictions">Dit recept past binnen de volgende allergieën:</label>
 

@@ -6,10 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Recipe extends Model
 {
-    public function diets()
-    {
-    	return $this->belongsToMany('App\Diet');
-    }
 
     public function foodrestrictions()
     {
@@ -30,4 +26,5 @@ class Recipe extends Model
     {
         return $this->hasMany('App\Ingredient');
     }
+
 }

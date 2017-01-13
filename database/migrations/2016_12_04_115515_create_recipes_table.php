@@ -19,7 +19,12 @@ class CreateRecipesTable extends Migration
             $table->string('titel');
             $table->text('ingredienten')->default(NULL);
             $table->text('bereidingswijze');
-            $table->text('voedingswaarde');
+            $table->text('energie');
+            $table->text('eiwit');
+            $table->text('koolhydraten');
+            $table->text('vet');
+            $table->text('voedingsvezel');
+            $table->text('natrium');
             //gelinkt aan user
             $table->timestamps();
         });

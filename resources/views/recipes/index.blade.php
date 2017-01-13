@@ -41,7 +41,16 @@
 						</ul>
 					</td>		
 					<td>{{ substr($recipe->bereidingswijze, 0, 30) }} {{ strlen($recipe->bereidingswijze) > 30 ? "..." : "" }}</td>
-					<td>{{ substr($recipe->voedingwaarde, 0, 30) }} {{ strlen($recipe->voedingwaarde) > 30 ? "..." : "" }}</td>
+					<td> 
+						<ul>
+							<li>Energie: {{ $recipe->energie }}</li>
+							<li>Eiwit: {{ $recipe->eiwit }}</li>
+							<li>Koolhydraten: {{ $recipe->Koolhydraten }}</li>
+							<li>Vet: {{ $recipe->vet }}</li>
+							<li>Voedingsvezel: {{ $recipe->voedingsvezel }}</li>
+							<li>Natrium: {{ $recipe->natrium }} </li>
+						</ul> 
+					</td>
 					<td><a href=" {{ route('recipes.show', $recipe->id) }} ">Bekijk</a>  </td>
 					<td><a href=" {{ route('recipes.edit', $recipe->id) }} ">Wijzig</a></td>
 				</tr>

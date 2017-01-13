@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Input;
 use App\User;
 use App\Foodrestriction;
 use App\Recipe;
+use App\Ingredient;
 use DB;
 use Auth;
 
@@ -133,12 +134,14 @@ class UserController extends Controller
     public function favorite($id)
     {
         $recipe = Recipe::find($id);
-        return view('pages.favorites')->with('recipe', $recipe);
+        $ingredients = Ingredient::all();
+        return view('pages.favorites')->with('recipe', $recipe)->with('ingredients', $ingredients);
     }
 
     public function history($id)
     {
         $recipe = Recipe::find($id);
-        return view('pages.history')->with('recipe', $recipe);
+        $ingredients = Ingredient::all();
+        return view('pages.history')->with('recipe', $recipe)->with('ingredients', $ingredients);
     }
 }

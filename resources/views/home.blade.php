@@ -37,15 +37,6 @@
   </form>
 
 
-{{-- <script type="text/javascript">
-    $('#generator').click(function(){
-      $.ajax({
-        type:"POST",
-        url: "{{route ('recipe-generate')}}",
-      });
-    });
-</script>   --}}
-
   <br>
 </section>
 @if($clicked)
@@ -83,7 +74,14 @@
     <div id="nutritional_values">
       <h3>Voedingswaarden</h3>
       <!-- vanuit PHP -->
-      <p>{{ $recipe->voedingswaarde }}</p>
+  <ul>
+      <li>Energie: {{ $recipe->energie }}</li>
+      <li>Eiwit: {{ $recipe->eiwit }}</li>
+      <li>Koolhydraten: {{ $recipe->koolhydraten }}</li>
+      <li>Vet: {{ $recipe->vet }}</li>
+      <li>Voedingsvezel: {{ $recipe->voedingsvezel }}</li>
+      <li>Natrium: {{ $recipe->natrium }}</li>
+  </ul>
     </div>
 
 
