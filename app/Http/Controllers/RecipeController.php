@@ -19,10 +19,7 @@ class RecipeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct() 
-    {
-        $this->middleware('auth');
-    }
+
     //laat alle recepten uit de database op de /recipe pagina zien
     public function index()
     {
@@ -127,7 +124,6 @@ class RecipeController extends Controller
     {
         //zoek het recept die je hebt aangeklikt op in de database
         $recipe = Recipe::find($id);
-
         $ingredients = Ingredient::all();
 
         return view('recipes.show')->with('recipe', $recipe)->with('ingredients', $ingredients);
@@ -233,6 +229,7 @@ class RecipeController extends Controller
     //genereer functie van het recept op de homepagina
     public function generate()
     {
+
         $clicked =  Input::get('genereer');
         $user = Auth::user();
 
@@ -282,6 +279,7 @@ class RecipeController extends Controller
         }
 
         return view('/home')->with('clicked', $clicked);
+
     }
 
     //geeft de mogelijkheid om het recept toe te voegen als favoriet
@@ -292,6 +290,16 @@ class RecipeController extends Controller
         $user->recipes()->sync([$recipe], false);
 
         return redirect()->route('users.index');
+    }
+
+    public function noUserGenerate()
+    {
+        $clicked =  Input::get('genereer2');
+        $recipe = Recipe::all()->random(1);
+        $ingredients = Ingredient::all();
+
+        return view('pages.welcome')->with('recipe', $recipe)->with('clicked', $clicked)->with('ingredients', $ingredients);
+
     }
 
 
