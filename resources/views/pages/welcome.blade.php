@@ -4,10 +4,12 @@
 <section id=container_generator>
   <a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>
 
+  <div class="dropdown">
 
-<div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
+    <img class="dropbtn" src="img/icons/Menu.png" alt="Profiel" width="50px">
+    <div class="dropdown-content">
+      @if (Route::has('login'))
+        <div class="top-right links">
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Home</a>
                     @else
@@ -15,7 +17,20 @@
                         <a href="{{ url('/register') }}">Registeren</a>
                     @endif
                 </div>
-            @endif
+      @endif
+      
+
+       <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+           {{ csrf_field() }}
+       </form>
+    </div>
+
+  </div>
+
+
+<div class="flex-center position-ref full-height">
+            
+       
 
             
         </div>

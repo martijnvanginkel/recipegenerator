@@ -6,7 +6,7 @@
 
 <div class="dropdown">
 
-  <img class="dropbtn" src="img/icons/Menu.png" alt="Profiel" width="80px">
+  <img class="dropbtn" src="img/icons/Menu.png" alt="Profiel" width="50px">
   <div class="dropdown-content">
     <a href="/home">Home</a>
     <a href="/users">Profiel</a>
@@ -60,7 +60,7 @@
 
 <div class="container_index_diet_or_allergy">
 
- <h1>Toegevoegde diëten en allergrieën</h1>
+ <h1>Toegevoegde diëten en allergieën</h1>
 
 	<table class="table table-bordered" >
 		<tr>

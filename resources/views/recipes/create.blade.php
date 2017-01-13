@@ -24,19 +24,23 @@
     </label>
 
   <label name="title">Titel:</label>
-    <textarea placeholder="Typ hier de titel van dit gerecht" rows="2" type="text" name="titel" id="titel"></textarea>
+    <textarea placeholder="Typ hier de titel van dit gerecht" rows="1" type="text" name="titel" id="titel"></textarea>
 
-  <label>Ingredienten:</label>
-  <textarea name="ingredienten[]"></textarea>
-  <textarea name="ingredienten[]"></textarea>
-  <textarea name="ingredienten[]"></textarea>
-  <textarea name="ingredienten[]"></textarea>
-  <textarea name="ingredienten[]"></textarea>
-  <textarea name="ingredienten[]"></textarea>
-  <textarea name="ingredienten[]"></textarea>
-  <textarea name="ingredienten[]"></textarea>
-  <textarea name="ingredienten[]"></textarea>
-  <textarea name="ingredienten[]"></textarea>   
+  <label>Ingrediënten:</label>
+  <textarea name="ingredienten[]"" placeholder="Ingrediënt 1" rows="1" type="text" name="energie" id="energie"></textarea> 
+  <textarea name="ingredienten[]"" placeholder="Ingrediënt 2" rows="1" type="text" name="energie" id="energie"></textarea> 
+  <textarea name="ingredienten[]"" placeholder="Ingrediënt 3" rows="1" type="text" name="energie" id="energie"></textarea> 
+  <textarea name="ingredienten[]"" placeholder="Ingrediënt 4" rows="1" type="text" name="energie" id="energie"></textarea> 
+  <textarea name="ingredienten[]"" placeholder="Ingrediënt 5" rows="1" type="text" name="energie" id="energie"></textarea> 
+  <textarea name="ingredienten[]"" placeholder="Ingrediënt 6" rows="1" type="text" name="energie" id="energie"></textarea> 
+  <textarea name="ingredienten[]"" placeholder="Ingrediënt 7" rows="1" type="text" name="energie" id="energie"></textarea> 
+  <textarea name="ingredienten[]"" placeholder="Ingrediënt 8" rows="1" type="text" name="energie" id="energie"></textarea> 
+  <textarea name="ingredienten[]"" placeholder="Ingrediënt 9" rows="1" type="text" name="energie" id="energie"></textarea> 
+  <textarea name="ingredienten[]"" placeholder="Ingrediënt 10" rows="1" type="text" name="energie" id="energie"></textarea> 
+  <textarea name="ingredienten[]"" placeholder="Ingrediënt 11" rows="1" type="text" name="energie" id="energie"></textarea> 
+  <textarea name="ingredienten[]"" placeholder="Ingrediënt 12" rows="1" type="text" name="energie" id="energie"></textarea> 
+  <textarea name="ingredienten[]"" placeholder="Ingrediënt 13" rows="1" type="text" name="energie" id="energie"></textarea> 
+  <textarea name="ingredienten[]"" placeholder="Ingrediënt 14" rows="1" type="text" name="energie" id="energie"></textarea> 
 
 
   <label name="bereidingswijze">Bereidingswijze:</label>
