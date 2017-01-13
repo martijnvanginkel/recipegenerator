@@ -40,7 +40,8 @@
 
 
   		<input type="hidden" name="_token" value="{{ Session::token() }}">
-  	 	<a href="{{ route('users.index') }}"><img src={{asset('img/icons/back.png')}}  class="go_back_button" ></a>
+  	 	
+  	 	<a href="{{ route('users.index') }}"><img src={{asset('img/icons/back.png')}}  class="button back" ></a>
 
 
       <h1>Dieet of allergie toevoegen</h1>
