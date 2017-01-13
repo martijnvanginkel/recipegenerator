@@ -126,7 +126,10 @@ class RecipeController extends Controller
         $recipe = Recipe::find($id);
         $ingredients = Ingredient::all();
 
-        return view('recipes.show')->with('recipe', $recipe)->with('ingredients', $ingredients);
+        $recipeWithRestrictions = $recipe->foodrestrictions()->get()->pluck('id');
+        $foodrestrictions = Foodrestriction::all();
+        
+        return view('recipes.show')->with('recipe', $recipe)->with('ingredients', $ingredients)->with('foodrestrictions', $foodrestrictions)->with('ingredients', $ingredients)->with('recipeWithRestrictions', $recipeWithRestrictions);
     }
 
     /**
