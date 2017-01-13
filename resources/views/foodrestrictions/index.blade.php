@@ -54,12 +54,16 @@
 
  
 
+
 <div class="container_index_diet_or_allergy">
 
+ <h1>Toegevoegde diëten en allergrieën</h1>
+ 
 	<table class="table table-bordered" >
 		<tr>
 			<th class="number_table">#</th>
 			<th class="diet_allergy_table">Allergieën</th>
+			<th></th>
 		</tr>
 
 			@foreach ($foodrestrictions->where('allergy', true) as $foodrestriction)
@@ -77,6 +81,7 @@
 		<tr>
 			<th class="number_table">#</th>
 			<th class="diet_allergy_table">Diëten</th>
+			<th></th>
 		</tr>
 
 			@foreach ($foodrestrictions->where('diet', true) as $foodrestriction)
