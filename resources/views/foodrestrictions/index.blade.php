@@ -6,7 +6,7 @@
 
 <div class="dropdown">
 
-  <img class="dropbtn" src="img/icons/Profiel.png" alt="Profiel" width="80px">
+  <img class="dropbtn" src="img/icons/Menu.png" alt="Profiel" width="80px">
   <div class="dropdown-content">
     <a href="/home">Home</a>
     <a href="/users">Profiel</a>
