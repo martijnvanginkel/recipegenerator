@@ -4,6 +4,29 @@
 
 
 <div id="container">
+
+<div class="dropdown">
+
+  <img class="dropbtn" src="img/icons/Menu.png" alt="Profiel" width="50px">
+  <div class="dropdown-content">
+    <a href="/home">Home</a>
+    <a href="/users">Profiel</a>
+    @if (Auth::user()->admin == 1)
+      <a href="{{ route('recipes.index') }}">Recepten</a>
+      <a href="{{ route('foodrestrictions.index') }}">Allergieën en diëten</a>
+    @endif
+    <a href="{{ url('/logout') }}"
+        onclick="event.preventDefault();
+               document.getElementById('logout-form').submit();">
+            Uitloggen
+    </a>
+
+     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+         {{ csrf_field() }}
+     </form>
+  </div>
+</div>
+
   <form id="forms" method="POST" action=" {{ route('recipes.store') }} " enctype="multipart/form-data">
 
   @if (count($errors) > 0)
@@ -15,6 +38,7 @@
       </ul>
     </div>
   @endif
+
 
 <h1 id="head">Recepten toevoegen</h1>
   <label for="">Afbeelding:</label>
@@ -44,7 +68,7 @@
 
 
   <label name="bereidingswijze">Bereidingswijze:</label>
-    <textarea placeholder="Typ hier hoe dit gerecht klaargemaakt wordt" rows="5" type="text" name="bereidingswijze" id="bereidingswijze"></textarea>
+    <textarea placeholder="Ingrediënt 14" rows="1" type="text" name="energie" id="energie"></textarea> 
 
   <label name="energie" for="">Energie:</label>
     <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="energie" id="energie"></textarea>
@@ -85,8 +109,5 @@
 
       <input type="hidden" name="_token" value="{{ Session::token() }}">
     </form>
-
-    <a href=" {{ route('recipes.index') }} ">Terug</a>
-  </div>
 
 @endsection

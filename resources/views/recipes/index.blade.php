@@ -2,13 +2,37 @@
 
 @section('content')
 <div class="container_index">
-	<h1>Recepten</h1>
-
-	<a href="{{ route('users.index') }}">
+		<a href="{{ route('users.index') }}">
 		<button class="button back">
 			<img src="img/icons/back.png" alt="Terug">
 		</button>
 	</a>
+
+	<div class="dropdown">
+
+  <img class="dropbtn" src="img/icons/Menu.png" alt="Profiel" width="50px">
+  <div class="dropdown-content">
+    <a href="/home">Home</a>
+    <a href="/users">Profiel</a>
+    @if (Auth::user()->admin == 1)
+      <a href="{{ route('recipes.index') }}">Recepten</a>
+      <a href="{{ route('foodrestrictions.index') }}">Allergieën en diëten</a>
+    @endif
+    <a href="{{ url('/logout') }}"
+        onclick="event.preventDefault();
+               document.getElementById('logout-form').submit();">
+            Uitloggen
+    </a>
+
+     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+         {{ csrf_field() }}
+     </form>
+  </div>
+</div>
+
+	<h1>Recepten</h1>
+
+
 
 	<a href="{{route('recipes.create')}}">
 		<button class="button" value="Recept toevoegen">Recept toevoegen</button>
