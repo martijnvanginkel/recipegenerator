@@ -3,6 +3,8 @@
 @section('content')
 <div id="container">
 	
+
+
  <div class="dropdown">
 
   <img class="dropbtn" src="img/icons/Menu.png" alt="Menu" width="50px">
@@ -27,6 +29,12 @@
 
 	<form class="forms" method="POST" action=" {{ route('foodrestrictions.store') }} " enctype="multipart/form-data">
 
+        <a href="{{ route('users.index') }}">
+    <button class="button back">
+      <img src="img/icons/back.png" alt="Terug">
+    </button>
+  </a>
+
   		@if (count($errors) > 0)
   			    <div class="alert alert-danger">
   			        <ul>
@@ -39,8 +47,6 @@
 
 
   		<input type="hidden" name="_token" value="{{ Session::token() }}">
-  	 	
-  	 	<a href="{{ route('users.index') }}"><img src={{asset('img/icons/back.png')}}  class="button back" ></a>
 
 
       <h1>Dieet of allergie toevoegen</h1>

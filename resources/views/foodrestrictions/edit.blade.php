@@ -28,7 +28,11 @@
 
 <form id="forms" method="POST" action="{{ route('foodrestrictions.update', $foodrestriction->id) }}">
       
- <a href="{{ route('users.index') }}"><img src={{asset('img/icons/back.png')}}  class="button back" ></a>
+     <a href="{{ route('users.index') }}">
+    <button class="button back">
+      <img src="img/icons/back.png" alt="Terug">
+    </button>
+  </a>
 
 
 
