@@ -15,7 +15,6 @@ Route::get('/', 'PagesController@getIndex');
 
 Route::get('/users.index', 'CommentsController@index');
 
-//Route::resource('recipes', 'RecipeController');
 Route::resource('users', 'UserController', ['except' => ['show']]);
 
 Route::get('/users/favorites/{id}', 'UserController@favorite')->name('favorite-recipes');
@@ -26,6 +25,9 @@ Route::get('/users.index', 'RecipeController@history')->name('history');
 Route::get('/home', 'RecipeController@generate')->name('generate');
 Route::get('/home', 'RecipeController@generate')->name('recipe-generate');
 Route::post('/home', 'RecipeController@generate')->name('recipe-generate');
+
+Route::get('/', 'RecipeController@noUserGenerate')->name('no-user-generate');
+Route::post('/', 'RecipeController@noUserGenerate')->name('no-user-generate');
 
 Route::post('/users.index', 'RecipeController@favorite')->name('recipe-favorite');
 
@@ -39,7 +41,6 @@ Auth::routes();
 Route::group(['middleware' => ['admin']], function () {
     Route::resource('recipes', 'RecipeController');
     Route::resource('foodrestrictions', 'FoodrestrictionController');
-    Route::resource('diets', 'DietController', ['except' => ['create']]);
 });
 
 
