@@ -226,8 +226,15 @@ a:hover{
 			border: none;
 			background-color: $lightgrey;
 			width: 580px;
+			max-width: 580px;
 			height: 140px;
 			font-size: 150%;
+			padding-left: 1%;
+			padding-right: 1%;
+		}
+		input[type="text"]
+		{
+			margin-bottom: 3%
 		}
 	}
 }
@@ -238,8 +245,13 @@ a:hover{
 
 		.wrapper
 		{
-			width: 580px;
+			width: 35%;
 			margin: 0 auto;
+			background-color: $white;
+			color: $black;
+			padding-left: 1%;
+			padding-right: 1%;
+			padding-bottom: 1%;
 		}
 
 		h1
@@ -264,6 +276,7 @@ a:hover{
 		{
 				border-style: solid;
 				margin-top: 2.2%;
+				color:$lightblue;
 		}
 }
 
@@ -284,10 +297,27 @@ header{
 	}
 	.wrapper
 	{
-		width: fit-content;
-		width: -moz-fit-content;
-		width: -webkit-fit-content;
+		width: 29%;
 		margin: 0 auto;
+
+		select
+		{
+	   -webkit-appearance: none;
+	   -moz-appearance: none;
+	   appearance: none;
+		 padding:5px;
+		}
+
+		.diets
+		{
+			float: left;
+			margin-right: 1.2%;
+		}
+
+		.allergies
+		{
+			float: left;
+		}
 
 		h1
 		{
@@ -580,6 +610,16 @@ footer
 	{
 		width: 80%;
 	}
+
+	header
+	{
+		margin: 1.8%;
+		.wrapper
+		{
+			width: 75%;
+		}
+	}
+
 }
 
 .button
