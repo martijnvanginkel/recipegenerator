@@ -122,7 +122,18 @@ ul {
 #container
 {
 
-
+  input[type="submit"]
+  {
+    padding: 5px;
+    background-color: red;
+    border: none;
+    color: $white;
+  }
+    input[type="submit"]:hover
+    {
+      background-color: $white;
+      color: red;
+    }
 
 	#forms, .forms
 	{
@@ -160,6 +171,7 @@ ul {
 		    cursor: inherit;
     		display: inline-block;
     		filter: alpha(opacity=0);
+        border: none;
     		opacity: 0;
         left: -99999px;
     		position: absolute;
@@ -180,6 +192,7 @@ ul {
     		cursor: pointer;
 	    	width: 100%;
         outline: inherit;
+        border: none;
 
 
 

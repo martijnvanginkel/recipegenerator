@@ -57,18 +57,6 @@ main
 	width: 80px;
 }
 
-.logout
-{
-	width: fit-content;
-	width: -moz-fit-content;
-	float: right;
-}
-
-.admin_menu
-{
-	float: right;
-}
-
 a
 {
 	color: $white;
@@ -257,6 +245,7 @@ a:hover{
 		h1
 		{
 				width: fit-content;
+				width: -webkit-fit-content;
 		}
 
 		li
@@ -297,6 +286,7 @@ header{
 	{
 		width: fit-content;
 		width: -moz-fit-content;
+		width: -webkit-fit-content;
 		margin: 0 auto;
 
 		h1
@@ -416,6 +406,7 @@ header{
 .container_index
 {
 	width: fit-content;
+	width: -webkit-fit-content;
 	margin: 0 auto;
 
 	table, table a
