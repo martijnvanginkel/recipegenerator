@@ -299,7 +299,7 @@ header{
 	}
 	.wrapper
 	{
-		width: 31%;
+		width: 500px;
 		margin: 0 auto;
 
 		select
@@ -619,8 +619,14 @@ footer
 	header
 	{
 		margin: 1.8%;
+
 		.wrapper
 		{
+			.diets
+			{
+				margin-right: 0;	
+			}
+
 			width: 75%;
 		}
 	}
