@@ -33,6 +33,41 @@
 		<li>Natrium: {{ $recipe->natrium }}</li>
 	</ul>
 
+	  <label name="foodrestrictions[]" for="foodrestrictions">Dit recept past binnen de volgende allergieën:</label>
+    <ul>
+  @foreach($foodrestrictions->where('allergy', true) as $foodrestriction)
+      <li> <input name="foodrestrictions[]" type="checkbox" 
+
+      @foreach($recipeWithRestrictions as $recipeWithRestriction)
+          @if ($foodrestriction->id === $recipeWithRestriction)
+            {{ "checked" }}
+          @endif
+      @endforeach
+
+      id="{{$foodrestriction->title}}" value="{{ $foodrestriction->id }}" ><label for="{{$foodrestriction->title}}" >
+      {{$foodrestriction->title}}
+       </label> 
+      
+      </li>
+      @endforeach
+    </ul>
+
+    <label name="foodrestrictions[]" for="foodrestrictions">Dit recept past binnen de volgende diëten:</label>
+
+    <ul>
+  @foreach($foodrestrictions->where('diet', true) as $foodrestriction)
+      <li> <input name="foodrestrictions[]" type="checkbox" 
+
+      @foreach($recipeWithRestrictions as $recipeWithRestriction)
+          @if ($foodrestriction->id === $recipeWithRestriction)
+            {{ "checked" }}
+          @endif
+      @endforeach
+
+      id="{{$foodrestriction->title}}" value="{{ $foodrestriction->id }}" ><label for="{{$foodrestriction->title}}" >{{$foodrestriction->title}}</label> </li>
+  @endforeach
+    </ul>
+
 	</div>
 </section>
 
