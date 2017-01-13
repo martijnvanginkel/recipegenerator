@@ -38,6 +38,11 @@
   			    </div>
   		@endif
 
+
+  		<input type="hidden" name="_token" value="{{ Session::token() }}">
+  	 	<a href="{{ route('users.index') }}"><img src={{asset('img/icons/back.png')}}  class="go_back_button" ></a>
+
+
       <h1>Dieet of allergie toevoegen</h1>
 
   		<label name="title">Titel:</label>
@@ -47,8 +52,6 @@
 
   		<input id="toevoegknop" type="submit" value="Voeg toe">
 
-  		<input type="hidden" name="_token" value="{{ Session::token() }}">
-  	 	<a href="{{ route('users.index') }}">Terug</a>
 
   	 	</form>
 
@@ -58,7 +61,7 @@
 <div class="container_index_diet_or_allergy">
 
  <h1>Toegevoegde diëten en allergrieën</h1>
- 
+
 	<table class="table table-bordered" >
 		<tr>
 			<th class="number_table">#</th>
