@@ -71,14 +71,14 @@
       <div id="nutritional_values">
         <h3>Voedingswaarden</h3>
         <!-- vanuit PHP -->
-    <ul>
-        <li>Energie: {{ $recipe->energie }}</li>
-        <li>Eiwit: {{ $recipe->eiwit }}</li>
-        <li>Koolhydraten: {{ $recipe->koolhydraten }}</li>
-        <li>Vet: {{ $recipe->vet }}</li>
-        <li>Voedingsvezel: {{ $recipe->voedingsvezel }}</li>
-        <li>Natrium: {{ $recipe->natrium }}</li>
-    </ul>
+        <ul class="nutritional_values">
+            <li>Energie: {{ $recipe->energie }}</li>
+            <li>Eiwit: {{ $recipe->eiwit }}</li>
+            <li>Koolhydraten: {{ $recipe->koolhydraten }}</li>
+            <li>Vet: {{ $recipe->vet }}</li>
+            <li>Voedingsvezel: {{ $recipe->voedingsvezel }}</li>
+            <li>Natrium: {{ $recipe->natrium }}</li>
+        </ul>
       </div>
 
 
@@ -126,17 +126,6 @@
       </div>
   </section>
       @endif
-
-      <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-90330521-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
 
 
