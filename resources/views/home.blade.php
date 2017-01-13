@@ -116,8 +116,8 @@
       <h1>Reactie's</h1>
         <ul>
           @foreach ($recipe->comments as $comment)
-            <li class="name">{{ $user->name }}</li>
-            <li>{{ date('d-m-Y ', strtotime($comment->updated_at)) }}</li>
+            <li class="name"><strong>{{ $user->name }}</strong></li>
+            <li><strong>{{ date('d-m-Y ', strtotime($comment->updated_at)) }}</strong></li>
             <li>{{ $comment->comment }}</li>
             <hr>
 
@@ -130,7 +130,3 @@
 
 
 @endsection
-
-
-
-

@@ -138,8 +138,8 @@
 	    <h1>Jouw reactie's</h1>
 	      <ul>
 			@foreach ($user->comments as $comment)
-			<li class="name">{{ $comment->recipe->titel }}</li>
-			<li>{{ date('d-m-Y ', strtotime($comment->updated_at)) }}</li>
+			<li class="name"><strong>{{ $comment->recipe->titel }}</strong></li>
+			<li><strong>{{ date('d-m-Y ', strtotime($comment->updated_at)) }}</strong></li>
 			<li>{{ $comment->comment}}</li>
 			<li>
                 <form method="POST" action="{{ route('destroy-comment', $comment->id ) }}">
