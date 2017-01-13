@@ -58,7 +58,7 @@
               @endif
 
             <select class="form-control" name="foodrestriction_id">
-            <option selected disabled>Selecteer een dieet</option>
+            <option selected disabled>Selecteer een dieet &#8681;</option>
               @foreach($notChosenFoodrestrictions->where('diet', true) as $foodrestriction)
                 <option value="{{ $foodrestriction->id }}"> {{ $foodrestriction->title }} </option>
               @endforeach
@@ -98,7 +98,7 @@
 		      	@endif
 
 		    	<select class="form-control" name="foodrestriction_id">
-		    	<option selected disabled>Selecteer een allergie</option>
+		    	<option selected disabled>Selecteer een allergie &#8681;</option>
 		      	@foreach($notChosenFoodrestrictions->where('allergy', true) as $foodrestriction)
 		        	<option value="{{ $foodrestriction->id }}"> {{ $foodrestriction->title }} </option>
 		      	@endforeach

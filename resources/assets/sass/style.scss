@@ -300,6 +300,14 @@ header{
 		width: 29%;
 		margin: 0 auto;
 
+		select
+		{
+	   -webkit-appearance: none;
+	   -moz-appearance: none;
+	   appearance: none;
+		 padding:5px;
+		}
+
 		.diets
 		{
 			float: left;
