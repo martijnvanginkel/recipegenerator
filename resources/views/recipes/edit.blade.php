@@ -4,6 +4,8 @@
 
 <div id="container">
 
+
+
  <div class="dropdown">
 
   <img class="dropbtn" src="img/icons/Menu.png" alt="Menu" width="50px">
@@ -27,6 +29,11 @@
 </div>
     
 <form id="forms" method="POST" action="{{ route('recipes.update', $recipe->id) }}" enctype="multipart/form-data">
+    <a href="{{ route('users.index') }}">
+    <button class="button back">
+      <img src="img/icons/back.png" alt="Terug">
+    </button>
+  </a>
     <h1 id="head">Recept wijzigen</h1>
 
     <label for="">Afbeelding:</label>
@@ -102,14 +109,14 @@
     <input type="hidden" name="_token" value="{{ Session::token() }}">
     {{ method_field('PUT') }}
 
-</form>﻿
-
 <form method="POST" action="{{ route('recipes.destroy', $recipe->id) }}">
     <input type="submit" value="Delete">
     <input type="hidden" name="_token" value="{{ Session::token() }}">
    {{ method_field('DELETE') }}
+   </form>﻿
 
-   <a href=" {{ route('recipes.index', $recipe->id) }} ">Terug</a>
+
+
 </form>﻿
 </div>
 

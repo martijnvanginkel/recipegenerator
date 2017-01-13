@@ -29,6 +29,12 @@
 
   <form id="forms" method="POST" action=" {{ route('recipes.store') }} " enctype="multipart/form-data">
 
+    <a href="{{ route('users.index') }}">
+    <button class="button back">
+      <img src="img/icons/back.png" alt="Terug">
+    </button>
+  </a>
+
   @if (count($errors) > 0)
     <div class="alert alert-danger">
       <ul>
@@ -109,9 +115,6 @@
 
       <input type="hidden" name="_token" value="{{ Session::token() }}">
     </form>
-
-
-    <a href=" {{ route('recipes.index') }} ">Terug</a>
   </div>
 
   <script>
