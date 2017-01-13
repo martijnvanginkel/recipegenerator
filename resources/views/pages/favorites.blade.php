@@ -10,10 +10,12 @@
 	</a>
 	<h1>{{ $recipe->titel }}</h1>
 	<ul id="ingredients">
-		<h3>Ingrediënten</h3>
-		<!-- vanuit PHP -->
-		<li>{{ $recipe->ingredienten }}</li>
-	</ul>
+      <h3>Ingrediënten</h3>
+      <!-- vanuit PHP -->
+      @foreach($ingredients->where('recipe_id', $recipe->id) as $ingredient)
+      <li>{{ $ingredient->ingredient }}</li>
+    @endforeach
+    </ul>
 	<div id="steps">
 		<h3>Bereidingswijze</h3>
 		<!-- vanuit PHP -->
@@ -22,7 +24,14 @@
 	<div id="nutritional_values">
 		<h3>Voedingswaarden</h3>
 		<!-- vanuit PHP -->
-		<p>{{ $recipe->voedingswaarde }}</p>
+	<ul>
+		<li>Energie: {{ $recipe->energie }}</li>
+		<li>Eiwit: {{ $recipe->eiwit }}</li>
+		<li>Koolhydraten: {{ $recipe->koolhydraten }}</li>
+		<li>Vet: {{ $recipe->vet }}</li>
+		<li>Voedingsvezel: {{ $recipe->voedingsvezel }}</li>
+		<li>Natrium: {{ $recipe->natrium }}</li>
+	</ul>
 	</div>
 
 	<form method="POST" action="{{ route('users.destroy', $recipe->id) }}">

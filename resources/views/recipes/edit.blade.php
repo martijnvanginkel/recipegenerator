@@ -30,8 +30,24 @@
 
     <label for="bereidingswijze">Bereidingswijze:</label>
     <textarea placeholder="Typ hier hoe dit gerecht klaargemaakt wordt" type="text" id="bereidingswijze" name="bereidingswijze" rows="10">{{ $recipe->bereidingswijze }}</textarea>
-    <label for="voedingswaarde">Voedingswaarden:</label>
-    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" type="text" id="voedingswaarde" name="voedingswaarde" rows="10">{{ $recipe->voedingswaarde }}</textarea>
+
+      <label name="energie" for="">Energie:</label>
+    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="energie" id="energie"> {{ $recipe->energie }} </textarea>
+
+      <label name="eiwit" for="">Eiwit:</label>
+    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="eiwit" id="eiwit"> {{ $recipe->eiwit }} </textarea>
+
+      <label name="koolhydraten" for="">Koolhydraten:</label>
+    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="koolhydraten" id="koolhydraten"> {{ $recipe->koolhydraten }} </textarea>
+
+      <label name="vet" for="">Vet:</label>
+    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="vet" id="vet"> {{ $recipe->vet }} </textarea>
+
+      <label name="voedingsvezel" for="">Voedingsvezel:</label>
+    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="voedingsvezel" id="voedingsvezel"> {{ $recipe->voedingsvezel }} </textarea>
+
+      <label name="natrium" for="">Natrium:</label>
+    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="natrium" id="natrium"> {{ $recipe->natrium }} </textarea>
 
   <label name="foodrestrictions[]" for="foodrestrictions">Dit recept past binnen de volgende allergieën:</label>
     <ul>
