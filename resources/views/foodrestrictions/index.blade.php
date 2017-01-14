@@ -29,7 +29,7 @@
 
 	<form class="forms" method="POST" action=" {{ route('foodrestrictions.store') }} " enctype="multipart/form-data">
 
-        <a href="{{ route('users.index') }}">
+  <a href="{{ route('users.index') }}">
     <button class="button back">
       <img src="img/icons/back.png" alt="Terug">
     </button>
