@@ -74,25 +74,27 @@
 
 
   <label name="bereidingswijze">Bereidingswijze:</label>
-    <textarea placeholder="Ingrediënt 14" rows="1" type="text" name="energie" id="energie"></textarea> 
+    <textarea placeholder="Typ hier hoe je het gerecht klaarmaakt" rows="15" type="text" name="energie" id="energie"></textarea> 
 
+
+Voedingswaarden:
   <label name="energie" for="">Energie:</label>
-    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="energie" id="energie"></textarea>
+    <textarea placeholder="In kcal" rows="1" name="energie" id="energie"></textarea>
 
       <label name="eiwit" for="">Eiwit:</label>
-    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="eiwit" id="eiwit"></textarea>
+    <textarea placeholder="In gram" rows="1" name="eiwit" id="eiwit"></textarea>
 
       <label name="koolhydraten" for="">Koolhydraten:</label>
-    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="koolhydraten" id="koolhydraten"></textarea>
+    <textarea placeholder="In gram" rows="1" name="koolhydraten" id="koolhydraten"></textarea>
 
       <label name="vet" for="">Vet:</label>
-    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="vet" id="vet"></textarea>
+    <textarea placeholder="In gram" rows="1" name="vet" id="vet"></textarea>
 
-      <label name="voedingsvezel" for="">Voedingsvezel:</label>
-    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="voedingsvezel" id="voedingsvezel"></textarea>
+      <label name="voedingsvezel" for="">Vezels:</label>
+    <textarea placeholder="In gram" rows="1" name="voedingsvezel" id="voedingsvezel"></textarea>
 
       <label name="natrium" for="">Natrium:</label>
-    <textarea placeholder="Typ hier de voedingswaarden van dit gerecht" rows="5" name="natrium" id="natrium"></textarea>
+    <textarea placeholder="In milligram" rows="1" name="natrium" id="natrium"></textarea>
 
   <label name="foodrestrictions[]" for="foodrestrictions">Dit recept past binnen de volgende allergieën:</label>
 
