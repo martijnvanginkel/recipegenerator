@@ -125,15 +125,13 @@ ul {
 #container
 {
 
-  input[type="submit"]
-  {
+  input[type="submit"]{
     padding: 5px;
     background-color: red;
     border: none;
     color: $white;
   }
-    input[type="submit"]:hover
-    {
+    input[type="submit"]:hover{
       background-color: $white;
       color: red;
     }

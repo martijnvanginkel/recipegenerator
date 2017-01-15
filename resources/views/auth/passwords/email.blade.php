@@ -5,7 +5,6 @@
 <div id="password-screen">
     <div class="panel panel-default">
         <h1 id="head" class="panel-heading">Nieuw wachtwoord</h1>
-            
         @if (session('status'))
             <div class="alert alert-success">
                 {{ session('status') }}
