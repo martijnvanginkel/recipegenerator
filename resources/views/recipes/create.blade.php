@@ -74,7 +74,7 @@
 
 
   <label name="bereidingswijze">Bereidingswijze:</label>
-    <textarea placeholder="Typ hier hoe je het gerecht klaarmaakt" rows="15" type="text" name="energie" id="energie"></textarea> 
+    <textarea placeholder="Typ hier hoe je het gerecht klaarmaakt" rows="15" type="text" name="bereidingswijze" id="bereidingswijze"></textarea> 
 
 
 Voedingswaarden:
