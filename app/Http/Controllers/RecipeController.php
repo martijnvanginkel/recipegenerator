@@ -88,7 +88,7 @@ class RecipeController extends Controller
         //verandert de filenaam naar de tijd en datum, zodat er nooit dezelfde afbeeldingen in de database komen te staan
         $filename = time() . '.' . $image->getClientOriginalExtension();
         //de locatie van de img
-        $location = public_path('img/' . $filename);
+        $location = 'img/' . $filename;
         //maakt de img aan, verandert de grootte en slaat hem op
         Image::make($image)->save($location);
         $recipe->image = $filename;
