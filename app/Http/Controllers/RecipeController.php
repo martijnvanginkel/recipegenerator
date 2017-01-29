@@ -232,25 +232,29 @@ class RecipeController extends Controller
     //genereer functie van het recept op de homepagina
     public function generate()
     {
-
+        //wanneer is er op het rad geklikt
         $clicked =  Input::get('genereer');
+        //definieer gebruiker
         $user = Auth::user();
-
+        //alle ingredienten
         $ingredients = Ingredient::all();
 
+        //alle recepten die in de geschiedenis staan van de huidige gebruiker in een array zetten
         $historyRecipes = $user->histories()->pluck('history_id')->toArray();
+        //alle foodrestrictions van de gebruiker in een array zetten
         $userFoodrestrictionsIds = $user->foodrestrictions->pluck('id')->toArray(); 
-
+        //alle recepten hun id's in een array zetten
         $allRecipes = Recipe::all()->pluck('id')->toArray();
 
+        //wanneer er niet is ingelogd, pak een random recept
         if($user->foodrestrictions->isEmpty()){
 
-            $recipe = Recipe::findMany(array_diff($allRecipes, $historyRecipes))->random(1);
+            $recipe = Recipe::all()->random(1);
 
         }
-        else{
-
-            $recipess = Recipe::whereHas('foodrestrictions', function($q)
+        //als er wel is ingelogd, kijk naar de foodrestrictions en geschiedenis van de gebruiker
+        else{ 
+            $recipesWithFoodrestrictions = Recipe::whereHas('foodrestrictions', function($q)
             {
                 $user = Auth::user();
                 $userFoodrestrictionsIds = $user->foodrestrictions->pluck('id')->toArray(); 
@@ -259,17 +263,18 @@ class RecipeController extends Controller
 
             })->pluck('id')->toArray();
 
-            $recipe = Recipe::findMany(array_diff($recipess, $historyRecipes))->random(1);
+            $recipe = Recipe::findMany(array_diff($recipesWithFoodrestrictions, $historyRecipes))->random(1);
 
         }
 
-        if($clicked){
-            $generatedRecipe = $recipe->id;
+        $generatedRecipe = $recipe->id;
+            // als de geschiedenis nog niet vol is (5), stop het recept in de geschiedenis
             if ($user->histories()->count() <= 4) {
                 $user->histories()->sync([$generatedRecipe], false);
 
                 return view('/home')->with('recipe', $recipe)->with('clicked', $clicked)->with('user', $user)->with('ingredients', $ingredients);
             }
+            //als de geschiedenis vol is, verwijder eerst de laatste en stop dan de nieuwe er pas in
             if($user->histories()->count() >= 5){
                 $lastRecipe = $user->histories()->first();
                 $user->histories()->detach($lastRecipe);
@@ -278,8 +283,6 @@ class RecipeController extends Controller
 
                 return view('/home')->with('recipe', $recipe)->with('clicked', $clicked)->with('user', $user)->with('ingredients', $ingredients);
             }
-
-        }
 
         return view('/home')->with('clicked', $clicked);
 

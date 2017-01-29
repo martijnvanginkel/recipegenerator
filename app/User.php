@@ -8,11 +8,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
 
-    public function diets()
-    {
-        return $this->belongsToMany('App\Diet');
-    }
-
     public function foodrestrictions()
     {
         return $this->belongsToMany('App\Foodrestriction');
