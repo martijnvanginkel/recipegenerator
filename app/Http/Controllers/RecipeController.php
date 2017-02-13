@@ -238,7 +238,6 @@ class RecipeController extends Controller
         $user = Auth::user();
         //alle ingredienten
         $ingredients = Ingredient::all();
-
         //alle recepten die in de geschiedenis staan van de huidige gebruiker in een array zetten
         $historyRecipes = $user->histories()->pluck('history_id')->toArray();
         //alle foodrestrictions van de gebruiker in een array zetten
@@ -246,7 +245,6 @@ class RecipeController extends Controller
         //alle recepten hun id's in een array zetten
         $allRecipes = Recipe::all()->pluck('id')->toArray();
 
-        //wanneer er niet is ingelogd, pak een random recept
         if($user->foodrestrictions->isEmpty()){
 
             $recipe = Recipe::all()->random(1);
