@@ -1,5 +1,5 @@
 @extends('main')
-
+<!-- hoi -->
 @section('content')
 <section id=container_generator>
   <a href="/home"><img id="logo" src={{asset('img/Sjef_logo.png')}} alt="De Sjef Logo"></a>

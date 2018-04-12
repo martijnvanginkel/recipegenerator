@@ -63,24 +63,25 @@ class RecipeController extends Controller
             'vet' => 'required',
             'voedingsvezel' => 'required',
             'natrium' => 'required',
-            
+
         ]);
 
         //nieuw recept wordt aangemaakt
         $recipe = new Recipe;
 
         //ingevulde data door de gebruiker wordt gevalideert door bovenstaande
-        $recipe->titel = $request->titel;      
+        $recipe->titel = $request->titel;
         $recipe->bereidingswijze = $request->bereidingswijze;
         $recipe->energie = $request->energie;
         $recipe->eiwit = $request->eiwit;
         $recipe->koolhydraten = $request->koolhydraten;
         $recipe->vet = $request->vet;
         $recipe->voedingsvezel = $request->voedingsvezel;
-        $recipe->natrium = $request->natrium; 
+        $recipe->natrium = $request->natrium;
 
         $ingredient = new Ingredient;
         $ingredientenArray = $ingredient->ingredient = $request->ingredienten;
+
 
 
         //img toevoegen aan recept
@@ -99,12 +100,12 @@ class RecipeController extends Controller
         foreach ($ingredientenArray as $requestIngredient) {
              $ingredient = New Ingredient;
              $ingredient->ingredient = $requestIngredient;
-             $recipe->ingredients()->save($ingredient);     
-         } 
-        
-       
-        
-    
+             $recipe->ingredients()->save($ingredient);
+         }
+
+
+
+
         //koppel het recept aan een dieet als die zijn aangegeven
         if($request->foodrestrictions){
             $recipe->foodrestrictions()->sync($request->foodrestrictions, false);
@@ -128,7 +129,7 @@ class RecipeController extends Controller
 
         $recipeWithRestrictions = $recipe->foodrestrictions()->get()->pluck('id');
         $foodrestrictions = Foodrestriction::all();
-        
+
         return view('recipes.show')->with('recipe', $recipe)->with('ingredients', $ingredients)->with('foodrestrictions', $foodrestrictions)->with('ingredients', $ingredients)->with('recipeWithRestrictions', $recipeWithRestrictions);
     }
 
@@ -186,7 +187,7 @@ class RecipeController extends Controller
         $recipe->koolhydraten = $request->input('koolhydraten');
         $recipe->vet = $request->input('vet');
         $recipe->voedingsvezel = $request->input('voedingsvezel');
-        $recipe->natrium = $request->input('natrium');   
+        $recipe->natrium = $request->input('natrium');
 
         //wanneer de img wordt gewijzigd wordt het volgende uitgevoerd
         if ($request->hasFile('image')) {
@@ -241,7 +242,7 @@ class RecipeController extends Controller
         //alle recepten die in de geschiedenis staan van de huidige gebruiker in een array zetten
         $historyRecipes = $user->histories()->pluck('history_id')->toArray();
         //alle foodrestrictions van de gebruiker in een array zetten
-        $userFoodrestrictionsIds = $user->foodrestrictions->pluck('id')->toArray(); 
+        $userFoodrestrictionsIds = $user->foodrestrictions->pluck('id')->toArray();
         //alle recepten hun id's in een array zetten
         $allRecipes = Recipe::all()->pluck('id')->toArray();
 
@@ -251,12 +252,12 @@ class RecipeController extends Controller
 
         }
         //als er wel is ingelogd, kijk naar de foodrestrictions en geschiedenis van de gebruiker
-        else{ 
+        else{
             $recipesWithFoodrestrictions = Recipe::whereHas('foodrestrictions', function($q)
             {
                 $user = Auth::user();
-                $userFoodrestrictionsIds = $user->foodrestrictions->pluck('id')->toArray(); 
-                
+                $userFoodrestrictionsIds = $user->foodrestrictions->pluck('id')->toArray();
+
                 $q->whereIn('foodrestriction_id', $userFoodrestrictionsIds);
 
             })->pluck('id')->toArray();
@@ -287,7 +288,7 @@ class RecipeController extends Controller
     }
 
     //geeft de mogelijkheid om het recept toe te voegen als favoriet
-    public function favorite(request $request) 
+    public function favorite(request $request)
     {
         $user = Auth::user();
         $recipe = $request->recipe_id;
